@@ -1,0 +1,230 @@
+@import "tailwindcss";
+
+/* Class-based dark mode: <html class="dark"> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------ */
+/* RAW PALETTE + STATIC TOKENS (from Figma "color" + "Typography")    */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* Primary (blue → navy) */
+  --color-primary-50: #f5f5fb;
+  --color-primary-100: #ccceed;
+  --color-primary-200: #999cda;
+  --color-primary-300: #666bc8;
+  --color-primary-400: #3339b5;
+  --color-primary-500: #0008a3;
+  --color-primary-600: #000682;
+  --color-primary-700: #000562;
+  --color-primary-800: #000341;
+  --color-primary-900: #000221;
+
+  /* Secondary (orange — brand accent) */
+  --color-secondary-50: #ffe4d5;
+  --color-secondary-100: #ffc9ab;
+  --color-secondary-200: #ffae80;
+  --color-secondary-300: #ff9356;
+  --color-secondary-400: #ff782c;
+  --color-secondary-500: #cc6023;
+  --color-secondary-600: #99481a;
+  --color-secondary-700: #663012;
+  --color-secondary-800: #331809;
+
+  /* Neutrals */
+  --color-gray-50: #f5f5f5;
+  --color-gray-100: #ebebeb;
+  --color-gray-200: #e1e1e1;
+  --color-gray-300: #d7d7d7;
+  --color-gray-400: #a4a4a4;
+  --color-gray-500: #7b7b7b;
+  --color-gray-600: #525252;
+  --color-gray-700: #292929;
+
+  /* Brand shortcuts (theme-constant) */
+  --color-brand: #ff782c;
+  --color-brand-hover: #cc6023;
+  --color-accent-card: #0008a3;
+  --color-navy: #000221;
+
+  /* Fonts (variables injected by next/font in layout) */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-arabic: var(--font-cairo), system-ui, sans-serif;
+
+  /* Type scale (size / line-height) — Figma Typography frame */
+  --text-display-large: 56px;
+  --text-display-large--line-height: 1.1;
+  --text-display-large--font-weight: 700;
+  --text-display-medium: 48px;
+  --text-display-medium--line-height: 1.12;
+  --text-display-medium--font-weight: 700;
+  --text-display-small: 28px;
+  --text-display-small--line-height: 1.2;
+  --text-display-small--font-weight: 500;
+
+  --text-headline-large: 36px;
+  --text-headline-large--line-height: 1.2;
+  --text-headline-large--font-weight: 600;
+  --text-headline-medium: 32px;
+  --text-headline-medium--line-height: 1.25;
+  --text-headline-medium--font-weight: 600;
+  --text-headline-small: 28px;
+  --text-headline-small--line-height: 1.3;
+  --text-headline-small--font-weight: 600;
+
+  --text-title-large: 24px;
+  --text-title-large--line-height: 1.3;
+  --text-title-large--font-weight: 600;
+  --text-title-medium: 20px;
+  --text-title-medium--line-height: 1.4;
+  --text-title-medium--font-weight: 600;
+  --text-title-small: 18px;
+  --text-title-small--line-height: 1.4;
+  --text-title-small--font-weight: 600;
+
+  --text-label-large: 24px;
+  --text-label-large--line-height: 1.4;
+  --text-label-large--font-weight: 500;
+  --text-label-medium: 20px;
+  --text-label-medium--line-height: 1.4;
+  --text-label-medium--font-weight: 500;
+  --text-label-small: 16px;
+  --text-label-small--line-height: 1.4;
+  --text-label-small--font-weight: 500;
+
+  --text-body-large: 20px;
+  --text-body-large--line-height: 1.6;
+  --text-body-large--font-weight: 400;
+  --text-body-medium: 18px;
+  --text-body-medium--line-height: 1.6;
+  --text-body-medium--font-weight: 400;
+  --text-body-small: 16px;
+  --text-body-small--line-height: 1.6;
+  --text-body-small--font-weight: 400;
+
+  /* Radius scale — aligned to Figma (tiles/inputs 12 · cards 16 · panels 24) */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+
+  /* Shadow scale (Figma: #999CDA3D 0/4/16) */
+  --shadow-card: 0 4px 16px 0 rgba(153, 156, 218, 0.24);
+  --shadow-card-hover: 0 12px 28px 0 rgba(153, 156, 218, 0.35);
+
+  /* Layout */
+  --container-content: 1200px;
+
+  /* Easing / motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ------------------------------------------------------------------ */
+/* SEMANTIC TOKENS — flip between Light & Dark                         */
+/* ------------------------------------------------------------------ */
+:root {
+  --background: #ffffff;
+  --foreground: #000221;
+  --surface: #ffffff;
+  --surface-foreground: #000221;
+  --muted: #f5f5f5;
+  --muted-foreground: #525252;
+  --border: #e1e1e1;
+  --input: #e1e1e1;
+  --ring: #ff782c;
+  --footer-bg: #000221;
+  --footer-foreground: #ffffff;
+  --hero-overlay: rgba(0, 2, 33, 0.55);
+}
+
+.dark {
+  --background: #161c2b;
+  --foreground: #ffffff;
+  --surface: #212839;
+  --surface-foreground: #ffffff;
+  --muted: #212839;
+  --muted-foreground: #ccceed;
+  --border: #303a52;
+  --input: #303a52;
+  --ring: #ff782c;
+  --footer-bg: #000221;
+  --footer-foreground: #ffffff;
+  /* Darker, neutral elevation shadow in dark mode (bluish light-mode shadow reads wrong on navy) */
+  --shadow-card: 0 4px 16px 0 rgba(0, 0, 0, 0.4);
+  --shadow-card-hover: 0 12px 28px 0 rgba(0, 0, 0, 0.5);
+  --hero-overlay: rgba(0, 2, 33, 0.65);
+}
+
+/* Expose semantic vars as Tailwind color utilities (bg-background, text-foreground, …) */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-foreground: var(--surface-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-footer: var(--footer-bg);
+  --color-footer-foreground: var(--footer-foreground);
+}
+
+/* ------------------------------------------------------------------ */
+/* BASE                                                               */
+/* ------------------------------------------------------------------ */
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Arabic locale uses Cairo */
+  html[lang="ar"] body {
+    font-family: var(--font-arabic);
+  }
+
+  /* Figma headings carry slight negative tracking — LTR only.
+     Arabic (Cairo) is a connected script; letter-spacing would break glyph joins. */
+  html[lang="en"] :is(h1, h2, h3, h4) {
+    letter-spacing: -0.02em;
+  }
+
+  /* Smooth theme transition */
+  body,
+  body * {
+    transition:
+      background-color 0.2s var(--ease-out-soft),
+      border-color 0.2s var(--ease-out-soft),
+      color 0.2s var(--ease-out-soft);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Utility: flip directional icons under RTL */
+@layer utilities {
+  [dir="rtl"] .rtl-flip {
+    transform: scaleX(-1);
+  }
+}

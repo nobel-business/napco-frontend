@@ -1,0 +1,189 @@
+import Image from "next/image";
+import { notFound } from "next/navigation";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Calendar, User, Eye, Check, ChevronRight, Lightbulb, Facebook, Linkedin, MessageCircle } from "@/components/ui/mingcute-icons";
+
+import type { Locale } from "@/i18n/routing";
+import { routing } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
+import { Container } from "@/components/ui/container";
+import { Badge } from "@/components/ui/badge";
+import { SectionHeading } from "@/components/sections/section-heading";
+import { ArticleCard } from "@/components/cards/article-card";
+import { getArticle, getArticles } from "@/content/articles";
+
+export function generateStaticParams() {
+  return routing.locales.flatMap((locale) =>
+    getArticles(locale).map((a) => ({ locale, slug: a.slug })),
+  );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale; slug: string }>;
+}) {
+  const { locale, slug } = await params;
+  const article = getArticle(locale, slug);
+  return { title: article?.title ?? "Article" };
+}
+
+type Impl = { title: string; desc: string };
+
+export default async function ArticlePage({
+  params,
+}: {
+  params: Promise<{ locale: Locale; slug: string }>;
+}) {
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+  const article = getArticle(locale, slug);
+  if (!article) notFound();
+
+  const t = await getTranslations("articleDetail");
+  const nav = await getTranslations("nav");
+
+  const benefits = t.raw("benefits") as string[];
+  const implementation = t.raw("implementation") as Impl[];
+  const related = getArticles(locale).filter((a) => a.slug !== slug).slice(0, 3);
+
+  const shareButtons = [
+    { Icon: Facebook, label: "FaceBook" },
+    { Icon: MessageCircle, label: "WhatsApp" },
+    { Icon: Linkedin, label: "LinkedIn" },
+  ];
+
+  return (
+    <>
+      {/* HERO */}
+      <section className="relative isolate flex min-h-[460px] items-center overflow-hidden">
+        <Image src={article.image} alt="" fill priority className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/75 to-navy/90" />
+        <Container className="relative z-10 flex flex-col items-center gap-5 py-28 text-center text-white">
+          <nav className="flex items-center gap-2 text-body-small text-white/70">
+            <Link href="/" className="hover:text-white">{nav("home")}</Link>
+            <ChevronRight className="h-4 w-4 rtl-flip" />
+            <Link href="/articles" className="hover:text-white">{nav("blog")}</Link>
+            <ChevronRight className="h-4 w-4 rtl-flip" />
+            <span className="text-white">{article.category}</span>
+          </nav>
+          <h1 className="max-w-4xl text-display-small font-bold uppercase text-brand md:text-headline-large">
+            {article.title}
+          </h1>
+          <p className="text-body-medium text-white/80">{t("heroSubtitle")}</p>
+        </Container>
+      </section>
+
+      {/* BODY */}
+      <section className="py-16 lg:py-20">
+        <Container>
+          <div className="mx-auto max-w-4xl space-y-8">
+            {/* Meta */}
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-3">
+              <span className="flex items-center gap-2 text-body-small text-muted-foreground">
+                <Calendar className="h-5 w-5 text-accent-card" /> {article.date}
+              </span>
+              <span className="flex items-center gap-2 text-body-small text-muted-foreground">
+                <User className="h-5 w-5 text-accent-card" /> {t("author")}
+              </span>
+              <span className="flex items-center gap-2 text-body-small text-muted-foreground">
+                <Eye className="h-5 w-5 text-accent-card" /> {t("reads")}
+              </span>
+              <Badge className="ms-auto">{article.category}</Badge>
+            </div>
+
+            <p className="text-body-large text-muted-foreground">{t("intro")}</p>
+
+            {/* Expert Tip */}
+            <div className="flex gap-4 rounded-2xl border-s-4 border-accent-card bg-muted/60 p-6">
+              <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand text-white">
+                <Lightbulb className="h-5 w-5" />
+              </span>
+              <div className="space-y-2">
+                <h2 className="text-title-medium font-semibold uppercase text-foreground">
+                  {t("expertTipTitle")}
+                </h2>
+                <p className="text-body-small text-muted-foreground">{t("expertTip")}</p>
+              </div>
+            </div>
+
+            {/* Feature image */}
+            <div className="relative aspect-[16/7] overflow-hidden rounded-2xl shadow-card">
+              <Image src="/images/svc-eng.png" alt="" fill className="object-cover" />
+            </div>
+
+            {/* Key benefits */}
+            <div className="space-y-4">
+              <h2 className="text-headline-small font-semibold uppercase text-foreground">
+                {t("benefitsTitle")}
+              </h2>
+              <ul className="space-y-3">
+                {benefits.map((b) => (
+                  <li key={b} className="flex items-start gap-3">
+                    <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand text-white">
+                      <Check className="h-4 w-4" />
+                    </span>
+                    <span className="text-body-medium text-muted-foreground">{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Implementation */}
+            <div className="space-y-6">
+              <h2 className="text-headline-small font-semibold uppercase text-foreground">
+                {t("implementationTitle")}
+              </h2>
+              <p className="text-body-medium text-muted-foreground">{t("implementationIntro")}</p>
+              <div className="grid gap-6 md:grid-cols-3">
+                {implementation.map((item, i) => (
+                  <article key={item.title} className="space-y-3 rounded-2xl border border-border bg-surface p-6 shadow-card">
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary-400 to-primary-600 text-title-medium font-bold text-white">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="text-title-small font-semibold text-foreground">{item.title}</h3>
+                    <p className="text-body-small text-muted-foreground">{item.desc}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* SHARE */}
+      <section className="pb-16">
+        <Container>
+          <div className="mx-auto max-w-4xl space-y-6 rounded-3xl border border-border bg-surface p-10 text-center shadow-card">
+            <h2 className="text-headline-small font-semibold uppercase text-foreground">
+              {t("shareTitle")}
+            </h2>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {shareButtons.map(({ Icon, label }) => (
+                <button
+                  key={label}
+                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-secondary-300 to-secondary-500 px-6 py-3 text-label-small font-medium text-white shadow-sm transition-opacity hover:opacity-90"
+                >
+                  <Icon className="h-5 w-5" />
+                  {label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* RELATED */}
+      <section className="bg-muted/40 py-20 lg:py-24">
+        <Container className="space-y-12">
+          <SectionHeading title={t("relatedTitle")} />
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {related.map((a) => (
+              <ArticleCard key={a.slug} article={a} />
+            ))}
+          </div>
+        </Container>
+      </section>
+    </>
+  );
+}
