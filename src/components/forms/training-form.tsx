@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useTranslations } from "next-intl";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "@/components/ui/mingcute-icons";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";

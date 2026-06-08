@@ -24,7 +24,7 @@ export function VideoCard({
           src={video.image}
           alt={video.title}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover transition-transform duration-[var(--motion-image)] group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-navy/30 transition-colors group-hover:bg-navy/45" />
         <button

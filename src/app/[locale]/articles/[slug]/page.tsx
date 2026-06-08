@@ -134,7 +134,7 @@ export default async function ArticlePage({
               <div className="grid gap-6 md:grid-cols-3">
                 {implementation.map((item, i) => (
                   <article key={item.title} className="space-y-3 rounded-2xl border border-border bg-surface p-6 shadow-card">
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[linear-gradient(135deg,#3b4ad8_0%,#0008A3_100%)] text-title-medium font-bold text-white">
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-stat-blue text-title-medium font-bold text-white">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <h3 className="text-title-small font-semibold text-foreground">{item.title}</h3>

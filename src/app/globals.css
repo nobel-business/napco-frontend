@@ -121,6 +121,8 @@
   --ease-out-quint: cubic-bezier(0.16, 1, 0.3, 1);
   --motion-fast: 150ms; /* hover / press feedback */
   --motion-base: 220ms; /* route transition, menus */
+  --motion-slow: 300ms; /* bg/overlay/opacity toggles */
+  --motion-image: 500ms; /* image zoom on hover */
   --motion-reveal: 600ms; /* scroll reveals */
 }
 
@@ -140,6 +142,18 @@
   --footer-bg: #000221;
   --footer-foreground: #ffffff;
   --hero-overlay: rgba(0, 2, 33, 0.55);
+
+  /* Brand gradients — single source of truth (was ~13 ad-hoc inline gradients). */
+  --gradient-navy: linear-gradient(-62deg, #0008a3 0%, #000562 100%);
+  --gradient-tile-orange: linear-gradient(105deg, #ff782c 3%, rgba(255, 120, 44, 0.6) 98%);
+  --gradient-tile-blue: linear-gradient(105deg, #0008a3 3%, rgba(0, 8, 163, 0.6) 98%);
+  --gradient-stat-blue: linear-gradient(135deg, #3b4ad8 0%, #0008a3 100%);
+  --gradient-stat-orange: linear-gradient(135deg, #ff9b5e 0%, #ff6a1f 100%);
+  --gradient-card-orange: linear-gradient(115deg, #cc6023 0%, #ff782c 100%);
+
+  /* Faint navy tints used on cards/borders (were raw rgba literals). */
+  --surface-tint: rgba(0, 8, 163, 0.02);
+  --border-tint: rgba(0, 8, 163, 0.04);
 }
 
 .dark {
@@ -230,6 +244,32 @@
 @layer utilities {
   [dir="rtl"] .rtl-flip {
     transform: scaleX(-1);
+  }
+
+  /* Brand gradient + tint utilities — the single source for these fills. */
+  .bg-gradient-navy {
+    background-image: var(--gradient-navy);
+  }
+  .bg-gradient-tile-orange {
+    background-image: var(--gradient-tile-orange);
+  }
+  .bg-gradient-tile-blue {
+    background-image: var(--gradient-tile-blue);
+  }
+  .bg-gradient-stat-blue {
+    background-image: var(--gradient-stat-blue);
+  }
+  .bg-gradient-stat-orange {
+    background-image: var(--gradient-stat-orange);
+  }
+  .bg-gradient-card-orange {
+    background-image: var(--gradient-card-orange);
+  }
+  .bg-surface-tint {
+    background-color: var(--surface-tint);
+  }
+  .border-tint {
+    border-color: var(--border-tint);
   }
 }
 

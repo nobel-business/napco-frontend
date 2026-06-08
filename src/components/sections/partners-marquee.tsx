@@ -22,7 +22,7 @@ export function PartnersMarquee({ logos }: { logos: string[] }) {
           <div
             key={i}
             aria-hidden={i >= logos.length}
-            className="relative h-12 w-36 shrink-0 opacity-90 transition-opacity duration-300 hover:opacity-100"
+            className="relative h-12 w-36 shrink-0 opacity-90 transition-opacity duration-[var(--motion-slow)] hover:opacity-100"
           >
             <Image src={src} alt="" fill sizes="144px" className="object-contain" />
           </div>

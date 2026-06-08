@@ -25,7 +25,7 @@ export function ArticleCard({ article }: { article: Article }) {
           src={article.image}
           alt={article.title}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover transition-transform duration-[var(--motion-image)] group-hover:scale-105"
         />
       </div>
       <div className="flex flex-1 flex-col gap-3 p-5">

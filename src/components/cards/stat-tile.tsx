@@ -18,9 +18,7 @@ export function StatTile({
       <span
         className={cn(
           "inline-flex h-16 w-16 items-center justify-center rounded-xl text-white shadow-sm",
-          color === "orange"
-            ? "bg-[linear-gradient(135deg,#ff9b5e_0%,#ff6a1f_100%)]"
-            : "bg-[linear-gradient(135deg,#3b4ad8_0%,#0008A3_100%)]",
+          color === "orange" ? "bg-gradient-stat-orange" : "bg-gradient-stat-blue",
         )}
       >
         <Icon name={icon} fill className="h-8 w-8" />

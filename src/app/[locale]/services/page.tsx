@@ -41,7 +41,7 @@ export default async function ServicesPage({
       {/* INTRO */}
       <section className="py-20 lg:py-28">
         <Container>
-          <div className="grid items-center gap-10 rounded-2xl bg-[rgba(0,8,163,0.02)] p-6 shadow-card md:p-10 lg:grid-cols-[1.5fr_1fr] dark:bg-surface">
+          <div className="grid items-center gap-10 rounded-2xl bg-surface-tint p-6 shadow-card md:p-10 lg:grid-cols-[1.5fr_1fr] dark:bg-surface">
             <div className="space-y-5">
               <h2 className="text-headline-small font-semibold uppercase text-foreground">
                 {t("intro.title")}

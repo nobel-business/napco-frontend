@@ -41,7 +41,7 @@ export function ServiceBlock({
               key={item}
               className="flex items-center gap-4 rounded-xl border border-border bg-surface p-3.5 shadow-sm"
             >
-              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[linear-gradient(105deg,#ff782c_3%,rgba(255,120,44,0.6)_98%)] text-white shadow-sm">
+              <span className="bg-gradient-tile-orange inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-white shadow-sm">
                 <Icon name="check-circle" fill className="h-5 w-5" />
               </span>
               <span className="text-body-small text-muted-foreground">{item}</span>

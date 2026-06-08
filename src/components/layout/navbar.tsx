@@ -35,7 +35,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "site-header fixed inset-x-0 top-0 z-50 transition-colors duration-300",
+        "site-header fixed inset-x-0 top-0 z-50 transition-colors duration-[var(--motion-slow)]",
         scrolled
           ? "border-b border-border/60 bg-[var(--background)]/80 text-foreground backdrop-blur-xl"
           : "bg-transparent text-white",
@@ -66,11 +66,7 @@ export function Navbar() {
 
         {/* Actions — Contact Us (navy gradient) + matching language & theme switch buttons */}
         <div className="flex items-center gap-3">
-          <Button
-            asChild
-            size="sm"
-            className="hidden bg-[linear-gradient(-62deg,#0008A3_0%,#000562_100%)] text-white hover:opacity-90 md:inline-flex"
-          >
+          <Button asChild size="sm" variant="navy" className="hidden md:inline-flex">
             <Link href="/contact">{t("contact")}</Link>
           </Button>
           <LocaleSwitcher className="hidden sm:inline-flex" />
@@ -108,7 +104,7 @@ export function Navbar() {
             <div className="mt-2 flex items-center gap-2">
               <LocaleSwitcher className="hover:bg-muted" />
               <ThemeToggle />
-              <Button asChild size="sm" className="flex-1 bg-[linear-gradient(-62deg,#0008A3_0%,#000562_100%)] text-white">
+              <Button asChild size="sm" variant="navy" className="flex-1">
                 <Link href="/contact">{t("contact")}</Link>
               </Button>
             </div>

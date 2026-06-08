@@ -34,10 +34,7 @@ export function IconTile({
 }) {
   const box = size === "lg" ? "h-16 w-16" : "h-12 w-12";
   const glyph = size === "lg" ? "h-8 w-8" : "h-6 w-6";
-  const gradient =
-    color === "blue"
-      ? "bg-[linear-gradient(105deg,#0008A3_3%,rgba(0,8,163,0.6)_98%)]"
-      : "bg-[linear-gradient(105deg,#ff782c_3%,rgba(255,120,44,0.6)_98%)]";
+  const gradient = color === "blue" ? "bg-gradient-tile-blue" : "bg-gradient-tile-orange";
   return (
     <span
       className={cn(

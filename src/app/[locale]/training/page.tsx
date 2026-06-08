@@ -52,7 +52,7 @@ export default async function TrainingPage({
       {/* INTRO */}
       <section className="py-20 lg:py-28">
         <Container>
-          <div className="grid items-center gap-10 rounded-2xl bg-[rgba(0,8,163,0.02)] p-6 shadow-card md:p-10 lg:grid-cols-[1.5fr_1fr] dark:bg-surface">
+          <div className="grid items-center gap-10 rounded-2xl bg-surface-tint p-6 shadow-card md:p-10 lg:grid-cols-[1.5fr_1fr] dark:bg-surface">
             <div className="space-y-5">
               <h2 className="text-headline-small font-semibold uppercase text-foreground">
                 {t("intro.title")}
@@ -77,7 +77,7 @@ export default async function TrainingPage({
                 key={track.title}
                 className="space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
               >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[linear-gradient(135deg,#3b4ad8_0%,#0008A3_100%)] text-white">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-stat-blue text-white">
                   <Icon name={track.icon} fill className="h-6 w-6" />
                 </span>
                 <h3 className="text-title-medium font-semibold text-foreground">{track.title}</h3>
@@ -116,7 +116,7 @@ export default async function TrainingPage({
                 key={step.title}
                 className="space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
               >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[linear-gradient(135deg,#3b4ad8_0%,#0008A3_100%)] text-title-medium font-bold text-white">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-stat-blue text-title-medium font-bold text-white">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-title-small font-semibold text-foreground">{step.title}</h3>
@@ -137,9 +137,7 @@ export default async function TrainingPage({
                 key={card.title}
                 className={cn(
                   "space-y-4 rounded-3xl p-8 text-white shadow-card md:p-10",
-                  card.variant === "blue"
-                    ? "bg-[linear-gradient(135deg,#0008A3_0%,#000562_100%)]"
-                    : "bg-[linear-gradient(135deg,#ff782c_0%,#cc6023_100%)]",
+                  card.variant === "blue" ? "bg-gradient-navy" : "bg-gradient-card-orange",
                 )}
               >
                 <div className="flex items-start justify-between gap-4">

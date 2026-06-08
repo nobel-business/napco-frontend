@@ -43,7 +43,7 @@ export default async function AboutPage({
       {/* INTRO — national partner */}
       <section className="py-20 lg:py-28">
         <Container className="space-y-12">
-          <div className="grid items-center gap-10 rounded-2xl bg-[rgba(0,8,163,0.02)] p-6 shadow-card md:p-10 lg:grid-cols-[1.6fr_1fr] dark:bg-surface">
+          <div className="grid items-center gap-10 rounded-2xl bg-surface-tint p-6 shadow-card md:p-10 lg:grid-cols-[1.6fr_1fr] dark:bg-surface">
             <div className="space-y-5">
               <h2 className="text-headline-small font-semibold uppercase text-foreground">
                 {t("intro.title")}
@@ -77,7 +77,7 @@ export default async function AboutPage({
         <Container className="space-y-12">
           <SectionHeading title={t("visionMission.title")} />
           <div className="grid items-stretch gap-6 md:grid-cols-2">
-            <article className="flex flex-col gap-4 rounded-xl bg-[linear-gradient(-72deg,#0008A3_0%,#000562_100%)] p-6 text-white">
+            <article className="bg-gradient-navy flex flex-col gap-4 rounded-xl p-6 text-white">
               <div className="flex items-center gap-4">
                 <span className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-white/15">
                   <Icon name="flag" fill className="h-8 w-8" />
@@ -86,7 +86,7 @@ export default async function AboutPage({
               </div>
               <p className="text-body-medium text-primary-100">{t("visionMission.vision")}</p>
             </article>
-            <article className="flex flex-col gap-4 rounded-xl bg-[linear-gradient(115deg,#cc6023_0%,#ff782c_100%)] p-6 text-white">
+            <article className="bg-gradient-card-orange flex flex-col gap-4 rounded-xl p-6 text-white">
               <div className="flex items-center gap-4">
                 <span className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-white/15">
                   <Icon name="puzzle" fill className="h-8 w-8" />
@@ -123,7 +123,7 @@ export default async function AboutPage({
                 {[Linkedin, MessageCircle, Mail].map((Ic, i) => (
                   <span
                     key={i}
-                    className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[linear-gradient(-62deg,#0008A3_0%,#000562_100%)] text-white transition-opacity hover:opacity-90"
+                    className="bg-gradient-navy inline-flex h-10 w-10 items-center justify-center rounded-lg text-white transition-opacity hover:opacity-90"
                   >
                     <Ic className="h-5 w-5" />
                   </span>
@@ -177,7 +177,7 @@ export default async function AboutPage({
             ))}
           </div>
 
-          <div className="grid items-center gap-8 rounded-2xl bg-[rgba(0,8,163,0.02)] p-6 shadow-card md:grid-cols-[300px_1fr] md:p-10 dark:bg-surface">
+          <div className="grid items-center gap-8 rounded-2xl bg-surface-tint p-6 shadow-card md:grid-cols-[300px_1fr] md:p-10 dark:bg-surface">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image src="/images/about-team.png" alt="" fill className="object-cover" />
             </div>
