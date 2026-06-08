@@ -31,7 +31,7 @@ export default async function ArticlesPage({
   return (
     <>
       <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-articles.png" />
-      <section className="py-20 lg:py-24">
+      <section className="py-20 lg:py-28">
         <Container>
           <ArticlesBrowser articles={articles} categories={categories} moreLabel={t("more")} />
         </Container>

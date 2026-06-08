@@ -37,7 +37,7 @@ export default async function MediaPage({
       <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-media.png" />
 
       {/* GALLERY */}
-      <section className="py-20 lg:py-24">
+      <section className="py-20 lg:py-28">
         <Container className="space-y-12">
           <SectionHeading title={t("gallery.title")} />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

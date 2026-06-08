@@ -74,7 +74,7 @@ export default async function HomePage({
       {/* TRUSTED PARTNER */}
       <section className="py-20 lg:py-28">
         <Container>
-          <div className="flex flex-col gap-10 rounded-xl bg-surface-tint p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
+          <div className="flex flex-col gap-10 rounded-2xl bg-surface-tint p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
             <div className="relative aspect-[4/3] shrink-0 overflow-hidden rounded-xl md:aspect-auto md:w-[440px]">
               <Image src="/images/trusted.png" alt={t("trusted.title")} fill className="object-cover" />
             </div>
@@ -107,7 +107,7 @@ export default async function HomePage({
               {services.map((item) => (
                 <li
                   key={item.label}
-                  className="hover-lift flex h-24 items-center gap-6 rounded-lg border border-tint bg-surface p-6 shadow-sm"
+                  className="hover-lift flex h-24 items-center gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
                 >
                   <IconTile name={item.icon} />
                   <span className="text-label-large font-medium text-foreground">
@@ -132,7 +132,7 @@ export default async function HomePage({
       {/* VISION */}
       <section className="py-20 lg:py-28">
         <Container>
-          <div className="flex flex-col gap-10 rounded-xl bg-surface-tint p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
+          <div className="flex flex-col gap-10 rounded-2xl bg-surface-tint p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
             <div className="relative aspect-square shrink-0 overflow-hidden rounded-xl md:aspect-auto md:w-[360px]">
               <Image src="/images/leadership.png" alt="" fill className="object-cover" />
             </div>
@@ -160,7 +160,7 @@ export default async function HomePage({
               {solutions.map((item) => (
                 <li
                   key={item.title}
-                  className="hover-lift flex gap-6 rounded-xl border border-tint bg-surface p-6 shadow-sm"
+                  className="hover-lift flex gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
                 >
                   <IconTile name={item.icon} size="lg" />
                   <div className="space-y-4">
@@ -197,7 +197,7 @@ export default async function HomePage({
               {values.map((item) => (
                 <li
                   key={item.title}
-                  className="hover-lift flex gap-6 rounded-xl border border-tint bg-surface p-6 shadow-sm"
+                  className="hover-lift flex gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
                 >
                   <IconTile name={item.icon} size="lg" />
                   <div className="space-y-4">
@@ -219,7 +219,7 @@ export default async function HomePage({
             {markets.map((c) => (
               <div
                 key={c.name}
-                className="flex h-[162px] flex-col items-center justify-center gap-4 rounded-xl bg-surface-tint p-6 shadow-card dark:bg-surface"
+                className="flex h-[162px] flex-col items-center justify-center gap-4 rounded-2xl bg-surface-tint p-6 shadow-card dark:bg-surface"
               >
                 <div className="relative h-[62px] w-20">
                   <Image src={c.icon} alt={c.name} fill className="object-contain dark:brightness-0 dark:invert" />
@@ -239,7 +239,7 @@ export default async function HomePage({
             {whyChoose.map((item) => (
               <article
                 key={item.title}
-                className="hover-lift flex gap-6 rounded-xl border border-tint bg-surface p-6"
+                className="hover-lift flex gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
               >
                 <IconTile name={item.icon} size="lg" />
                 <div className="space-y-4">
@@ -255,7 +255,7 @@ export default async function HomePage({
       </section>
 
       {/* PARTNERS — infinite logo carousel (contained card: white in light, elevated in dark) */}
-      <section className="bg-muted/40 py-20 lg:py-24">
+      <section className="bg-muted/40 py-20 lg:py-28">
         <Container>
           <div className="space-y-10 rounded-2xl border border-border bg-surface px-6 py-10 shadow-card md:px-10">
             <SectionHeading title={t("partners.title")} />
@@ -265,7 +265,7 @@ export default async function HomePage({
       </section>
 
       {/* CTA BANNER */}
-      <section className="py-20 lg:py-24">
+      <section className="py-20 lg:py-28">
         <Container>
           <div className="relative isolate overflow-hidden rounded-xl">
             <Image src="/images/home-cta.png" alt="" fill className="scale-110 object-cover blur-md" />

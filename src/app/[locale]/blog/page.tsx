@@ -51,7 +51,7 @@ export default async function BlogPage({
       <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-blog.png" />
 
       {/* FEATURED */}
-      <section className="py-20 lg:py-24">
+      <section className="py-20 lg:py-28">
         <Container className="space-y-10">
           <SectionHeading title={t("featured.sectionTitle")} />
           <div className="flex items-center gap-4">
@@ -95,7 +95,7 @@ export default async function BlogPage({
       </section>
 
       {/* STATS */}
-      <section className="py-14">
+      <section className="py-12 lg:py-16">
         <Container className="grid grid-cols-2 gap-8 lg:grid-cols-4">
           {stats.map((s) => (
             <StatTile key={s.label} icon={s.icon} value={s.value} label={s.label} color={s.color} />
@@ -118,7 +118,7 @@ export default async function BlogPage({
                   <span
                     className={cn(
                       "absolute bottom-3 start-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-surface shadow-md",
-                      card.iconColor === "blue" ? "text-[#0008A3]" : "text-brand",
+                      card.iconColor === "blue" ? "text-accent-card" : "text-brand",
                     )}
                   >
                     <Icon name={card.icon} fill className="h-5 w-5" />

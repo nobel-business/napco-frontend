@@ -36,7 +36,7 @@ export function ArticleCard({ article }: { article: Article }) {
             {article.date}
           </span>
         </div>
-        <h3 className="text-title-small font-semibold text-foreground transition-colors group-hover:text-brand">
+        <h3 className="text-title-medium font-semibold text-foreground transition-colors group-hover:text-brand">
           {article.title}
         </h3>
         <p className="line-clamp-2 flex-1 text-body-small text-muted-foreground">

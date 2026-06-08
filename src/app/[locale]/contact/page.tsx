@@ -78,7 +78,7 @@ export default async function ContactPage({
       <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-contact.png" />
 
       {/* FORM + INFO */}
-      <section className="py-20 lg:py-24">
+      <section className="py-20 lg:py-28">
         <Container className="space-y-12">
           <SectionHeading title={t("mainTitle")} />
           <div className="grid gap-8 lg:grid-cols-2">
@@ -132,7 +132,7 @@ export default async function ContactPage({
       </section>
 
       {/* MAP — illustrated world map (Figma "image 9") */}
-      <section className="pb-24">
+      <section className="pb-20 lg:pb-28">
         <Container className="flex justify-center">
           <div className="relative aspect-[800/520] w-full max-w-[800px]">
             <Image src="/images/contact-map.png" alt={t("map.label")} fill className="object-contain" />

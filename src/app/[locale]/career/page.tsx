@@ -43,7 +43,7 @@ export default async function CareerPage({
       <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-career.png" />
 
       {/* TESTIMONIALS */}
-      <section className="py-20 lg:py-24">
+      <section className="py-20 lg:py-28">
         <Container className="space-y-12">
           <SectionHeading title={t("testimonials.title")} />
           <TestimonialCarousel items={testimonials} />
@@ -51,7 +51,7 @@ export default async function CareerPage({
       </section>
 
       {/* FEATURES */}
-      <section className="pb-8">
+      <section className="pb-12 lg:pb-16">
         <Container className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((f) => (
             <div key={f.title} className="flex flex-col items-center gap-3 text-center">
@@ -73,7 +73,7 @@ export default async function CareerPage({
       </section>
 
       {/* AMBASSADOR */}
-      <section className="py-12">
+      <section className="py-12 lg:py-16">
         <Container>
           <div className="grid items-center gap-8 rounded-3xl border border-border bg-surface p-5 shadow-card md:grid-cols-[280px_1fr] md:p-6">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
@@ -93,7 +93,7 @@ export default async function CareerPage({
       </section>
 
       {/* WHAT WILL YOU GAIN */}
-      <section className="py-16 lg:py-24">
+      <section className="py-20 lg:py-28">
         <Container className="space-y-12">
           <SectionHeading title={t("gain.title")} />
           <div className="grid gap-6 md:grid-cols-2">
@@ -104,7 +104,7 @@ export default async function CareerPage({
               >
                 <IconTile name={g.icon} />
                 <div className="space-y-2">
-                  <h3 className="text-title-large font-semibold text-foreground">{g.title}</h3>
+                  <h3 className="text-title-medium font-semibold text-foreground">{g.title}</h3>
                   <p className="text-body-small text-muted-foreground">{g.desc}</p>
                 </div>
               </article>

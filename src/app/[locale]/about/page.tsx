@@ -77,7 +77,7 @@ export default async function AboutPage({
         <Container className="space-y-12">
           <SectionHeading title={t("visionMission.title")} />
           <div className="grid items-stretch gap-6 md:grid-cols-2">
-            <article className="bg-gradient-navy flex flex-col gap-4 rounded-xl p-6 text-white">
+            <article className="bg-gradient-navy flex flex-col gap-4 rounded-2xl p-6 text-white">
               <div className="flex items-center gap-4">
                 <span className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-white/15">
                   <Icon name="flag" fill className="h-8 w-8" />
@@ -86,7 +86,7 @@ export default async function AboutPage({
               </div>
               <p className="text-body-medium text-primary-100">{t("visionMission.vision")}</p>
             </article>
-            <article className="bg-gradient-card-orange flex flex-col gap-4 rounded-xl p-6 text-white">
+            <article className="bg-gradient-card-orange flex flex-col gap-4 rounded-2xl p-6 text-white">
               <div className="flex items-center gap-4">
                 <span className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-white/15">
                   <Icon name="puzzle" fill className="h-8 w-8" />
@@ -193,7 +193,7 @@ export default async function AboutPage({
                     className="flex flex-col items-center gap-1 rounded-xl border border-border bg-surface p-5 text-center dark:bg-white/5"
                   >
                     <span
-                      className={`text-display-small font-bold ${i === 1 ? "text-[#0008A3] dark:text-primary-300" : "text-brand"}`}
+                      className={`text-display-small font-bold ${i === 1 ? "text-accent-card dark:text-primary-300" : "text-brand"}`}
                     >
                       {s.value}
                     </span>
@@ -207,7 +207,7 @@ export default async function AboutPage({
       </section>
 
       {/* VISION 2030 BANNER */}
-      <section className="pb-24">
+      <section className="pb-20 lg:pb-28">
         <Container>
           <div className="grid items-center gap-8 overflow-hidden rounded-2xl border border-border bg-surface shadow-card md:grid-cols-[240px_1fr]">
             <div className="relative h-[220px] w-full md:h-[300px]">

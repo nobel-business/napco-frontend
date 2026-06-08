@@ -67,7 +67,7 @@ export default async function ArticlePage({
       </section>
 
       {/* BODY */}
-      <section className="py-16 lg:py-20">
+      <section className="py-20 lg:py-28">
         <Container>
           <div className="mx-auto max-w-4xl space-y-8">
             {/* Meta */}
@@ -148,7 +148,7 @@ export default async function ArticlePage({
       </section>
 
       {/* SHARE */}
-      <section className="pb-16">
+      <section className="pb-12 lg:pb-16">
         <Container>
           <div className="mx-auto max-w-4xl space-y-6 rounded-3xl border border-border bg-surface p-10 text-center shadow-card">
             <h2 className="text-headline-small font-semibold uppercase text-foreground">
@@ -170,7 +170,7 @@ export default async function ArticlePage({
       </section>
 
       {/* RELATED */}
-      <section className="bg-muted/40 py-20 lg:py-24">
+      <section className="bg-muted/40 py-20 lg:py-28">
         <Container className="space-y-12">
           <SectionHeading title={t("relatedTitle")} />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

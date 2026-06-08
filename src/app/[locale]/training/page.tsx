@@ -128,7 +128,7 @@ export default async function TrainingPage({
       </section>
 
       {/* DUAL CTA */}
-      <section className="py-20 lg:py-24">
+      <section className="py-20 lg:py-28">
         <Container className="space-y-12">
           <SectionHeading title={t("dualCta.title")} />
           <div className="grid gap-6 md:grid-cols-2">

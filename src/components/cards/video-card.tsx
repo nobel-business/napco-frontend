@@ -35,7 +35,7 @@ export function VideoCard({
         </button>
       </div>
       <div className="flex flex-1 flex-col gap-3 p-6">
-        <h3 className="text-title-small font-semibold text-foreground">{video.title}</h3>
+        <h3 className="text-title-medium font-semibold text-foreground">{video.title}</h3>
         <p className="flex-1 text-body-small text-muted-foreground">{video.desc}</p>
         <div className="flex items-center gap-2 pt-1 text-body-small text-muted-foreground">
           <Clock className="h-4 w-4 text-brand" />
