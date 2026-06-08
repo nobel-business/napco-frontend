@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Mail, MapPin, Phone, Linkedin, Twitter, Instagram, Youtube } from "@/components/ui/mingcute-icons";
+import { Mail, MapPin, Phone, Facebook, Linkedin, Twitter, Instagram } from "@/components/ui/mingcute-icons";
 
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
@@ -8,10 +8,10 @@ import { footerQuickLinks, siteContact } from "@/config/site";
 import { Logo } from "./logo";
 
 const socials = [
+  { Icon: Facebook, href: "#", label: "Facebook" },
   { Icon: Linkedin, href: "#", label: "LinkedIn" },
   { Icon: Twitter, href: "#", label: "Twitter" },
   { Icon: Instagram, href: "#", label: "Instagram" },
-  { Icon: Youtube, href: "#", label: "YouTube" },
 ];
 
 export function Footer() {
@@ -72,15 +72,15 @@ export function Footer() {
               <Link href="/training">{t("footer.bookConsultation")}</Link>
             </Button>
           </div>
-          <div className="flex items-center gap-3 pt-2">
+          <div className="flex items-center gap-5 pt-2">
             {socials.map(({ Icon, href, label }) => (
               <a
                 key={label}
                 href={href}
                 aria-label={label}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-brand"
+                className="text-white/80 transition-colors hover:text-brand"
               >
-                <Icon className="h-5 w-5" />
+                <Icon className="h-6 w-6" />
               </a>
             ))}
           </div>
@@ -90,7 +90,10 @@ export function Footer() {
       <div className="border-t border-white/10">
         <Container className="flex flex-col items-center justify-between gap-2 py-5 text-body-small text-white/60 sm:flex-row">
           <p>{t("footer.copyright")}</p>
-          <p>{t("footer.poweredBy")}</p>
+          <p>
+            {t("footer.poweredBy")}{" "}
+            <span className="font-bold text-white">NOBEL BUSINESS</span>
+          </p>
         </Container>
       </div>
     </footer>
