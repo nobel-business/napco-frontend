@@ -8,6 +8,7 @@ import { Container } from "@/components/ui/container";
 import { Icon, IconTile } from "@/components/ui/icon";
 import { PageHero } from "@/components/sections/page-hero";
 import { SectionHeading } from "@/components/sections/section-heading";
+import { ServiceBlock } from "@/components/sections/service-block";
 import { TrainingForm } from "@/components/forms/training-form";
 
 type Track = { icon: string; title: string; desc: string; tag: string };
@@ -44,28 +45,30 @@ export default async function TrainingPage({
       <PageHero
         title={t("hero.title")}
         subtitle={t("hero.subtitle")}
+        image="/images/hero-training.png"
         cta={{ label: t("hero.cta"), href: "#enroll" }}
       />
 
       {/* INTRO */}
-      <section className="py-20 lg:py-24">
-        <Container className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="space-y-5">
-            <h2 className="text-headline-medium font-semibold uppercase text-foreground">
-              {t("intro.title")}
-            </h2>
-            <span className="block h-1 w-14 rounded-full bg-brand" />
-            <p className="text-body-medium text-muted-foreground">{t("intro.body1")}</p>
-            <p className="text-body-medium text-muted-foreground">{t("intro.body2")}</p>
-          </div>
-          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-card">
-            <Image src="/images/train-intro.png" alt={t("intro.title")} fill className="object-cover" />
+      <section className="py-20 lg:py-28">
+        <Container>
+          <div className="grid items-center gap-10 rounded-2xl bg-[rgba(0,8,163,0.02)] p-6 shadow-card md:p-10 lg:grid-cols-[1.5fr_1fr] dark:bg-surface">
+            <div className="space-y-5">
+              <h2 className="text-headline-small font-semibold uppercase text-foreground">
+                {t("intro.title")}
+              </h2>
+              <p className="text-body-medium text-muted-foreground">{t("intro.body1")}</p>
+              <p className="text-body-medium text-muted-foreground">{t("intro.body2")}</p>
+            </div>
+            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
+              <Image src="/images/train-intro.png" alt={t("intro.title")} fill className="object-cover" />
+            </div>
           </div>
         </Container>
       </section>
 
       {/* TRACKS */}
-      <section className="bg-muted/40 py-20 lg:py-28">
+      <section className="py-20 lg:py-28">
         <Container className="space-y-12">
           <SectionHeading title={t("tracks.title")} />
           <div className="grid gap-6 lg:grid-cols-3">
@@ -74,8 +77,8 @@ export default async function TrainingPage({
                 key={track.title}
                 className="space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
               >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary-400 to-primary-600 text-white">
-                  <Icon name={track.icon} className="h-6 w-6" />
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[linear-gradient(135deg,#3b4ad8_0%,#0008A3_100%)] text-white">
+                  <Icon name={track.icon} fill className="h-6 w-6" />
                 </span>
                 <h3 className="text-title-medium font-semibold text-foreground">{track.title}</h3>
                 <p className="text-body-small text-muted-foreground">{track.desc}</p>
@@ -93,44 +96,18 @@ export default async function TrainingPage({
 
       {/* PROGRAMS IN DETAIL */}
       <section className="py-20 lg:py-28">
-        <Container className="space-y-16">
+        <Container className="space-y-12 lg:space-y-16">
           <SectionHeading title={t("programs.title")} />
-          {groups.map((group, i) => (
-            <div key={group.title} className="grid items-center gap-8 lg:grid-cols-2">
-              <div
-                className={cn(
-                  "relative aspect-[16/10] overflow-hidden rounded-2xl shadow-card",
-                  i % 2 === 1 ? "lg:order-last" : "lg:order-first",
-                )}
-              >
-                <Image src={group.image} alt={group.title} fill className="object-cover" />
-              </div>
-              <div className="space-y-4">
-                <h3 className="text-title-large font-semibold text-foreground">{group.title}</h3>
-                <ul className="space-y-3">
-                  {group.items.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-center gap-3 rounded-xl border border-border bg-surface p-3.5 shadow-sm"
-                    >
-                      <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-brand text-white">
-                        <Check className="h-4 w-4" />
-                      </span>
-                      <span className="text-body-small text-foreground">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                {group.caption && (
-                  <p className="text-body-small text-muted-foreground">{group.caption}</p>
-                )}
-              </div>
-            </div>
-          ))}
+          <div className="space-y-16 lg:space-y-20">
+            {groups.map((group, i) => (
+              <ServiceBlock key={group.title} data={group} reverse={i % 2 === 1} />
+            ))}
+          </div>
         </Container>
       </section>
 
       {/* STEPS */}
-      <section className="bg-muted/40 py-20 lg:py-28">
+      <section className="py-20 lg:py-28">
         <Container className="space-y-12">
           <SectionHeading title={t("steps.title")} />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -139,7 +116,7 @@ export default async function TrainingPage({
                 key={step.title}
                 className="space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
               >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary-400 to-primary-600 text-title-medium font-bold text-white">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[linear-gradient(135deg,#3b4ad8_0%,#0008A3_100%)] text-title-medium font-bold text-white">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-title-small font-semibold text-foreground">{step.title}</h3>
@@ -160,7 +137,9 @@ export default async function TrainingPage({
                 key={card.title}
                 className={cn(
                   "space-y-4 rounded-3xl p-8 text-white shadow-card md:p-10",
-                  card.variant === "blue" ? "bg-accent-card" : "bg-brand",
+                  card.variant === "blue"
+                    ? "bg-[linear-gradient(135deg,#0008A3_0%,#000562_100%)]"
+                    : "bg-[linear-gradient(135deg,#ff782c_0%,#cc6023_100%)]",
                 )}
               >
                 <div className="flex items-start justify-between gap-4">
@@ -169,7 +148,7 @@ export default async function TrainingPage({
                     <p className="text-body-medium text-white/85">{card.desc}</p>
                   </div>
                   <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15">
-                    <Icon name={card.icon} className="h-6 w-6" />
+                    <Icon name={card.icon} fill className="h-6 w-6" />
                   </span>
                 </div>
                 <ul className="space-y-2 pt-2">

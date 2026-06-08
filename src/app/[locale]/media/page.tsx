@@ -8,14 +8,8 @@ import { PageHero } from "@/components/sections/page-hero";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { VideoCard, type VideoItem } from "@/components/cards/video-card";
 
-const galleryImages = [
-  "/images/trusted.png",
-  "/images/solutions.png",
-  "/images/services.png",
-  "/images/svc-site.png",
-  "/images/cta.png",
-  "/images/svc-eng.png",
-];
+// Figma "Outstanding Examples of Our Work" repeats one shot (Rectangle 1) across all 6 tiles.
+const galleryImages = Array.from({ length: 6 }, () => "/images/media-gallery.png");
 
 export async function generateMetadata({
   params,
@@ -40,7 +34,7 @@ export default async function MediaPage({
 
   return (
     <>
-      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} />
+      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-media.png" />
 
       {/* GALLERY */}
       <section className="py-20 lg:py-24">
@@ -74,8 +68,8 @@ export default async function MediaPage({
         <Container className="space-y-12">
           <SectionHeading title={t("videos.title")} />
           <div className="grid gap-6 md:grid-cols-2">
-            {videos.map((v) => (
-              <VideoCard key={v.title} video={v} durationLabel={t("videos.durationLabel")} />
+            {videos.map((v, i) => (
+              <VideoCard key={i} video={v} durationLabel={t("videos.durationLabel")} />
             ))}
           </div>
         </Container>

@@ -228,3 +228,16 @@
     transform: scaleX(-1);
   }
 }
+
+/* Infinite logo marquee — track holds two copies; -50% = one full set */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+[dir="rtl"] .marquee-track {
+  animation-direction: reverse;
+}

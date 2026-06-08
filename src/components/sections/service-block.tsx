@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { Check } from "@/components/ui/mingcute-icons";
+import { Icon } from "@/components/ui/icon";
 
 import { cn } from "@/lib/utils";
 
 export type ServiceBlockData = {
   title: string;
   items: string[];
-  caption: string;
+  caption?: string;
   image: string;
 };
 
@@ -23,17 +23,14 @@ export function ServiceBlock({
   reverse?: boolean;
 }) {
   return (
-    <div className="grid items-center gap-8 lg:grid-cols-2">
-      <div
-        className={cn(
-          "relative aspect-[16/11] overflow-hidden rounded-2xl shadow-card",
-          reverse ? "lg:order-last" : "lg:order-first",
-        )}
-      >
-        <Image src={data.image} alt={data.title} fill className="object-cover" />
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/80 to-transparent p-4">
-          <p className="text-body-small font-medium text-white">{data.caption}</p>
+    <div className="grid items-center gap-10 lg:grid-cols-2">
+      <div className={cn("space-y-3", reverse ? "lg:order-last" : "lg:order-first")}>
+        <div className="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-card">
+          <Image src={data.image} alt={data.title} fill className="object-cover" />
         </div>
+        {data.caption && (
+          <p className="text-body-small text-muted-foreground">{data.caption}</p>
+        )}
       </div>
 
       <div className="space-y-5">
@@ -42,10 +39,10 @@ export function ServiceBlock({
           {data.items.map((item) => (
             <li
               key={item}
-              className="flex items-start gap-3 rounded-xl border border-border bg-surface p-3.5 shadow-sm"
+              className="flex items-center gap-4 rounded-xl border border-border bg-surface p-3.5 shadow-sm"
             >
-              <span className="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-brand text-white">
-                <Check className="h-4 w-4" />
+              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[linear-gradient(105deg,#ff782c_3%,rgba(255,120,44,0.6)_98%)] text-white shadow-sm">
+                <Icon name="check-circle" fill className="h-5 w-5" />
               </span>
               <span className="text-body-small text-muted-foreground">{item}</span>
             </li>

@@ -40,7 +40,7 @@ export default async function CareerPage({
 
   return (
     <>
-      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} />
+      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-career.png" />
 
       {/* TESTIMONIALS */}
       <section className="py-20 lg:py-24">

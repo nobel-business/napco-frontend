@@ -27,21 +27,21 @@ export function ArticleCard({ article }: { article: Article }) {
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <Badge className="absolute start-3 top-3 bg-surface/90 backdrop-blur">
-          {article.category}
-        </Badge>
       </div>
       <div className="flex flex-1 flex-col gap-3 p-5">
+        <div className="flex items-center justify-between gap-2">
+          <Badge>{article.category}</Badge>
+          <span className="flex items-center gap-1.5 text-body-small text-muted-foreground">
+            <Calendar className="h-4 w-4 text-brand" />
+            {article.date}
+          </span>
+        </div>
         <h3 className="text-title-small font-semibold text-foreground transition-colors group-hover:text-brand">
           {article.title}
         </h3>
         <p className="line-clamp-2 flex-1 text-body-small text-muted-foreground">
           {article.excerpt}
         </p>
-        <div className="flex items-center gap-2 pt-1 text-body-small text-muted-foreground">
-          <Calendar className="h-4 w-4 text-brand" />
-          <span>{article.date}</span>
-        </div>
       </div>
     </Link>
   );

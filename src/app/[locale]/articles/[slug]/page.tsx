@@ -1,11 +1,10 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Calendar, User, Eye, Check, ChevronRight, Lightbulb, Facebook, Linkedin, MessageCircle } from "@/components/ui/mingcute-icons";
+import { Calendar, User, Eye, Check, Lightbulb, Facebook, Linkedin, MessageCircle } from "@/components/ui/mingcute-icons";
 
 import type { Locale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
-import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import { SectionHeading } from "@/components/sections/section-heading";
@@ -41,7 +40,6 @@ export default async function ArticlePage({
   if (!article) notFound();
 
   const t = await getTranslations("articleDetail");
-  const nav = await getTranslations("nav");
 
   const benefits = t.raw("benefits") as string[];
   const implementation = t.raw("implementation") as Impl[];
@@ -55,22 +53,16 @@ export default async function ArticlePage({
 
   return (
     <>
-      {/* HERO */}
-      <section className="relative isolate flex min-h-[460px] items-center overflow-hidden">
-        <Image src={article.image} alt="" fill priority className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/75 to-navy/90" />
-        <Container className="relative z-10 flex flex-col items-center gap-5 py-28 text-center text-white">
-          <nav className="flex items-center gap-2 text-body-small text-white/70">
-            <Link href="/" className="hover:text-white">{nav("home")}</Link>
-            <ChevronRight className="h-4 w-4 rtl-flip" />
-            <Link href="/articles" className="hover:text-white">{nav("blog")}</Link>
-            <ChevronRight className="h-4 w-4 rtl-flip" />
-            <span className="text-white">{article.category}</span>
-          </nav>
-          <h1 className="max-w-4xl text-display-small font-bold uppercase text-brand md:text-headline-large">
-            {article.title}
+      {/* HERO — generic article banner */}
+      <section className="relative isolate flex min-h-[420px] items-end overflow-hidden">
+        <Image src="/images/hero-article.png" alt="" fill priority className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/40 to-navy/85" />
+        <Container className="relative z-10 w-full pb-14 text-white">
+          <h1 className="max-w-3xl text-display-small font-bold uppercase text-brand md:text-headline-large">
+            {t("heroTitle")}
           </h1>
-          <p className="text-body-medium text-white/80">{t("heroSubtitle")}</p>
+          <p className="mt-4 max-w-2xl text-body-medium text-white/80">{t("heroSubtitle")}</p>
+          <span className="mt-6 block h-1.5 w-24 rounded-full bg-brand" />
         </Container>
       </section>
 
@@ -92,6 +84,10 @@ export default async function ArticlePage({
               <Badge className="ms-auto">{article.category}</Badge>
             </div>
 
+            <h2 className="text-headline-medium font-semibold uppercase text-foreground">
+              {article.title}
+            </h2>
+
             <p className="text-body-large text-muted-foreground">{t("intro")}</p>
 
             {/* Expert Tip */}
@@ -109,7 +105,7 @@ export default async function ArticlePage({
 
             {/* Feature image */}
             <div className="relative aspect-[16/7] overflow-hidden rounded-2xl shadow-card">
-              <Image src="/images/svc-eng.png" alt="" fill className="object-cover" />
+              <Image src="/images/article-feature.png" alt="" fill className="object-cover" />
             </div>
 
             {/* Key benefits */}
@@ -138,7 +134,7 @@ export default async function ArticlePage({
               <div className="grid gap-6 md:grid-cols-3">
                 {implementation.map((item, i) => (
                   <article key={item.title} className="space-y-3 rounded-2xl border border-border bg-surface p-6 shadow-card">
-                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary-400 to-primary-600 text-title-medium font-bold text-white">
+                    <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[linear-gradient(135deg,#3b4ad8_0%,#0008A3_100%)] text-title-medium font-bold text-white">
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <h3 className="text-title-small font-semibold text-foreground">{item.title}</h3>

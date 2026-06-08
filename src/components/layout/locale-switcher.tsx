@@ -3,11 +3,15 @@
 import { useLocale } from "next-intl";
 import { useParams } from "next/navigation";
 import { useTransition } from "react";
-import { Globe } from "@/components/ui/mingcute-icons";
 
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/i18n/routing";
+import { TranslateIcon } from "@/components/ui/translate-icon";
+
+/** Shared style for the navbar switch buttons (navy gradient rounded square). */
+export const switchButtonClass =
+  "inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[linear-gradient(-62deg,#0008A3_0%,#000562_100%)] text-white shadow-sm transition-opacity hover:opacity-90 disabled:opacity-60";
 
 export function LocaleSwitcher({ className }: { className?: string }) {
   const locale = useLocale() as Locale;
@@ -17,7 +21,6 @@ export function LocaleSwitcher({ className }: { className?: string }) {
   const [isPending, startTransition] = useTransition();
 
   const next: Locale = locale === "en" ? "ar" : "en";
-  const label = locale === "en" ? "العربية" : "EN";
 
   function switchLocale() {
     startTransition(() => {
@@ -31,14 +34,11 @@ export function LocaleSwitcher({ className }: { className?: string }) {
       type="button"
       onClick={switchLocale}
       disabled={isPending}
-      aria-label={`Switch language to ${next}`}
-      className={cn(
-        "inline-flex h-10 items-center gap-1.5 rounded-full px-3 text-label-small font-medium text-current transition-colors hover:bg-white/10",
-        className,
-      )}
+      aria-label={`Switch language to ${next === "ar" ? "Arabic" : "English"}`}
+      title={next === "ar" ? "العربية" : "English"}
+      className={cn(switchButtonClass, className)}
     >
-      <Globe className="h-4 w-4" />
-      <span>{label}</span>
+      <TranslateIcon className="h-5 w-5" />
     </button>
   );
 }

@@ -1,9 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { ChevronLeft, ChevronRight } from "@/components/ui/mingcute-icons";
+import { ChevronDown } from "@/components/ui/mingcute-icons";
 
 import { cn } from "@/lib/utils";
+import { Icon } from "@/components/ui/icon";
 import { ArticleCard } from "@/components/cards/article-card";
 import type { ArticleData, Category } from "@/content/articles";
 
@@ -12,9 +13,11 @@ const PAGE_SIZE = 6;
 export function ArticlesBrowser({
   articles,
   categories,
+  moreLabel,
 }: {
   articles: ArticleData[];
   categories: Category[];
+  moreLabel: string;
 }) {
   const [active, setActive] = useState("all");
   const [page, setPage] = useState(1);
@@ -36,21 +39,28 @@ export function ArticlesBrowser({
   return (
     <div className="space-y-10">
       {/* Filter chips */}
-      <div className="flex flex-wrap items-center justify-center gap-3">
+      <div className="flex flex-wrap items-center gap-2">
         {categories.map((cat) => (
           <button
             key={cat.key}
             onClick={() => selectCategory(cat.key)}
             className={cn(
-              "rounded-full px-5 py-2 text-label-small font-medium transition-colors",
+              "rounded-lg px-5 py-2.5 text-label-small font-medium transition-colors",
               active === cat.key
                 ? "bg-brand text-white shadow-sm"
-                : "bg-muted text-muted-foreground hover:bg-secondary-50 hover:text-brand",
+                : "text-muted-foreground hover:text-brand",
             )}
           >
             {cat.label}
           </button>
         ))}
+        <button
+          type="button"
+          className="inline-flex items-center gap-1 rounded-lg px-4 py-2.5 text-label-small font-medium text-muted-foreground transition-colors hover:text-brand"
+        >
+          {moreLabel}
+          <ChevronDown className="h-4 w-4" />
+        </button>
       </div>
 
       {/* Grid */}
@@ -62,24 +72,24 @@ export function ArticlesBrowser({
 
       {/* Pagination */}
       {pageCount > 1 && (
-        <div className="flex items-center justify-center gap-2 pt-4">
+        <div className="flex items-center justify-center gap-3 pt-4">
           <button
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={current === 1}
             aria-label="Previous page"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-foreground transition-colors hover:bg-muted disabled:opacity-40"
+            className="inline-flex h-10 w-8 items-center justify-center text-muted-foreground transition-colors hover:text-brand disabled:opacity-40"
           >
-            <ChevronLeft className="h-5 w-5 rtl-flip" />
+            <Icon name="chevrons-left" className="h-5 w-5 rtl-flip" />
           </button>
           {Array.from({ length: pageCount }, (_, i) => i + 1).map((n) => (
             <button
               key={n}
               onClick={() => setPage(n)}
               className={cn(
-                "inline-flex h-10 w-10 items-center justify-center rounded-full text-label-small font-medium transition-colors",
+                "inline-flex h-10 items-center justify-center rounded-lg text-label-small transition-colors",
                 n === current
-                  ? "bg-brand text-white"
-                  : "border border-border bg-surface text-foreground hover:bg-muted",
+                  ? "w-10 bg-brand font-semibold text-white"
+                  : "min-w-[1.75rem] px-1 font-medium text-muted-foreground hover:text-brand",
               )}
             >
               {n}
@@ -89,9 +99,9 @@ export function ArticlesBrowser({
             onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
             disabled={current === pageCount}
             aria-label="Next page"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-foreground transition-colors hover:bg-muted disabled:opacity-40"
+            className="inline-flex h-10 w-8 items-center justify-center text-muted-foreground transition-colors hover:text-brand disabled:opacity-40"
           >
-            <ChevronRight className="h-5 w-5 rtl-flip" />
+            <Icon name="chevrons-right" className="h-5 w-5 rtl-flip" />
           </button>
         </div>
       )}

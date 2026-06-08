@@ -1,5 +1,6 @@
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Mail, Phone, Clock, MapPin } from "@/components/ui/mingcute-icons";
+import { Mail, Phone, Clock } from "@/components/ui/mingcute-icons";
 
 import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
@@ -74,7 +75,7 @@ export default async function ContactPage({
 
   return (
     <>
-      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} />
+      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-contact.png" />
 
       {/* FORM + INFO */}
       <section className="py-20 lg:py-24">
@@ -130,24 +131,11 @@ export default async function ContactPage({
         </Container>
       </section>
 
-      {/* MAP */}
+      {/* MAP — illustrated world map (Figma "image 9") */}
       <section className="pb-24">
-        <Container>
-          <div className="relative isolate flex min-h-[360px] items-center justify-center overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-primary-50 to-surface dark:from-surface dark:to-muted">
-            {/* decorative pins */}
-            <span className="absolute left-[22%] top-[35%] h-3 w-3 rounded-full bg-brand shadow-[0_0_0_6px_rgba(255,120,44,0.2)]" />
-            <span className="absolute left-[58%] top-[55%] h-3 w-3 rounded-full bg-accent-card shadow-[0_0_0_6px_rgba(0,8,163,0.18)]" />
-            <span className="absolute left-[72%] top-[30%] h-3 w-3 rounded-full bg-brand shadow-[0_0_0_6px_rgba(255,120,44,0.2)]" />
-            <span className="absolute left-[40%] top-[68%] h-3 w-3 rounded-full bg-accent-card shadow-[0_0_0_6px_rgba(0,8,163,0.18)]" />
-            <div className="flex flex-col items-center gap-3 text-center">
-              <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-brand text-white shadow-lg">
-                <MapPin className="h-7 w-7" />
-              </span>
-              <p className="max-w-sm text-title-small font-semibold text-foreground">
-                {t("map.label")}
-              </p>
-              <p className="text-body-small text-muted-foreground">{siteContact.address}</p>
-            </div>
+        <Container className="flex justify-center">
+          <div className="relative aspect-[800/520] w-full max-w-[800px]">
+            <Image src="/images/contact-map.png" alt={t("map.label")} fill className="object-contain" />
           </div>
         </Container>
       </section>

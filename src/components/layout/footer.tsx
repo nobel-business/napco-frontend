@@ -36,8 +36,8 @@ export function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <Phone className="h-5 w-5 shrink-0 text-brand" />
-              <a href={`tel:${siteContact.phone}`} dir="ltr" className="hover:text-white">
-                {siteContact.phone}
+              <a href={`tel:${siteContact.footerPhone}`} dir="ltr" className="hover:text-white">
+                {siteContact.footerPhone}
               </a>
             </li>
           </ul>

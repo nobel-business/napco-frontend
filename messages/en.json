@@ -1,54 +1,12 @@
 {
-  "meta": {
-    "siteName": "NAPCO Aqua",
-    "defaultTitle": "NAPCO Aqua — Trusted Partner in Aquaculture",
-    "description": "NAPCO Aqua offers consulting, training, and operational support to drive growth, sustainability, and innovation in the aquaculture industry."
-  },
-  "common": {
-    "toggleTheme": "Toggle theme",
-    "readMore": "Read more",
-    "learnMore": "Learn more",
-    "viewAll": "View all",
-    "submit": "Submit",
-    "previous": "Previous",
-    "next": "Next"
-  },
-  "nav": {
-    "home": "Home",
-    "about": "About us",
-    "services": "Services",
-    "training": "Training",
-    "blog": "Blog",
-    "media": "Media",
-    "career": "Careers",
-    "contact": "Contact us",
-    "search": "Search"
-  },
-  "footer": {
-    "quickLinks": "Quick Links",
-    "getStarted": "Get Started",
-    "bookConsultation": "Book a Consultation",
-    "copyright": "© 2026 NAPCO Aqua. All rights reserved.",
-    "poweredBy": "Powered by GAIT"
-  },
-  "notFound": {
-    "title": "Page not found",
-    "description": "The page you are looking for doesn't exist or has been moved.",
-    "backHome": "Back to home"
-  },
+  "meta": { "siteName": "NAPCO Aqua", "defaultTitle": "NAPCO Aqua — Trusted Partner in Aquaculture", "description": "NAPCO Aqua offers consulting, training, and operational support to drive growth, sustainability, and innovation in the aquaculture industry." },
+  "common": { "toggleTheme": "Toggle theme", "readMore": "Read more", "learnMore": "Learn more", "viewAll": "View all", "submit": "Submit", "previous": "Previous", "next": "Next", "joinCommunity": "Join our community", "backToTop": "Back to top" },
+  "nav": { "home": "Home", "about": "About us", "services": "Services", "training": "Training", "blog": "Blog", "media": "Media", "career": "Careers", "contact": "Contact us", "search": "Search" },
+  "footer": { "quickLinks": "Quick Links", "getStarted": "Get Started", "bookConsultation": "Book a Consultation", "copyright": "© 2025 NAPCO Aqua. All rights reserved.", "poweredBy": "Powered by GAIT" },
+  "notFound": { "title": "Page not found", "description": "The page you are looking for doesn't exist or has been moved.", "backHome": "Back to home" },
   "home": {
-    "hero": {
-      "title": "Welcome to NAPCO Aqua",
-      "subtitle": "An integrated system delivering innovative and sustainable solutions to support fish farming projects and drive sustainable growth in the aquaculture sector.",
-      "primaryCta": "Explore our services",
-      "secondaryCta": "Booking a Consultation"
-    },
-    "trusted": {
-      "title": "A Trusted Partner For Aquaculture Investors & Operators",
-      "body": "Napco Aqua is an operating brand of Nobel Business Group, providing specialized consultancy and technical solutions for the aquaculture sector, backed by over 30 years of hands-on experience in developing and managing aquaculture projects.",
-      "statValue": "30+",
-      "statLabel": "Over 30 years of hands-on experience"
-    },
+    "hero": { "title": "Welcome to NAPCO Aqua", "subtitle": "An integrated system delivering innovative and sustainable solutions to support fish farming projects and drive sustainable growth in the aquaculture sector.", "primaryCta": "Explore our services", "secondaryCta": "Booking a Consultation" },
+    "trusted": { "title": "A Trusted Partner For Aquaculture Investors & Operators", "body": "Napco Aqua is an operating brand of Nobel Business Group, providing specialized consultancy and technical solutions for the aquaculture sector, backed by over 30 years of hands-on experience in developing and managing aquaculture projects.", "statValue": "30+", "statLabel": "Over 30 years of hands-on experience" },
     "services": {
       "title": "NAPCO Aqua Services",
       "caption": "Integrated solutions from concept to operation, ensuring efficiency, quality, and long-term sustainability.",
@@ -61,127 +19,84 @@
         { "icon": "settings", "label": "Operations & Management" }
       ]
     },
-    "vision": {
-      "title": "Our Vision in Action",
-      "body": "At NAPCO Aqua, we don't just build fish farms; we are engineering a sustainable future for food security in the Kingdom. Guided by Vision 2030, our mission is to transform traditional aquaculture into a high-performing, technology-driven industry that serves both the environment and the economy.",
-      "cta": "Read More"
-    },
+    "vision": { "title": "Our Vision in Action", "body": "At NAPCO Aqua, we don't just build fish farms; we are engineering a sustainable future for food security in the Kingdom. Guided by Vision 2030, our mission is to transform traditional aquaculture into a high-performing, technology-driven industry that serves both the environment and the economy.", "cta": "Read More" },
     "solutions": {
       "title": "NAPCO Aqua Solutions",
       "caption": "Napco Aqua offers integrated engineering and technical solutions tailored to support aquaculture farmers and investors at the highest efficiency.",
       "items": [
-        {
-          "icon": "cpu",
-          "title": "Custom Engineering & IoT Systems",
-          "desc": "We deliver tailored engineering designs with IoT integration for real-time monitoring. Our smart systems maximize efficiency, minimize waste, and optimize available space through innovative, sustainable technical solutions."
-        },
-        {
-          "icon": "sprout",
-          "title": "Integrated Agro-Aquaculture Systems",
-          "desc": "We design sustainable solutions combining fish farming with crop production. This integrated cycle maximizes water utilization and naturally enriches soil quality, ensuring high-quality, eco-friendly food production."
-        },
-        {
-          "icon": "clipboard-check",
-          "title": "End-to-End Project Supervision",
-          "desc": "We manage your project from initial blueprints to direct on-site execution. Our team ensures strict compliance with international standards, reducing operational risks to guarantee your farm is launch-ready."
-        },
-        {
-          "icon": "megaphone",
-          "title": "Support, Supply & Marketing",
-          "desc": "We provide technical training and secure input sourcing through a robust network. By connecting your project to established distribution channels, we accelerate market reach and ensure business continuity."
-        }
+        { "icon": "cpu", "title": "Custom Engineering & IoT Systems", "desc": "We deliver tailored engineering designs with IoT integration for real-time monitoring. Our smart systems maximize efficiency, minimize waste, and optimize available space through innovative, sustainable technical solutions." },
+        { "icon": "sprout", "title": "Integrated Agro-Aquaculture Systems", "desc": "We design sustainable solutions combining fish farming with crop production. This integrated cycle maximizes water utilization and naturally enriches soil quality, ensuring high-quality, eco-friendly food production." },
+        { "icon": "clipboard-check", "title": "End-to-End Project Supervision", "desc": "We manage your project from initial blueprints to direct on-site execution. Our team ensures strict compliance with international standards, reducing operational risks to guarantee your farm is launch-ready." },
+        { "icon": "megaphone", "title": "Support, Supply & Marketing", "desc": "We provide technical training and secure input sourcing through a robust network. By connecting your project to established distribution channels, we accelerate market reach and ensure business continuity." }
+      ]
+    },
+    "values": {
+      "title": "NAPCO Aqua Values",
+      "image": "/images/home-values.png",
+      "caption": "The values that shape our business and guide every decision we make, from planning to execution and long-term partnerships.",
+      "items": [
+        { "icon": "leaf", "title": "Sustainability First", "desc": "We design and operate every project in a way that protects water resources, reduces waste, and enhances energy efficiency." },
+        { "icon": "layers", "title": "Long-Term Partnerships", "desc": "Our relationship with clients starts from the idea stage and does not end at handover; it extends to operations and technical support." },
+        { "icon": "shield-check", "title": "Reliability & Responsibility", "desc": "Full commitment to our partners and investors with clear deliverables, transparent timelines, and well-planned execution." }
+      ]
+    },
+    "markets": {
+      "title": "Deep Expertise Across Middle Eastern Markets",
+      "countries": [
+        { "name": "Saudi Arabia", "icon": "/images/markets/saudi-arabia.png" },
+        { "name": "Egypt", "icon": "/images/markets/egypt.png" },
+        { "name": "Oman", "icon": "/images/markets/oman.png" },
+        { "name": "Iraq", "icon": "/images/markets/iraq.png" },
+        { "name": "Bahrain", "icon": "/images/markets/bahrain.png" },
+        { "name": "UAE", "icon": "/images/markets/uae.png" }
       ]
     },
     "whyChoose": {
       "title": "Why Choose NAPCO Aqua",
       "items": [
-        {
-          "icon": "bar-chart-3",
-          "title": "Operational Flexibility",
-          "desc": "Custom operating and construction systems designed for each project to achieve the highest returns at the lowest cost."
-        },
-        {
-          "icon": "line-chart",
-          "title": "Smart Construction",
-          "desc": "Reduce establishment costs up to 20%, minimize waste, and ensure operational readiness from day one with strategic land utilization."
-        },
-        {
-          "icon": "file-check",
-          "title": "Documented Systems",
-          "desc": "Certified ISO 9001 standards, full operational monitoring, easy data tracking, and faster decision-making across the entire production cycle."
-        },
-        {
-          "icon": "flag",
-          "title": "Advanced Operating Systems",
-          "desc": "RAS and Biofloc systems selected based on location, space, resources, and operational capacity to maximize production from minimal footprint."
-        },
-        {
-          "icon": "wrench",
-          "title": "Full Operational Management",
-          "desc": "Comprehensive farm management including feeding, water quality, storage, and marketing, reducing feed consumption and increasing ROI."
-        },
-        {
-          "icon": "users",
-          "title": "Experience-Driven Efficiency",
-          "desc": "Optimized performance through over 30 years of aquaculture experience, ensuring sustainable growth and operational excellence."
-        }
+        { "icon": "bar-chart-3", "title": "Operational Flexibility", "desc": "Custom operating and construction systems designed for each project to achieve the highest returns at the lowest cost." },
+        { "icon": "line-chart", "title": "Smart Construction", "desc": "Reduce establishment costs up to 20%, minimize waste, and ensure operational readiness from day one with strategic land utilization." },
+        { "icon": "file-check", "title": "Documented Systems", "desc": "Certified ISO 9001 standards, full operational monitoring, easy data tracking, and faster decision-making across the entire production cycle." },
+        { "icon": "flag", "title": "Advanced Operating Systems", "desc": "RAS and Biofloc systems selected based on location, space, resources, and operational capacity to maximize production from minimal footprint." },
+        { "icon": "wrench", "title": "Full Operational Management", "desc": "Comprehensive farm management including feeding, water quality, storage, and marketing, reducing feed consumption and increasing ROI." },
+        { "icon": "users", "title": "Experience-Driven Efficiency", "desc": "Optimized performance through over 30 years of aquaculture experience, ensuring sustainable growth and operational excellence." }
       ]
     },
-    "partners": {
-      "title": "NAPCO Aqua Partners"
-    },
-    "cta": {
-      "title": "Operational Excellence for Modern Aquaculture Ventures",
-      "body": "Napco Aqua delivers advanced expertise in developing and managing aquaculture projects — from strategic feasibility studies through to full-scale operation — with an integrated model that ensures operational efficiency, sustainable production, and maximum investment value.",
-      "button": "Start Your Investment Journey"
-    }
+    "partners": { "title": "NAPCO Aqua Partners" },
+    "cta": { "title": "Operational Excellence for Modern Aquaculture Ventures", "body": "Napco Aqua delivers advanced expertise in developing and managing aquaculture projects — from strategic feasibility studies through to full-scale operation — with an integrated model that ensures operational efficiency, sustainable production, and maximum investment value.", "button": "Start Your Investment Journey" }
   },
   "about": {
-    "hero": {
-      "title": "Your Partners for Success in Aquaculture",
-      "subtitle": "We lead the transformation of fish farming projects into sustainable production ecosystems from concept and feasibility studies through to design and operation, all delivered to world-class standards of efficiency."
-    },
+    "hero": { "title": "Your Partners for Success in Aquaculture", "subtitle": "We lead the transformation of fish farming projects into sustainable production ecosystems from concept and feasibility studies through to design and operation, all delivered to world-class standards of efficiency." },
     "intro": {
       "title": "The National Partner in Aquaculture",
-      "body": "Napco Aqua is the operational arm of Nobel Business, providing integrated consultancy and technical solutions across the full lifecycle of fish farming projects, ensuring production efficiency and operational sustainability. We support investors across the Middle East, with a strategic focus on the Saudi market and solutions tailored to local conditions.",
+      "body": "Napco Aqua is the operational arm of Nobel Business, providing integrated consultancy and technical solutions across the full lifecycle of fish farming projects\n\nensuring production efficiency and operational sustainability. We support investors across the Middle East, with a strategic focus on the Saudi market and solutions tailored to local conditions.",
       "features": [
-        { "icon": "award", "title": "Practical experience", "desc": "Extensive experience in fish farming" },
-        { "icon": "layers", "title": "Integrated solutions", "desc": "From evaluation to operation and management" },
+        { "icon": "rocket", "title": "Practical experience", "desc": "Extensive experience in fish farming" },
+        { "icon": "settings", "title": "Integrated solutions", "desc": "From evaluation to operation and management" },
         { "icon": "shield-check", "title": "Operational quality", "desc": "Precise standards at every stage" },
-        { "icon": "sprout", "title": "Sustainable growth", "desc": "Scalable and investable projects" }
+        { "icon": "leaf", "title": "Sustainable growth", "desc": "Scalable and investable projects" }
       ]
     },
-    "visionMission": {
-      "title": "Our Vision & Mission",
-      "visionLabel": "Our Vision",
-      "vision": "To be the leading strategic partner in developing aquaculture projects locally and regionally is our clear vision. At Napco Aqua, we recognize that the future of protein production lies in the intelligent, sustainable and efficient management of our aquatic resources.",
-      "missionLabel": "Our Mission",
-      "mission": "At Napco Aqua, we are committed to delivering integrated consultancy services and practical, expertise-driven solutions that empower our clients to design and operate successful, highly efficient projects. We also focus on knowledge transfer and capacity building through specialized training programs ensuring sustained performance and the best possible return on investment."
-    },
-    "ceo": {
-      "eyebrow": "Leading the Future of Aquaculture",
-      "name": "Eng. Nabil Kamoun",
-      "role": "Chief Executive Officer",
-      "body": "At NAPCO Aqua, we see aquaculture not just as a business, but as a long-term vision for strengthening food security and supporting environmental sustainability in the Kingdom and the region. Our goal is to transform traditional fish farming into strategic, high-performing assets that combine science, field expertise, and modern technology.\n\nWe are committed to building strong partnerships based on transparency, responsibility, and measurable results. In alignment with Vision 2030, NAPCO Aqua aims to play an active role in advancing the aquaculture sector and contributing to sustainable national growth."
-    },
+    "visionMission": { "title": "Our Vision & Mission", "visionLabel": "Our Vision", "vision": "To be the leading strategic partner in developing aquaculture projects locally and regionally is our clear vision. At Napco Aqua, we recognize that the future of protein production lies in the intelligent, sustainable and efficient management of our aquatic resources.", "missionLabel": "Our Mission", "mission": "At Napco Aqua, we are committed to delivering integrated consultancy services and practical, expertise-driven solutions that empower our clients to design and operate successful, highly efficient projects. We also focus on knowledge transfer and capacity building through specialized training programs ensuring sustained performance and the best possible return on investment." },
+    "ceo": { "eyebrow": "Leading the Future of Aquaculture", "name": "Eng. Nabil Kamoun", "role": "Chief Executive Office", "body": "At NAPCO Aqua, we see aquaculture not just as a business, but as a long-term vision for strengthening food security and supporting environmental sustainability in the Kingdom and the region. Our goal is to transform traditional fish farming into strategic, high-performing assets that combine science, field expertise, and modern technology.\n\nWe are committed to building strong partnerships based on transparency, responsibility, and measurable results. In alignment with Vision 2030, NAPCO Aqua aims to play an active role in advancing the aquaculture sector and contributing to sustainable national growth." },
     "standards": {
       "title": "Work Standards and Operational Methodology",
       "intro": "At Napco Aqua, we follow a clear methodology and rigorous operational standards that guarantee execution quality, sustainable results, and the highest levels of efficiency across every stage of the project.",
       "items": [
-        { "icon": "database", "title": "Data-Driven Methodology", "desc": "We base our work on technical and economic analysis of every project, making decisions grounded in precise data and field studies — never on general estimates." },
-        { "icon": "puzzle", "title": "Tailored Solutions for Every Project", "desc": "We don't believe in one-size-fits-all. Each solution is custom-designed to match the nature of the site, the type of system, the investor's capabilities, and market requirements." },
-        { "icon": "graduation-cap", "title": "Knowledge Transfer and Capacity Building", "desc": "We are committed to empowering our clients' teams through continuous training and the transfer of expertise — ensuring lasting success well beyond project delivery." },
-        { "icon": "git-merge", "title": "Technical & Economic Integration", "desc": "We believe aquaculture success depends on seamless integration between engineering design, operational planning, and technical study to ensure long-term sustainability." },
-        { "icon": "leaf", "title": "Focus on Operational Sustainability", "desc": "We place production sustainability and operational risk mitigation at the top of our priorities, achieved through well-engineered systems and precise operating procedures." }
+        { "icon": "file-check", "title": "Data-Driven Methodology", "desc": "We base our work on technical and economic analysis of every project, making decisions grounded in precise data and field studies — never on general estimates." },
+        { "icon": "bar-chart-3", "title": "Tailored Solutions for Every Project", "desc": "We don't believe in one-size-fits-all. Each solution is custom-designed to match the nature of the site, the type of system, the investor's capabilities, and market requirements." },
+        { "icon": "layers", "title": "Knowledge Transfer and Capacity Building", "desc": "We are committed to empowering our clients' teams through continuous training and the transfer of expertise — ensuring lasting success well beyond project delivery." },
+        { "icon": "line-chart", "title": "Technical & Economic Integration", "desc": "We believe aquaculture success depends on seamless integration between engineering design, operational planning, and technical study to ensure long-term sustainability." },
+        { "icon": "chart-pie", "title": "Focus on Operational Sustainability", "desc": "We place production sustainability and operational risk mitigation at the top of our priorities, achieved through well-engineered systems and precise operating procedures." }
       ]
     },
     "team": {
       "title": "NAPCO Aqua Team",
       "members": [
-        { "icon": "hard-hat", "title": "Engineering Experts", "desc": "Aquaculture and environmental engineers" },
-        { "icon": "heart-pulse", "title": "Health & Nutrition", "desc": "Fish nutrition and health specialists" },
-        { "icon": "settings", "title": "Operations Specialists", "desc": "Commercial fish farm specialists" },
-        { "icon": "briefcase", "title": "Financial Consultants", "desc": "Financial and operational consultants" }
+        { "icon": "settings", "title": "Engineering Experts", "desc": "Aquaculture and environmental engineers" },
+        { "icon": "leaf", "title": "Health & Nutrition", "desc": "Fish nutrition and health specialists" },
+        { "icon": "bar-chart-3", "title": "Operations Specialists", "desc": "Commercial fish farm specialists" },
+        { "icon": "globe", "title": "Financial Consultants", "desc": "Financial and operational consultants" }
       ],
       "experienceTitle": "30+ Years Experience",
       "experienceBody": "Our team combines extensive hands-on experience in the local market with advanced global knowledge, enabling us to deliver innovative solutions tailored to the local environment.",
@@ -190,23 +105,11 @@
         { "value": "4+", "label": "countries we've operated in" }
       ]
     },
-    "vision2030": {
-      "badge": "Vision 2030",
-      "country": "Kingdom of Saudi Arabia",
-      "title": "Toward Sustainable Aquaculture Aligned with the Kingdom's Vision",
-      "body": "At Napco Aqua, we believe that aquaculture is not merely an economic activity, but a core pillar of the Kingdom's food security and environmental sustainability. We develop projects that enhance aquaculture's contribution to the national economy, create quality jobs for youth, reduce import dependency, and preserve water resources through smart technologies and recirculation solutions."
-    }
+    "vision2030": { "badge": "Vision 2030", "country": "Kingdom of Saudi Arabia", "title": "Toward Sustainable Aquaculture Aligned with the Kingdom's Vision", "body": "At Napco Aqua, we believe that aquaculture is not merely an economic activity, but a core pillar of the Kingdom's food security and environmental sustainability.\n\nWe develop projects that enhance aquaculture's contribution to the national economy, create quality jobs for youth, reduce import dependency, and preserve water resources through smart technologies and recirculation solutions." }
   },
   "services": {
-    "hero": {
-      "title": "Aquaculture for Growth and Sustainability",
-      "subtitle": "An integrated suite of engineering and technical services across the aquaculture value chain, for stable operations and sustainable growth."
-    },
-    "intro": {
-      "title": "Practical Aquaculture Solutions, Zero Theory",
-      "body1": "We take part in building, operating, and developing projects, drawing on practical experience.",
-      "body2": "We deliver solutions covering the full cycle, from assessment, studies, design, supervision, to operation, capacity building, and continuous improvement."
-    },
+    "hero": { "title": "Aquaculture for Growth and Sustainability", "subtitle": "An integrated suite of engineering and technical services across the aquaculture value chain, for stable operations and sustainable growth." },
+    "intro": { "title": "Practical Aquaculture Solutions, Zero Theory", "body1": "We take part in building, operating, and developing projects, drawing on practical experience.", "body2": "We deliver solutions covering the full cycle, from assessment, studies, design, supervision, to operation, capacity building, and continuous improvement." },
     "blocks": [
       {
         "title": "Site Assessment",
@@ -221,7 +124,7 @@
         ]
       },
       {
-        "title": "Feasibility Studies",
+        "title": "Integrated Studies",
         "image": "/images/svc-feasibility.png",
         "caption": "Clear investment decisions, driven by numbers",
         "items": [
@@ -246,7 +149,7 @@
       },
       {
         "title": "Training & Capacity Building",
-        "image": "/images/services.png",
+        "image": "/images/svc-training.png",
         "caption": "A self-sustaining farm team, zero dependency",
         "items": [
           "Applied foundation programs: Intro to Aquaculture + Farm School",
@@ -258,7 +161,7 @@
       },
       {
         "title": "Operation & Management",
-        "image": "/images/cta.png",
+        "image": "/images/svc-operations.png",
         "caption": "Managing for efficiency and continuous growth",
         "items": [
           "Technical support, systems review, performance evaluation",
@@ -287,22 +190,15 @@
         { "icon": "leaf", "title": "Biofloc Systems", "desc": "Improves feed efficiency and water quality sustainably." },
         { "icon": "chevrons-left", "title": "Open Systems", "desc": "Culture systems based on continuous water renewal, with effective reuse of nutrients." },
         { "icon": "droplets", "title": "Aquamimicry Systems", "desc": "Mimics nature to reduce feed and recycle water." },
-        { "icon": "recycle", "title": "Integrated Agri-Aquaculture", "desc": "Systems that combine fish farming with irrigation, reusing nutrient-rich water to enhance soil productivity." },
-        { "icon": "sprout", "title": "Aquaponics", "desc": "Combining fish farming and soilless plant cultivation using fish waste as natural fertilizer." }
+        { "icon": "settings", "title": "Integrated Agri-Aquaculture", "desc": "Systems that combine fish farming with irrigation, reusing nutrient-rich water to enhance soil productivity." },
+        { "icon": "leaf", "title": "Aquaponics", "desc": "Combining fish farming and soilless plant cultivation using fish waste as natural fertilizer." }
       ]
-    }
+    },
+    "blocksTitle": "Integrated Solutions for Every Stage of Project"
   },
   "training": {
-    "hero": {
-      "title": "From Theory to Field Application",
-      "subtitle": "A specialized program qualifying technical and operational aquaculture teams — we build crews that run and manage projects efficiently to accredited professional standards.",
-      "cta": "Schedule Visit"
-    },
-    "intro": {
-      "title": "From Knowledge to Execution",
-      "body1": "At \"NAPCO Aqua\" we believe people drive success, bridging the gap between theory and real production.",
-      "body2": "Our services span three tracks (foundations, technical, operations) to build profitable, sustainable aquaculture teams."
-    },
+    "hero": { "title": "From Theory to Field Application", "subtitle": "A specialized program qualifying technical and operational aquaculture teams — we build crews that run and manage projects efficiently to accredited professional standards.", "cta": "Schedule Visit" },
+    "intro": { "title": "From Knowledge to Execution", "body1": "At \"NAPCO Aqua\" we believe people drive success, bridging the gap between theory and real production.", "body2": "Our services span three tracks (foundations, technical, operations) to build profitable, sustainable aquaculture teams." },
     "tracks": {
       "title": "Three Tracks, One Integrated Journey",
       "items": [
@@ -317,19 +213,32 @@
         {
           "title": "Applied Foundation Programs",
           "image": "/images/train-foundation.png",
-          "items": ["Applied Training Program (Farm School)", "Introduction to Aquaculture"]
+          "items": [
+            "Applied Training Program (Farm School)",
+            "Introduction to Aquaculture"
+          ],
+          "caption": "Hands-on training qualifying staff for fieldwork"
         },
         {
           "title": "Specialized Technical Programs",
           "image": "/images/train-technical.png",
           "caption": "Focused on advanced technical skills and specialized expertise across production systems and stages, preparing specialized teams to run production systems efficiently.",
-          "items": ["Closed Intensive Aquaculture Systems Specialist", "Biofloc Systems Specialist", "Fish Health and Disease Control", "Hatchery Management Program"]
+          "items": [
+            "Closed Intensive Aquaculture Systems Specialist",
+            "Biofloc Systems Specialist",
+            "Fish Health and Disease Control",
+            "Hatchery Management Program"
+          ]
         },
         {
           "title": "Operations & Management Programs",
           "image": "/images/train-operations.png",
           "caption": "Focused on operations management skills and operational and production efficiency, aimed at elevating management capability and improving project performance.",
-          "items": ["Fish Farm Operations Management", "Production Planning", "Cost Control and Efficiency Improvement"]
+          "items": [
+            "Fish Farm Operations Management",
+            "Production Planning",
+            "Cost Control and Efficiency Improvement"
+          ]
         }
       ]
     },
@@ -345,40 +254,67 @@
     "dualCta": {
       "title": "Experience & Learn Aquaculture",
       "cards": [
-        { "icon": "fish", "variant": "blue", "title": "Book Farm Visit", "desc": "Explore real aquaculture operations on-site", "bullets": ["Meet aquaculture experts", "Learn best practices on-site", "Guided tour of farm operations"] },
-        { "icon": "graduation-cap", "variant": "orange", "title": "Enroll in Training", "desc": "Enhance your team with hands-on training", "bullets": ["Real-world farm experience", "Expert-led training programs", "Practical, hands-on sessions"] }
+        {
+          "icon": "fish",
+          "variant": "blue",
+          "title": "Book Farm Visit",
+          "desc": "Explore real aquaculture operations on-site",
+          "bullets": [
+            "Meet aquaculture experts",
+            "Learn best practices on-site",
+            "Guided tour of farm operations"
+          ]
+        },
+        {
+          "icon": "graduation-cap",
+          "variant": "orange",
+          "title": "Enroll in Training",
+          "desc": "Enhance your team with hands-on training",
+          "bullets": [
+            "Real-world farm experience",
+            "Expert-led training programs",
+            "Practical, hands-on sessions"
+          ]
+        }
       ]
     },
     "form": {
       "title": "Choose Your Training Program",
-      "name": "Name", "namePh": "Your Full Name",
-      "email": "Email Address", "emailPh": "Your@email.com",
-      "phone": "Phone Number", "phonePh": "+1 (555) 000-000",
-      "date": "Date", "datePh": "DD / MM / YYYY",
-      "company": "Company Name", "companyPh": "Your Company Name",
-      "visitType": "Visit or Training Type", "visitTypePh": "Select visit type",
-      "visitTypeOptions": ["Farm Visit", "Foundation Training", "Technical Training", "Operations Training"],
-      "visitors": "Number of Visitors", "visitorsPh": "Number of Visitors",
+      "name": "Name",
+      "namePh": "Your Full Name",
+      "email": "Email Address",
+      "emailPh": "Your@email.com",
+      "phone": "Phone Number",
+      "phonePh": "+1 (555) 000-000",
+      "date": "Date",
+      "datePh": "DD / MM / YYYY",
+      "company": "Company Name",
+      "companyPh": "Your Company Name",
+      "visitType": "Visit or Training Type",
+      "visitTypePh": "Select visit type",
+      "visitTypeOptions": [
+        "Farm Visit",
+        "Foundation Training",
+        "Technical Training",
+        "Operations Training"
+      ],
+      "visitors": "Number of Visitors",
+      "visitorsPh": "Number of Visitors",
       "visitorOptions": ["1 – 5", "6 – 10", "11 – 20", "More than 20"],
-      "details": "Additional Details", "detailsPh": "Additional insights and supporting information that offer deeper context to the topic discussed.",
-      "submit": "Booking Confirmation", "cancel": "Cancel",
-      "required": "This field is required", "invalidEmail": "Please enter a valid email",
-      "successTitle": "Booking Received", "successBody": "Thank you. Our team will contact you shortly to confirm your training program or farm visit.", "again": "Submit another request"
+      "details": "Additional Details",
+      "detailsPh": "Additional insights and supporting information that offer deeper context to the topic discussed.",
+      "submit": "Booking Confirmation",
+      "cancel": "Cancel",
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email",
+      "successTitle": "Booking Received",
+      "successBody": "Thank you. Our team will contact you shortly to confirm your training program or farm visit.",
+      "again": "Submit another request"
     }
   },
   "blog": {
-    "hero": {
-      "title": "Insights That Shape the Future, Innovations That Make the Difference",
-      "subtitle": "Explore the latest analyses and field stories in aquaculture technology drawn from hands-on practice and deep technical expertise."
-    },
-    "featured": {
-      "sectionTitle": "Fish Farm Design & Operations",
-      "viewAll": "View All Articles",
-      "tag": "Nutrition",
-      "title": "Feeding Strategies for Maximum Growth Rate",
-      "desc": "Discover proven feeding techniques and nutrition plans that maximize fish growth while minimizing costs.",
-      "date": "Jan 20, 2025"
-    },
+    "hero": { "title": "Insights That Shape the Future, Innovations That Make the Difference", "subtitle": "Explore the latest analyses and field stories in aquaculture technology drawn from hands-on practice and deep technical expertise." },
+    "featured": { "sectionTitle": "Fish Farm Design & Operations", "viewAll": "View All Articles", "tag": "Nutrition", "title": "Feeding Strategies for Maximum Growth Rate", "desc": "Discover proven feeding techniques and nutrition plans that maximize fish growth while minimizing costs.", "date": "Jan 20, 2025" },
     "stats": [
       { "icon": "newspaper", "color": "orange", "value": "250+", "label": "Published Articles" },
       { "icon": "video", "color": "blue", "value": "80+", "label": "Educational Videos" },
@@ -389,34 +325,50 @@
       "title": "Advanced Aquaculture Systems",
       "items": [
         {
-          "image": "/images/solutions.png",
+          "image": "/images/blog-ras.png",
           "tag": "Technology",
           "title": "RAS Technology",
           "desc": "Recirculating Aquaculture Systems explained: components, benefits and implementation strategies for sustainable farming.",
-          "checklist": ["Year-round Production", "Disease Control Enhanced", "Water Conservation up to 95%"]
+          "checklist": [
+            "Year-round Production",
+            "Disease Control Enhanced",
+            "Water Conservation up to 95%"
+          ],
+          "icon": "refresh-cw",
+          "iconColor": "orange"
         },
         {
-          "image": "/images/svc-site.png",
+          "image": "/images/blog-biofloc.png",
           "tag": "Sustainability",
           "title": "Biofloc Systems",
           "desc": "Harness microbial communities for natural water treatment and supplemental nutrition in your aquaculture operations.",
-          "checklist": ["Reduced Feed Costs", "Higher Stocking Density", "Natural Water Treatment"]
+          "checklist": [
+            "Reduced Feed Costs",
+            "Higher Stocking Density",
+            "Natural Water Treatment"
+          ],
+          "icon": "leaf",
+          "iconColor": "blue"
         },
         {
-          "image": "/images/services.png",
+          "image": "/images/blog-smart.png",
           "tag": "Innovation",
           "title": "Smart Systems",
           "desc": "IoT sensors, AI monitoring and automated controls for precision aquaculture management and optimization.",
-          "checklist": ["Real-time Monitoring", "Automated Feeding", "Predictive Analytics"]
+          "checklist": [
+            "Real-time Monitoring",
+            "Automated Feeding",
+            "Predictive Analytics"
+          ],
+          "icon": "settings",
+          "iconColor": "orange"
         }
       ]
     }
   },
   "articles": {
-    "hero": {
-      "title": "All Articles",
-      "subtitle": "Stay updated with the latest insights, innovations and expertise in aquaculture solutions."
-    }
+    "hero": { "title": "All Articles", "subtitle": "Stay updated with the latest insights, innovations and expertise in aquaculture solutions." },
+    "more": "More"
   },
   "articleDetail": {
     "heroSubtitle": "Aqua Knowledge — knowledge is investment power",
@@ -440,38 +392,29 @@
       { "title": "Integration & Testing", "desc": "Seamless integration with existing infrastructure and thorough testing protocols" }
     ],
     "shareTitle": "Share Article",
-    "relatedTitle": "Related Articles"
+    "relatedTitle": "Related Articles",
+    "heroTitle": "Advanced Water Technologies"
   },
   "media": {
-    "hero": {
-      "title": "The Pulse of Aquaculture",
-      "subtitle": "A visual journey showcasing how environmental challenges are transformed into successful, sustainable investment opportunities powered by smart systems and advanced technologies."
-    },
-    "gallery": {
-      "title": "Outstanding Examples of Our Work"
-    },
+    "hero": { "title": "The Pulse of Aquaculture", "subtitle": "A visual journey showcasing how environmental challenges are transformed into successful, sustainable investment opportunities powered by smart systems and advanced technologies." },
+    "gallery": { "title": "Outstanding Examples of Our Work" },
     "videos": {
       "title": "Projects That Prove Our Methodology",
       "durationLabel": "duration",
       "items": [
-        { "image": "/images/cta.png", "title": "National Fish Production Farm", "desc": "Tilapia production farm combining Biofloc and RAS systems — one of the first farms in Saudi Arabia to operate a mixed model, and among NAPCO AQUA's strongest references.", "duration": "5:32" },
-        { "image": "/images/solutions.png", "title": "Makka Company Farms", "desc": "Semi-intensive open-system farms producing Tilapia, Seabream, Seabass, Shrimp, Mullet, and Catfish — around Burullus Lake, the Mediterranean coast, Marsala and Manzala Lakes.", "duration": "5:32" },
-        { "image": "/images/services.png", "title": "Integrated Coastal Project", "desc": "A large-scale coastal aquaculture project applying advanced recirculation and monitoring to maximize yield while preserving the marine environment.", "duration": "4:18" },
-        { "image": "/images/svc-site.png", "title": "Inland RAS Facility", "desc": "A fully enclosed recirculating aquaculture facility delivering year-round production with minimal water use and precise environmental control.", "duration": "6:05" }
+        { "image": "/images/media-video.png", "title": "National Fish Production Farm", "desc": "Tilapia production farm combining Biofloc and RAS systems — one of the first farms in Saudi Arabia to operate a mixed model, and among NAPCO AQUA's strongest references.", "duration": "5:32" },
+        { "image": "/images/media-farm.png", "title": "Makka Company Farms", "desc": "Semi-intensive open-system farms producing Tilapia, Seabream, Seabass, Shrimp, Mullet, and Catfish — around Burullus Lake, the Mediterranean coast, Manzala and Mariout Lakes.", "duration": "5:32" },
+        { "image": "/images/media-video.png", "title": "National Fish Production Farm", "desc": "Tilapia production farm combining Biofloc and RAS systems — one of the first farms in Saudi Arabia to operate a mixed model, and among NAPCO AQUA's strongest references.", "duration": "5:32" },
+        { "image": "/images/media-farm.png", "title": "Makka Company Farms", "desc": "Semi-intensive open-system farms producing Tilapia, Seabream, Seabass, Shrimp, Mullet, and Catfish — around Burullus Lake, the Mediterranean coast, Manzala and Mariout Lakes.", "duration": "5:32" }
       ]
     }
   },
   "career": {
-    "hero": {
-      "title": "Build Your Future, Lead the Sustainable Aquaculture Revolution",
-      "subtitle": "Join a team redefining food security standards across the region and become part of a journey that blends technical innovation, passion, and real impact."
-    },
+    "hero": { "title": "Build Your Future, Lead the Sustainable Aquaculture Revolution", "subtitle": "Join a team redefining food security standards across the region and become part of a journey that blends technical innovation, passion, and real impact." },
     "testimonials": {
       "title": "Real Voices from Our Team",
       "items": [
-        { "image": "/images/leadership.png", "name": "Ahmed Al-Qurashi", "role": "Farm Operations Manager", "quote": "Leads daily farm operations, feed planning, and KPI monitoring to ensure stable growth." },
-        { "image": "/images/leadership.png", "name": "Sara Al-Otaibi", "role": "Aquaculture Engineer", "quote": "From design to commissioning, I get to apply cutting-edge systems on real production sites every day." },
-        { "image": "/images/leadership.png", "name": "Khalid Al-Harbi", "role": "Fish Health Specialist", "quote": "Working with a team that values science and field expertise has accelerated my professional growth." }
+        { "image": "/images/testimonial-ahmed.png", "name": "Ahmed Al-Qurashi", "role": "Farm Operations Manager", "quote": "Leads daily farm operations, feed planning, and KPI monitoring to ensure stable growth." }
       ]
     },
     "features": [
@@ -480,11 +423,7 @@
       { "icon": "wrench", "color": "orange", "title": "Field Work Impact", "desc": "Hands-on experience with modern aquaculture systems and practices." },
       { "icon": "line-chart", "color": "blue", "title": "High Potential", "desc": "A fast-growing sector with strong career growth opportunities." }
     ],
-    "ambassador": {
-      "title": "Become a Brand Ambassador with NAPCO Aqua",
-      "body": "Join the NAPCO Aqua Ambassadors Program and be a partner in developing the sector and promoting sustainable practices.",
-      "cta": "Join the Ambassadors Program"
-    },
+    "ambassador": { "title": "Become a Brand Ambassador with NAPCO Aqua", "body": "Join the NAPCO Aqua Ambassadors Program and be a partner in developing the sector and promoting sustainable practices.", "cta": "Join the Ambassadors Program" },
     "gain": {
       "title": "What Will You Gain",
       "items": [
@@ -498,47 +437,41 @@
     },
     "form": {
       "title": "Be Part of Our Journey in Shaping the Future of Aquaculture",
-      "name": "Name", "namePh": "Your Full Name",
-      "email": "Email Address", "emailPh": "Your@email.com",
-      "phone": "Phone Number", "phonePh": "+1 (555) 000-000",
-      "cv": "Upload CV", "cvPh": "Drop your file or upload",
-      "nationality": "Nationality", "nationalityPh": "Select your country",
-      "countries": ["Saudi Arabia", "Egypt", "United Arab Emirates", "Jordan", "Kuwait", "Other"],
-      "specialization": "Specialization", "specializationPh": "Choose your specialty",
-      "details": "Details", "detailsPh": "Tell us more details",
+      "name": "Name",
+      "namePh": "Your Full Name",
+      "email": "Email Address",
+      "emailPh": "Your@email.com",
+      "phone": "Phone Number",
+      "phonePh": "+1 (555) 000-000",
+      "cv": "Upload CV",
+      "cvPh": "Drop your file or upload",
+      "nationality": "Nationality",
+      "nationalityPh": "Select your country",
+      "countries": [
+        "Saudi Arabia",
+        "Egypt",
+        "United Arab Emirates",
+        "Jordan",
+        "Kuwait",
+        "Other"
+      ],
+      "specialization": "Specialization",
+      "specializationPh": "Choose your specialty",
+      "details": "Details",
+      "detailsPh": "Tell us more details",
       "submit": "Submit",
-      "required": "This field is required", "invalidEmail": "Please enter a valid email",
-      "successTitle": "Application Received", "successBody": "Thank you for your interest. Our team will review your application and reach out if there's a fit.", "again": "Submit another application"
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email",
+      "successTitle": "Application Received",
+      "successBody": "Thank you for your interest. Our team will review your application and reach out if there's a fit.",
+      "again": "Submit another application"
     }
   },
   "contact": {
-    "hero": {
-      "title": "Contact Us... Let's Shape Your Vision",
-      "subtitle": "Let's build your fish farm — speak with our aquaculture experts to start your project."
-    },
+    "hero": { "title": "Contact Us... Let's Shape Your Vision", "subtitle": "Let's build your fish farm — speak with our aquaculture experts to start your project." },
     "mainTitle": "Let's Discuss Your Next Project",
-    "form": {
-      "heading": "Get in Touch",
-      "sub": "Fill out the form. We'll reply within 24 hours.",
-      "name": "Name", "namePh": "Your Full Name",
-      "email": "Email Address", "emailPh": "Your@email.com",
-      "phone": "Phone Number", "phonePh": "+1 (555) 000-000",
-      "project": "Project Details", "projectPh": "Tell us about your project, goals and how we can help you...",
-      "submit": "Request Call Back",
-      "required": "This field is required", "invalidEmail": "Please enter a valid email",
-      "successTitle": "Message Sent", "successBody": "Thank you for reaching out. Our team will reply within 24 hours.", "again": "Send another message"
-    },
-    "info": {
-      "heading": "Contact Information",
-      "emailTitle": "Email Address", "emailNote": "Send us an email anytime",
-      "phoneTitle": "Phone Number", "phoneNote": "Call us during business hours",
-      "hoursTitle": "Business Hours", "hoursValue": "Sunday – Thursday: 8:00 AM – 4:00 PM",
-      "expertTitle": "Expert Support Available",
-      "expertBody": "Our team of aquaculture specialists brings decades of combined experience in project development, investment analysis, and sustainable farming practices.",
-      "expertStatValue": "30+", "expertStatLabel": "Years Experience"
-    },
-    "map": {
-      "label": "Operating across the Middle East and beyond"
-    }
+    "form": { "heading": "Get in Touch", "sub": "Fill out the form. We'll reply within 24 hours.", "name": "Name", "namePh": "Your Full Name", "email": "Email Address", "emailPh": "Your@email.com", "phone": "Phone Number", "phonePh": "+1 (555) 000-000", "project": "Project Details", "projectPh": "Tell us about your project, goals and how we can help you...", "submit": "Request Call Back", "required": "This field is required", "invalidEmail": "Please enter a valid email", "successTitle": "Message Sent", "successBody": "Thank you for reaching out. Our team will reply within 24 hours.", "again": "Send another message" },
+    "info": { "heading": "Contact Information", "emailTitle": "Email Address", "emailNote": "Send us an email anytime", "phoneTitle": "Phone Number", "phoneNote": "Call us during business hours", "hoursTitle": "Business Hours", "hoursValue": "Sunday – Thursday: 8:00 AM – 4:00 PM", "expertTitle": "Expert Support Available", "expertBody": "Our team of aquaculture specialists brings decades of combined experience in project development, investment analysis, and sustainable farming practices.", "expertStatValue": "30+", "expertStatLabel": "Years Experience" },
+    "map": { "label": "Operating across the Middle East and beyond" }
   }
 }

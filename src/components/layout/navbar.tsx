@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
-import { Search } from "lucide-react";
 import { Menu, X } from "@/components/ui/mingcute-icons";
 
 import { Link, usePathname } from "@/i18n/navigation";
@@ -48,15 +47,15 @@ export function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-2 lg:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {mainNav.map((item) => (
             <Link
               key={item.key}
               href={item.href}
               className={cn(
-                "rounded-full px-4 py-2 text-label-small font-medium uppercase transition-colors",
+                "whitespace-nowrap rounded-lg py-2 text-label-small font-medium uppercase transition-colors",
                 isActive(item.href)
-                  ? "bg-brand text-white"
+                  ? "bg-brand px-4 text-white"
                   : "hover:text-brand",
               )}
             >
@@ -65,25 +64,17 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Actions */}
-        <div className="flex items-center gap-1">
-          <button
-            type="button"
-            aria-label={t("search")}
-            className="hidden h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-white/10 sm:inline-flex"
-          >
-            <Search className="h-5 w-5" />
-          </button>
-          <LocaleSwitcher className="hidden sm:inline-flex" />
-          <ThemeToggle />
+        {/* Actions — Contact Us (navy gradient) + matching language & theme switch buttons */}
+        <div className="flex items-center gap-3">
           <Button
             asChild
             size="sm"
-            variant="navy"
-            className="hidden uppercase md:inline-flex"
+            className="hidden bg-[linear-gradient(-62deg,#0008A3_0%,#000562_100%)] text-white hover:opacity-90 md:inline-flex"
           >
             <Link href="/contact">{t("contact")}</Link>
           </Button>
+          <LocaleSwitcher className="hidden sm:inline-flex" />
+          <ThemeToggle className="hidden sm:inline-flex" />
 
           {/* Mobile menu toggle */}
           <button
@@ -116,7 +107,8 @@ export function Navbar() {
             ))}
             <div className="mt-2 flex items-center gap-2">
               <LocaleSwitcher className="hover:bg-muted" />
-              <Button asChild size="sm" className="flex-1">
+              <ThemeToggle />
+              <Button asChild size="sm" className="flex-1 bg-[linear-gradient(-62deg,#0008A3_0%,#000562_100%)] text-white">
                 <Link href="/contact">{t("contact")}</Link>
               </Button>
             </div>

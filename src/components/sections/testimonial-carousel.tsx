@@ -28,7 +28,7 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
         </div>
         <div className="space-y-2 text-center md:text-start">
           <h3 className="text-title-large font-semibold uppercase text-foreground">{t.name}</h3>
-          <p className="text-label-small font-medium text-brand">{t.role}</p>
+          <p className="text-label-small font-medium text-muted-foreground">{t.role}</p>
           <p className="text-body-medium text-muted-foreground">{t.quote}</p>
         </div>
       </article>

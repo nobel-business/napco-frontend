@@ -37,3 +37,9 @@ yarn-error.log*
 /.figma-audit/shots/
 /.figma-audit/*.zip
 /.figma-audit/img/
+/.figma-audit/_final/
+/.figma-audit/_*.png
+/.figma-audit/*.log
+
+# dark-mode capture helper (local QA only)
+/public/_setdark.html

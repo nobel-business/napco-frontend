@@ -6,6 +6,7 @@ import { Moon, Sun } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
+import { switchButtonClass } from "./locale-switcher";
 
 export function ThemeToggle({ className }: { className?: string }) {
   const { theme, setTheme } = useTheme();
@@ -20,17 +21,11 @@ export function ThemeToggle({ className }: { className?: string }) {
     <button
       type="button"
       aria-label={t("toggleTheme")}
+      title={t("toggleTheme")}
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className={cn(
-        "inline-flex h-10 w-10 items-center justify-center rounded-full text-current transition-colors hover:bg-white/10",
-        className,
-      )}
+      className={cn(switchButtonClass, className)}
     >
-      {mounted && isDark ? (
-        <Sun className="h-5 w-5" />
-      ) : (
-        <Moon className="h-5 w-5" />
-      )}
+      {mounted && isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
     </button>
   );
 }

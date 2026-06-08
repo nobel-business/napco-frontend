@@ -1,34 +1,53 @@
 import { mingcuteRegistry } from "./mingcute-icons";
+import { fillRegistry } from "./mingcute-fill";
 import { cn } from "@/lib/utils";
 
-/** Renders a MingCute icon by content key (see messages JSON `icon` fields). */
+/** Renders a MingCute icon by content key (see messages JSON `icon` fields).
+ *  Pass `fill` to use the solid (filled) MingCute variant — used inside colored tiles/chips. */
 export function Icon({
   name,
   className,
+  fill,
 }: {
   name: string;
   className?: string;
+  fill?: boolean;
 }) {
-  const Cmp = mingcuteRegistry[name] ?? mingcuteRegistry["settings"];
+  const Cmp =
+    (fill ? fillRegistry[name] : undefined) ??
+    mingcuteRegistry[name] ??
+    mingcuteRegistry["settings"];
   return <Cmp className={className} />;
 }
 
-/** Orange gradient rounded-square icon tile (Figma feature icon). */
+/** Orange gradient rounded-square icon tile (Figma feature icon: rounded-8, 105° gradient). */
 export function IconTile({
   name,
+  size = "md",
+  color = "orange",
   className,
 }: {
   name: string;
+  size?: "md" | "lg";
+  color?: "orange" | "blue";
   className?: string;
 }) {
+  const box = size === "lg" ? "h-16 w-16" : "h-12 w-12";
+  const glyph = size === "lg" ? "h-8 w-8" : "h-6 w-6";
+  const gradient =
+    color === "blue"
+      ? "bg-[linear-gradient(105deg,#0008A3_3%,rgba(0,8,163,0.6)_98%)]"
+      : "bg-[linear-gradient(105deg,#ff782c_3%,rgba(255,120,44,0.6)_98%)]";
   return (
     <span
       className={cn(
-        "inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-secondary-300 to-secondary-500 text-white shadow-sm",
+        "inline-flex shrink-0 items-center justify-center rounded-lg text-white shadow-sm",
+        gradient,
+        box,
         className,
       )}
     >
-      <Icon name={name} className="h-6 w-6" />
+      <Icon name={name} fill className={glyph} />
     </span>
   );
 }

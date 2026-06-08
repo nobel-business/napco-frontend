@@ -19,16 +19,15 @@ export const mainNav: NavItem[] = [
 
 export const footerQuickLinks: NavItem[] = [
   { key: "home", href: "/" },
-  { key: "about", href: "/about" },
   { key: "services", href: "/services" },
-  { key: "blog", href: "/blog" },
-  { key: "contact", href: "/contact" },
+  { key: "about", href: "/about" },
 ];
 
 export const siteContact = {
   email: "info@npaqua.sa",
-  phone: "+966 54 125 2773",
-  address: "Dhahran Techno Valley, Dhahran, Kingdom of Saudi Arabia",
+  phone: "+966 54 125 2773", // Contact page
+  footerPhone: "+966 50 706 2900", // Footer (per Figma)
+  address: "Dhahran-Thuqbah Road - Al Khobar - Kingdom of Saudi Arabia",
   hours: "Sunday – Thursday, 8:00 AM – 4:00 PM",
 };
 

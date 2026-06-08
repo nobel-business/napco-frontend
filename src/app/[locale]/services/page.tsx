@@ -36,31 +36,35 @@ export default async function ServicesPage({
 
   return (
     <>
-      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} />
+      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-services.png" />
 
       {/* INTRO */}
-      <section className="py-20 lg:py-24">
-        <Container className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="space-y-5">
-            <h2 className="text-headline-medium font-semibold uppercase text-foreground">
-              {t("intro.title")}
-            </h2>
-            <span className="block h-1 w-14 rounded-full bg-brand" />
-            <p className="text-body-medium text-muted-foreground">{t("intro.body1")}</p>
-            <p className="text-body-medium text-muted-foreground">{t("intro.body2")}</p>
-          </div>
-          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-card">
-            <Image src="/images/trusted.png" alt={t("intro.title")} fill className="object-cover" />
+      <section className="py-20 lg:py-28">
+        <Container>
+          <div className="grid items-center gap-10 rounded-2xl bg-[rgba(0,8,163,0.02)] p-6 shadow-card md:p-10 lg:grid-cols-[1.5fr_1fr] dark:bg-surface">
+            <div className="space-y-5">
+              <h2 className="text-headline-small font-semibold uppercase text-foreground">
+                {t("intro.title")}
+              </h2>
+              <p className="text-body-medium text-muted-foreground">{t("intro.body1")}</p>
+              <p className="text-body-medium text-muted-foreground">{t("intro.body2")}</p>
+            </div>
+            <div className="relative aspect-[3/2] overflow-hidden rounded-2xl">
+              <Image src="/images/services-intro.png" alt={t("intro.title")} fill className="object-cover" />
+            </div>
           </div>
         </Container>
       </section>
 
       {/* SERVICE BLOCKS */}
-      <section className="bg-muted/40 py-20 lg:py-28">
-        <Container className="space-y-16 lg:space-y-24">
-          {blocks.map((block, i) => (
-            <ServiceBlock key={block.title} data={block} reverse={i % 2 === 1} />
-          ))}
+      <section className="py-20 lg:py-28">
+        <Container className="space-y-12 lg:space-y-16">
+          <SectionHeading title={t("blocksTitle")} />
+          <div className="space-y-16 lg:space-y-20">
+            {blocks.map((block, i) => (
+              <ServiceBlock key={block.title} data={block} reverse={i % 2 === 1} />
+            ))}
+          </div>
         </Container>
       </section>
 
@@ -86,7 +90,7 @@ export default async function ServicesPage({
       </section>
 
       {/* SYSTEMS — icon grid */}
-      <section className="bg-muted/40 py-20 lg:py-28">
+      <section className="py-20 lg:py-28">
         <Container className="space-y-12">
           <SectionHeading title={t("systems.title")} />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

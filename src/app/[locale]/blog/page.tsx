@@ -3,16 +3,26 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Calendar, Check, ChevronLeft, ChevronRight } from "@/components/ui/mingcute-icons";
 
 import type { Locale } from "@/i18n/routing";
+import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Icon } from "@/components/ui/icon";
 import { PageHero } from "@/components/sections/page-hero";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { StatTile } from "@/components/cards/stat-tile";
 
 type Stat = { icon: string; color: "orange" | "blue"; value: string; label: string };
-type SystemCard = { image: string; tag: string; title: string; desc: string; checklist: string[] };
+type SystemCard = {
+  image: string;
+  tag: string;
+  icon: string;
+  iconColor: "orange" | "blue";
+  title: string;
+  desc: string;
+  checklist: string[];
+};
 
 export async function generateMetadata({
   params,
@@ -38,7 +48,7 @@ export default async function BlogPage({
 
   return (
     <>
-      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} />
+      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-blog.png" />
 
       {/* FEATURED */}
       <section className="py-20 lg:py-24">
@@ -85,7 +95,7 @@ export default async function BlogPage({
       </section>
 
       {/* STATS */}
-      <section className="border-y border-border bg-muted/40 py-14">
+      <section className="py-14">
         <Container className="grid grid-cols-2 gap-8 lg:grid-cols-4">
           {stats.map((s) => (
             <StatTile key={s.label} icon={s.icon} value={s.value} label={s.label} color={s.color} />
@@ -94,7 +104,7 @@ export default async function BlogPage({
       </section>
 
       {/* SYSTEMS GRID */}
-      <section className="py-20 lg:py-28">
+      <section className="bg-muted/40 py-20 lg:py-28">
         <Container className="space-y-12">
           <SectionHeading title={t("systems.title")} />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -105,9 +115,14 @@ export default async function BlogPage({
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image src={card.image} alt={card.title} fill className="object-cover" />
-                  <Badge className="absolute start-3 top-3 bg-surface/90 backdrop-blur">
-                    {card.tag}
-                  </Badge>
+                  <span
+                    className={cn(
+                      "absolute bottom-3 start-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-surface shadow-md",
+                      card.iconColor === "blue" ? "text-[#0008A3]" : "text-brand",
+                    )}
+                  >
+                    <Icon name={card.icon} fill className="h-5 w-5" />
+                  </span>
                 </div>
                 <div className="flex flex-1 flex-col gap-3 p-6">
                   <h3 className="text-title-medium font-semibold text-foreground">{card.title}</h3>

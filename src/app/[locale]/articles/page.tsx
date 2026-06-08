@@ -30,10 +30,10 @@ export default async function ArticlesPage({
 
   return (
     <>
-      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} />
+      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-articles.png" />
       <section className="py-20 lg:py-24">
         <Container>
-          <ArticlesBrowser articles={articles} categories={categories} />
+          <ArticlesBrowser articles={articles} categories={categories} moreLabel={t("more")} />
         </Container>
       </section>
     </>

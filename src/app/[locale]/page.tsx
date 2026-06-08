@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ArrowRight } from "@/components/ui/mingcute-icons";
 
 import type { Locale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
@@ -8,6 +7,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { IconTile } from "@/components/ui/icon";
 import { SectionHeading } from "@/components/sections/section-heading";
+import { PartnersMarquee } from "@/components/sections/partners-marquee";
 
 type ListItem = { icon: string; label: string };
 type Feature = { icon: string; title: string; desc: string };
@@ -23,6 +23,8 @@ export default async function HomePage({
 
   const services = t.raw("services.items") as ListItem[];
   const solutions = t.raw("solutions.items") as Feature[];
+  const values = t.raw("values.items") as Feature[];
+  const markets = t.raw("markets.countries") as { name: string; icon: string }[];
   const whyChoose = t.raw("whyChoose.items") as Feature[];
   const partners = [
     ...Array.from({ length: 13 }, (_, i) => `/images/partners/partner-${i + 1}.png`),
@@ -31,16 +33,27 @@ export default async function HomePage({
 
   return (
     <>
-      {/* HERO — light: silver-gray gradient (Figma) · dark: navy */}
-      <section className="relative isolate flex min-h-[640px] items-center overflow-hidden bg-gradient-to-b from-[#9aa0ac] to-[#565c69] dark:from-primary-900 dark:to-primary-800">
-        <Container className="relative z-10 flex flex-col items-center gap-6 py-32 text-center text-white">
-          <h1 className="max-w-4xl text-display-medium font-bold uppercase text-brand">
-            {t("hero.title")}
-          </h1>
-          <p className="max-w-2xl text-body-large text-white/85">
-            {t("hero.subtitle")}
-          </p>
-          <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
+      {/* HERO — aerial fish-cages video background + navy overlay */}
+      <section className="relative isolate flex min-h-[680px] items-center overflow-hidden bg-primary-900">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/hero.png"
+          className="absolute inset-0 -z-10 h-full w-full object-cover"
+        >
+          <source src="/videos/hero-aqua.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary-900/55 via-primary-900/70 to-primary-900/90" />
+        <Container className="relative z-10 flex max-w-[1000px] flex-col items-center gap-10 py-32 text-center text-white">
+          <div className="flex flex-col items-center gap-6">
+            <h1 className="text-headline-large font-semibold uppercase text-brand">
+              {t("hero.title")}
+            </h1>
+            <p className="text-label-large text-white">{t("hero.subtitle")}</p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-6">
             <Button asChild size="lg">
               <Link href="/services">{t("hero.primaryCta")}</Link>
             </Button>
@@ -48,32 +61,38 @@ export default async function HomePage({
               asChild
               size="lg"
               variant="outline"
-              className="border-white/40 text-white hover:bg-white hover:text-navy"
+              className="border-gray-400 text-white hover:bg-white hover:text-navy"
             >
               <Link href="/contact">{t("hero.secondaryCta")}</Link>
             </Button>
           </div>
+          {/* orange accent bar */}
+          <span className="mt-2 inline-block h-1.5 w-12 rounded-full bg-brand" />
         </Container>
       </section>
 
       {/* TRUSTED PARTNER */}
       <section className="py-20 lg:py-28">
-        <Container className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-card">
-            <Image src="/images/trusted.png" alt={t("trusted.title")} fill className="object-cover" />
-          </div>
-          <div className="space-y-5">
-            <h2 className="text-headline-large font-semibold uppercase text-foreground">
-              {t("trusted.title")}
-            </h2>
-            <p className="text-body-medium text-muted-foreground">{t("trusted.body")}</p>
-            <div className="flex items-baseline gap-3 pt-2">
-              <span className="text-display-small font-bold text-brand">
-                {t("trusted.statValue")}
-              </span>
-              <span className="text-body-medium text-muted-foreground">
-                {t("trusted.statLabel")}
-              </span>
+        <Container>
+          <div className="flex flex-col gap-10 rounded-xl bg-[rgba(0,8,163,0.02)] p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
+            <div className="relative aspect-[4/3] shrink-0 overflow-hidden rounded-xl md:aspect-auto md:w-[440px]">
+              <Image src="/images/trusted.png" alt={t("trusted.title")} fill className="object-cover" />
+            </div>
+            <div className="flex flex-1 flex-col justify-center gap-10">
+              <div className="space-y-6">
+                <h2 className="text-headline-small font-semibold uppercase text-foreground">
+                  {t("trusted.title")}
+                </h2>
+                <p className="text-body-large text-muted-foreground">{t("trusted.body")}</p>
+              </div>
+              <div className="flex flex-col items-center gap-1 rounded-lg bg-surface px-6 py-4 text-center dark:bg-white/5">
+                <span className="text-label-large font-medium text-brand">
+                  {t("trusted.statValue")}
+                </span>
+                <span className="text-body-medium text-muted-foreground">
+                  {t("trusted.statLabel")}
+                </span>
+              </div>
             </div>
           </div>
         </Container>
@@ -81,45 +100,54 @@ export default async function HomePage({
 
       {/* SERVICES */}
       <section className="bg-muted/40 py-20 lg:py-28">
-        <Container className="space-y-12">
+        <Container className="flex flex-col items-center gap-10">
           <SectionHeading title={t("services.title")} />
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            <ul className="divide-y divide-border">
+          <div className="grid w-full items-end gap-10 lg:grid-cols-[1fr_466px]">
+            <ul className="flex flex-col gap-6">
               {services.map((item) => (
-                <li key={item.label} className="flex items-center gap-4 py-4">
+                <li
+                  key={item.label}
+                  className="flex h-24 items-center gap-6 rounded-lg border border-[rgba(0,8,163,0.04)] bg-surface p-6 shadow-sm"
+                >
                   <IconTile name={item.icon} />
-                  <span className="text-title-small font-semibold text-foreground">
+                  <span className="text-label-large font-medium text-foreground">
                     {item.label}
                   </span>
                 </li>
               ))}
             </ul>
-            <div className="space-y-5">
-              <div className="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-card">
-                <Image src="/images/services.png" alt={t("services.title")} fill className="object-cover" />
+            <div className="flex flex-col gap-6 self-stretch pt-10">
+              <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-xl">
+                <Image src="/images/home-services.png" alt={t("services.title")} fill className="object-cover" />
               </div>
-              <p className="text-body-small text-muted-foreground">{t("services.caption")}</p>
-              <Button asChild>
-                <Link href="/services">{t("services.cta")}</Link>
-              </Button>
+              <p className="text-body-large text-muted-foreground">{t("services.caption")}</p>
             </div>
           </div>
+          <Button asChild size="lg">
+            <Link href="/services">{t("services.cta")}</Link>
+          </Button>
         </Container>
       </section>
 
       {/* VISION */}
       <section className="py-20 lg:py-28">
         <Container>
-          <div className="grid items-center gap-10 rounded-3xl bg-gradient-to-br from-primary-50 to-surface p-6 shadow-card md:grid-cols-[320px_1fr] md:p-10 dark:from-surface dark:to-muted">
-            <div className="relative aspect-square overflow-hidden rounded-2xl">
+          <div className="flex flex-col gap-10 rounded-xl bg-[rgba(0,8,163,0.02)] p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
+            <div className="relative aspect-square shrink-0 overflow-hidden rounded-xl md:aspect-auto md:w-[360px]">
               <Image src="/images/leadership.png" alt="" fill className="object-cover" />
             </div>
-            <div className="space-y-5">
-              <h2 className="text-headline-medium font-semibold uppercase text-foreground">
-                {t("vision.title")}
-              </h2>
-              <p className="text-body-medium text-muted-foreground">{t("vision.body")}</p>
-              <Button asChild variant="secondary">
+            <div className="flex flex-1 flex-col justify-center gap-10">
+              <div className="space-y-6">
+                <h2 className="text-headline-small font-semibold uppercase text-foreground">
+                  {t("vision.title")}
+                </h2>
+                <p className="text-body-large text-muted-foreground">{t("vision.body")}</p>
+              </div>
+              <Button
+                asChild
+                size="lg"
+                className="self-start bg-[linear-gradient(-57deg,#0008A3_0%,#000562_100%)] text-white"
+              >
                 <Link href="/about">{t("vision.cta")}</Link>
               </Button>
             </div>
@@ -129,48 +157,100 @@ export default async function HomePage({
 
       {/* SOLUTIONS */}
       <section className="bg-muted/40 py-20 lg:py-28">
-        <Container className="space-y-12">
+        <Container className="flex flex-col items-center gap-10">
           <SectionHeading title={t("solutions.title")} />
-          <div className="grid items-start gap-12 lg:grid-cols-[1fr_420px]">
-            <ul className="space-y-6">
+          <div className="grid w-full items-stretch gap-10 lg:grid-cols-[1fr_466px]">
+            <ul className="flex flex-col gap-6">
               {solutions.map((item) => (
-                <li key={item.title} className="flex gap-4">
-                  <IconTile name={item.icon} />
-                  <div className="space-y-1.5">
-                    <h3 className="text-title-small font-semibold text-foreground">
+                <li
+                  key={item.title}
+                  className="flex gap-6 rounded-xl border border-[rgba(0,8,163,0.04)] bg-surface p-6 shadow-sm"
+                >
+                  <IconTile name={item.icon} size="lg" />
+                  <div className="space-y-4">
+                    <h3 className="text-label-large font-medium text-foreground">
                       {item.title}
                     </h3>
-                    <p className="text-body-small text-muted-foreground">{item.desc}</p>
+                    <p className="text-body-medium text-muted-foreground">{item.desc}</p>
                   </div>
                 </li>
               ))}
             </ul>
-            <div className="space-y-5">
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-card">
+            <div className="flex flex-col gap-6 self-stretch pt-10">
+              <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-xl">
                 <Image src="/images/solutions.png" alt={t("solutions.title")} fill className="object-cover" />
               </div>
-              <p className="text-body-small text-muted-foreground">{t("solutions.caption")}</p>
+              <p className="text-body-large text-muted-foreground">{t("solutions.caption")}</p>
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* VALUES */}
+      <section className="py-20 lg:py-28">
+        <Container className="flex flex-col items-center gap-10">
+          <SectionHeading title={t("values.title")} />
+          <div className="grid w-full items-stretch gap-10 lg:grid-cols-[466px_1fr]">
+            <div className="flex flex-col gap-6 self-stretch pt-10">
+              <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-xl">
+                <Image src={t("values.image")} alt={t("values.title")} fill className="object-cover" />
+              </div>
+              <p className="text-body-large text-muted-foreground">{t("values.caption")}</p>
+            </div>
+            <ul className="flex flex-col gap-6">
+              {values.map((item) => (
+                <li
+                  key={item.title}
+                  className="flex gap-6 rounded-xl border border-[rgba(0,8,163,0.04)] bg-surface p-6 shadow-sm"
+                >
+                  <IconTile name={item.icon} size="lg" />
+                  <div className="space-y-4">
+                    <h3 className="text-label-large font-medium text-foreground">{item.title}</h3>
+                    <p className="text-body-medium text-muted-foreground">{item.desc}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Container>
+      </section>
+
+      {/* DEEP EXPERTISE — Middle Eastern markets */}
+      <section className="bg-muted/40 py-20 lg:py-28">
+        <Container className="flex flex-col items-center gap-10">
+          <SectionHeading title={t("markets.title")} />
+          <div className="grid w-full grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+            {markets.map((c) => (
+              <div
+                key={c.name}
+                className="flex h-[162px] flex-col items-center justify-center gap-4 rounded-xl bg-[rgba(0,8,163,0.02)] p-6 shadow-card dark:bg-surface"
+              >
+                <div className="relative h-[62px] w-20">
+                  <Image src={c.icon} alt={c.name} fill className="object-contain dark:brightness-0 dark:invert" />
+                </div>
+                <span className="text-label-medium font-medium text-foreground">{c.name}</span>
+              </div>
+            ))}
           </div>
         </Container>
       </section>
 
       {/* WHY CHOOSE */}
       <section className="py-20 lg:py-28">
-        <Container className="space-y-12">
+        <Container className="flex flex-col items-center gap-10">
           <SectionHeading title={t("whyChoose.title")} />
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid w-full gap-6 md:grid-cols-2">
             {whyChoose.map((item) => (
               <article
                 key={item.title}
-                className="flex gap-5 rounded-2xl border border-border bg-surface p-6 shadow-card transition-shadow hover:shadow-card-hover"
+                className="flex gap-6 rounded-xl border border-[rgba(0,8,163,0.04)] bg-surface p-6 transition-shadow hover:shadow-card"
               >
-                <IconTile name={item.icon} />
-                <div className="space-y-2">
-                  <h3 className="text-title-large font-semibold text-foreground">
+                <IconTile name={item.icon} size="lg" />
+                <div className="space-y-4">
+                  <h3 className="text-label-large font-medium text-foreground">
                     {item.title}
                   </h3>
-                  <p className="text-body-small text-muted-foreground">{item.desc}</p>
+                  <p className="text-body-medium text-muted-foreground">{item.desc}</p>
                 </div>
               </article>
             ))}
@@ -178,16 +258,12 @@ export default async function HomePage({
         </Container>
       </section>
 
-      {/* PARTNERS */}
-      <section className="bg-muted/40 py-16">
-        <Container className="space-y-10">
-          <SectionHeading title={t("partners.title")} />
-          <div className="grid grid-cols-3 items-center justify-items-center gap-8 sm:grid-cols-4 lg:grid-cols-7">
-            {partners.map((src) => (
-              <div key={src} className="relative h-16 w-full opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0">
-                <Image src={src} alt="" fill className="object-contain" />
-              </div>
-            ))}
+      {/* PARTNERS — infinite logo carousel (contained card: white in light, elevated in dark) */}
+      <section className="bg-muted/40 py-20 lg:py-24">
+        <Container>
+          <div className="space-y-10 rounded-2xl border border-border bg-surface px-6 py-10 shadow-card md:px-10">
+            <SectionHeading title={t("partners.title")} />
+            <PartnersMarquee logos={partners} />
           </div>
         </Container>
       </section>
@@ -195,20 +271,28 @@ export default async function HomePage({
       {/* CTA BANNER */}
       <section className="py-20 lg:py-24">
         <Container>
-          <div className="relative isolate overflow-hidden rounded-3xl px-8 py-14 text-white md:px-14">
-            <Image src="/images/home-cta.png" alt="" fill className="-z-10 object-cover" />
-            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy/95 to-navy/70" />
-            <div className="max-w-2xl space-y-5">
-              <h2 className="text-headline-large font-semibold uppercase">
-                {t("cta.title")}
-              </h2>
-              <p className="text-body-medium text-white/80">{t("cta.body")}</p>
-              <Button asChild size="lg">
-                <Link href="/contact" className="gap-2">
-                  {t("cta.button")}
-                  <ArrowRight className="h-5 w-5 rtl-flip" />
-                </Link>
-              </Button>
+          <div className="relative isolate overflow-hidden rounded-xl">
+            <Image src="/images/home-cta.png" alt="" fill className="scale-110 object-cover blur-md" />
+            <div className="absolute inset-0 bg-gradient-to-b from-navy/45 to-navy/75" />
+            <div className="relative flex flex-col items-center gap-10 p-6 text-white md:flex-row md:p-10">
+              <div className="flex flex-1 flex-col gap-10">
+                <div className="space-y-6">
+                  <h2 className="text-headline-small font-semibold uppercase">
+                    {t("cta.title")}
+                  </h2>
+                  <p className="text-body-large">{t("cta.body")}</p>
+                </div>
+                <Button
+                  asChild
+                  size="lg"
+                  className="self-start bg-[linear-gradient(-38deg,#0008A3_0%,#000562_100%)] text-white"
+                >
+                  <Link href="/contact">{t("cta.button")}</Link>
+                </Button>
+              </div>
+              <div className="relative aspect-square w-full shrink-0 overflow-hidden rounded-xl md:w-[316px]">
+                <Image src="/images/home-cta.png" alt="" fill className="object-cover" />
+              </div>
             </div>
           </div>
         </Container>
