@@ -6,6 +6,9 @@ import { Inter, Cairo } from "next/font/google";
 
 import { routing, localeDirection, type Locale } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { SmoothScroll } from "@/components/providers/smooth-scroll";
+import { ScrollReveal } from "@/components/providers/scroll-reveal";
+import { ViewTransitions } from "@/components/providers/view-transitions";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { FloatingActions } from "@/components/layout/floating-actions";
@@ -83,6 +86,9 @@ export default async function LocaleLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages}>
+            <SmoothScroll />
+            <ScrollReveal />
+            <ViewTransitions />
             <div className="flex min-h-screen flex-col">
               <Navbar />
               <main className="flex-1">{children}</main>

@@ -107,7 +107,7 @@ export default async function HomePage({
               {services.map((item) => (
                 <li
                   key={item.label}
-                  className="flex h-24 items-center gap-6 rounded-lg border border-[rgba(0,8,163,0.04)] bg-surface p-6 shadow-sm"
+                  className="hover-lift flex h-24 items-center gap-6 rounded-lg border border-[rgba(0,8,163,0.04)] bg-surface p-6 shadow-sm"
                 >
                   <IconTile name={item.icon} />
                   <span className="text-label-large font-medium text-foreground">
@@ -164,7 +164,7 @@ export default async function HomePage({
               {solutions.map((item) => (
                 <li
                   key={item.title}
-                  className="flex gap-6 rounded-xl border border-[rgba(0,8,163,0.04)] bg-surface p-6 shadow-sm"
+                  className="hover-lift flex gap-6 rounded-xl border border-[rgba(0,8,163,0.04)] bg-surface p-6 shadow-sm"
                 >
                   <IconTile name={item.icon} size="lg" />
                   <div className="space-y-4">
@@ -201,7 +201,7 @@ export default async function HomePage({
               {values.map((item) => (
                 <li
                   key={item.title}
-                  className="flex gap-6 rounded-xl border border-[rgba(0,8,163,0.04)] bg-surface p-6 shadow-sm"
+                  className="hover-lift flex gap-6 rounded-xl border border-[rgba(0,8,163,0.04)] bg-surface p-6 shadow-sm"
                 >
                   <IconTile name={item.icon} size="lg" />
                   <div className="space-y-4">
@@ -243,7 +243,7 @@ export default async function HomePage({
             {whyChoose.map((item) => (
               <article
                 key={item.title}
-                className="flex gap-6 rounded-xl border border-[rgba(0,8,163,0.04)] bg-surface p-6 transition-shadow hover:shadow-card"
+                className="hover-lift flex gap-6 rounded-xl border border-[rgba(0,8,163,0.04)] bg-surface p-6"
               >
                 <IconTile name={item.icon} size="lg" />
                 <div className="space-y-4">

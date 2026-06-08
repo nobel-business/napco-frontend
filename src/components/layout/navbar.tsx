@@ -35,7 +35,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-colors duration-300",
+        "site-header fixed inset-x-0 top-0 z-50 transition-colors duration-300",
         scrolled
           ? "border-b border-border/60 bg-[var(--background)]/80 text-foreground backdrop-blur-xl"
           : "bg-transparent text-white",
@@ -91,7 +91,7 @@ export function Navbar() {
 
       {/* Mobile panel */}
       {open && (
-        <div className="border-t border-border/60 bg-[var(--background)]/95 text-foreground backdrop-blur-xl lg:hidden">
+        <div className="mobile-panel border-t border-border/60 bg-[var(--background)]/95 text-foreground backdrop-blur-xl lg:hidden">
           <Container className="flex flex-col gap-1 py-4">
             {mainNav.map((item) => (
               <Link

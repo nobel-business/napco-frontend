@@ -18,7 +18,7 @@ export function VideoCard({
   durationLabel: string;
 }) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-card transition-shadow hover:shadow-card-hover">
+    <article className="group hover-lift flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-card">
       <div className="relative aspect-[16/9] overflow-hidden">
         <Image
           src={video.image}

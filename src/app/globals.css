@@ -116,8 +116,12 @@
   /* Layout */
   --container-content: 1200px;
 
-  /* Easing / motion */
+  /* Easing / motion — one coherent system used by every interaction */
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-quint: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-fast: 150ms; /* hover / press feedback */
+  --motion-base: 220ms; /* route transition, menus */
+  --motion-reveal: 600ms; /* scroll reveals */
 }
 
 /* ------------------------------------------------------------------ */
@@ -240,4 +244,129 @@
 }
 [dir="rtl"] .marquee-track {
   animation-direction: reverse;
+}
+
+/* ------------------------------------------------------------------ */
+/* MOTION SYSTEM — smooth scroll, route transitions, scroll reveals,   */
+/* and shared interaction polish. Visual design is unchanged.          */
+/* ------------------------------------------------------------------ */
+
+/* Lenis: let it own the scroll (disable native smooth so they don't fight). */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Route transitions — native View Transitions API: a subtle, fast cross-dissolve
+   between the old and new page (no flashing / harsh replacement). Timing matches the
+   site motion system. */
+::view-transition-old(root),
+::view-transition-new(root),
+::view-transition-old(site-header),
+::view-transition-new(site-header),
+::view-transition-group(site-header) {
+  animation-duration: var(--motion-base);
+  animation-timing-function: var(--ease-out-soft);
+}
+/* Keep the persistent navbar visually continuous across routes (shared layout). */
+.site-header {
+  view-transition-name: site-header;
+}
+
+/* Fallback for browsers without the View Transitions API: a pure opacity fade on the
+   new page (no movement → no "pop"). Replayed per client navigation; never on first load. */
+@keyframes route-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@supports not (view-transition-name: none) {
+  .route-transition {
+    animation: route-fade var(--motion-base) var(--ease-out-soft) both;
+  }
+}
+
+/* Mobile nav panel — subtle fade-down on open. */
+@keyframes panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.mobile-panel {
+  animation: panel-in var(--motion-base) var(--ease-out-soft) both;
+}
+
+/* Scroll reveal — only below-fold sections get the initial hidden state (set by JS),
+   so above-the-fold content is never hidden (LCP-safe). */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(22px);
+  will-change: opacity, transform;
+}
+.reveal-init.reveal-in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity var(--motion-reveal) var(--ease-out-quint),
+    transform var(--motion-reveal) var(--ease-out-quint);
+}
+
+/* Consistent, accessible keyboard focus for links (buttons/inputs keep their own rings). */
+@layer base {
+  :where(a):focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--color-brand) 65%, transparent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+/* Subtle card hover elevation — pointer devices only, never on touch. */
+@media (hover: hover) and (pointer: fine) {
+  .hover-lift {
+    transition:
+      transform var(--motion-base) var(--ease-out-soft),
+      box-shadow var(--motion-base) var(--ease-out-soft);
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card-hover);
+  }
+}
+
+/* Reduced-motion: no route animation, no reveal offset, no hover transforms. */
+@media (prefers-reduced-motion: reduce) {
+  .route-transition {
+    animation: none;
+  }
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+  .reveal-init,
+  .reveal-init.reveal-in {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hover-lift:hover {
+    transform: none;
+  }
 }
