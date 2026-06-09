@@ -111,7 +111,7 @@ export default async function BlogPage({
             {systems.map((card) => (
               <article
                 key={card.title}
-                className="flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-card transition-shadow hover:shadow-card-hover"
+                className="hover-lift flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-card"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image src={card.image} alt={card.title} fill className="object-cover" />
