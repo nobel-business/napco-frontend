@@ -102,9 +102,9 @@ export default async function ServicesPage({
             {systems.map((item) => (
               <article
                 key={item.title}
-                className="hover-lift flex flex-col items-center gap-4 rounded-2xl border border-border bg-surface p-8 text-center shadow-card"
+                className="hover-lift group flex flex-col items-center gap-4 rounded-2xl border border-border bg-surface p-8 text-center shadow-card"
               >
-                <IconTile name={item.icon} />
+                <IconTile name={item.icon} className="fx-icon-tile" />
                 <h3 className="text-title-medium font-semibold text-foreground">{item.title}</h3>
                 <p className="text-body-small text-muted-foreground">{item.desc}</p>
               </article>
