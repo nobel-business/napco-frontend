@@ -16,11 +16,11 @@ export function Logo({
   variant?: "light" | "dark";
 }) {
   const piece = cn(
-    "h-9 w-auto transition-[filter] duration-[var(--motion-base)] ease-[var(--ease-out-soft)]",
+    "h-10 w-auto transition-[filter] duration-[var(--motion-base)] ease-[var(--ease-out-soft)]",
     variant === "dark" && "brightness-0",
   );
   return (
-    <span className={cn("logo-mark inline-flex h-9 items-center", className)} aria-label="NAPCO Aqua">
+    <span className={cn("logo-mark inline-flex h-10 items-center", className)} aria-label="NAPCO Aqua">
       <Image src="/images/napco-fish.png" alt="" width={117} height={54} priority className={cn("logo-fish", piece)} />
       <Image src="/images/napco-wordmark.png" alt="NAPCO Aqua" width={123} height={54} priority className={piece} />
     </span>
