@@ -5,7 +5,7 @@
   "footer": { "quickLinks": "Quick Links", "getStarted": "Get Started", "bookConsultation": "Book a Consultation", "copyright": "© 2025 NAPCO Aqua. All rights reserved.", "poweredBy": "Powered by" },
   "notFound": { "title": "Page not found", "description": "The page you are looking for doesn't exist or has been moved.", "backHome": "Back to home" },
   "home": {
-    "hero": { "title": "Welcome to NAPCO Aqua", "subtitle": "An integrated system delivering innovative and sustainable solutions to support fish farming projects and drive sustainable growth in the aquaculture sector.", "primaryCta": "Explore our services", "secondaryCta": "Booking a Consultation" },
+    "hero": { "eyebrow": "Aquaculture · Engineering · Operations", "title": "Welcome to NAPCO Aqua", "subtitle": "An integrated system delivering innovative and sustainable solutions to support fish farming projects and drive sustainable growth in the aquaculture sector.", "primaryCta": "Explore our services", "secondaryCta": "Booking a Consultation", "stats": [{ "value": "30+", "label": "Years of expertise" }, { "value": "6", "label": "GCC markets" }, { "value": "5", "label": "Integrated services" }] },
     "trusted": { "title": "A Trusted Partner For Aquaculture Investors & Operators", "body": "Napco Aqua is an operating brand of Nobel Business Group, providing specialized consultancy and technical solutions for the aquaculture sector, backed by over 30 years of hands-on experience in developing and managing aquaculture projects.", "statValue": "30+", "statLabel": "Over 30 years of hands-on experience" },
     "services": {
       "title": "NAPCO Aqua Services",
@@ -19,7 +19,7 @@
         { "icon": "settings", "label": "Operations & Management" }
       ]
     },
-    "vision": { "title": "Our Vision in Action", "body": "At NAPCO Aqua, we don't just build fish farms; we are engineering a sustainable future for food security in the Kingdom. Guided by Vision 2030, our mission is to transform traditional aquaculture into a high-performing, technology-driven industry that serves both the environment and the economy.", "cta": "Read More" },
+    "vision": { "eyebrow": "Vision 2030", "title": "Our Vision in Action", "body": "At NAPCO Aqua, we don't just build fish farms; we are engineering a sustainable future for food security in the Kingdom. Guided by Vision 2030, our mission is to transform traditional aquaculture into a high-performing, technology-driven industry that serves both the environment and the economy.", "cta": "Read More" },
     "solutions": {
       "title": "NAPCO Aqua Solutions",
       "caption": "Napco Aqua offers integrated engineering and technical solutions tailored to support aquaculture farmers and investors at the highest efficiency.",

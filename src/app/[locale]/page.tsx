@@ -26,6 +26,7 @@ export default async function HomePage({
   const values = t.raw("values.items") as Feature[];
   const markets = t.raw("markets.countries") as { name: string; icon: string }[];
   const whyChoose = t.raw("whyChoose.items") as Feature[];
+  const heroStats = t.raw("hero.stats") as { value: string; label: string }[];
   const partners = [
     ...Array.from({ length: 13 }, (_, i) => `/images/partners/partner-${i + 1}.png`),
     "/images/partners/renile.png",
@@ -33,49 +34,61 @@ export default async function HomePage({
 
   return (
     <>
-      {/* HERO — aerial fish-cages video background + navy overlay */}
-      <section className="relative isolate flex min-h-[680px] items-center overflow-hidden bg-primary-900">
+      {/* HERO — aerial fish-cages video under a water-depth overlay; lower-left composition */}
+      <section className="relative isolate flex max-h-[920px] min-h-[80vh] items-end overflow-hidden bg-aqua-900">
         <video
           autoPlay
           loop
           muted
           playsInline
           poster="/images/hero.png"
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
+          className="hero-drift absolute inset-0 -z-10 h-full w-full object-cover"
         >
           <source src="/videos/hero-aqua.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-primary-900/55 via-primary-900/70 to-primary-900/90" />
-        <Container className="relative z-10 flex max-w-[1000px] flex-col items-center gap-10 py-32 text-center text-white">
-          <div className="flex flex-col items-center gap-6">
-            <h1 className="text-headline-large font-semibold uppercase text-brand">
+        <div className="bg-hero-depth absolute inset-0 -z-10" />
+        <Container className="relative z-10 w-full pb-14 pt-32 text-white lg:pb-20">
+          <div className="max-w-2xl space-y-6">
+            <p className="text-label-small font-medium uppercase tracking-[0.18em] text-aqua-200">
+              {t("hero.eyebrow")}
+            </p>
+            <h1 className="text-display-small font-bold uppercase md:text-display-large">
               {t("hero.title")}
             </h1>
-            <p className="text-label-large text-white">{t("hero.subtitle")}</p>
+            <p className="max-w-xl text-label-large text-white/85">{t("hero.subtitle")}</p>
+            {/* orange accent bar */}
+            <span className="block h-1.5 w-12 rounded-full bg-brand" />
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <Button asChild size="lg">
+                <Link href="/services">{t("hero.primaryCta")}</Link>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-white/40 text-white hover:bg-white hover:text-navy"
+              >
+                <Link href="/contact">{t("hero.secondaryCta")}</Link>
+              </Button>
+            </div>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            <Button asChild size="lg">
-              <Link href="/services">{t("hero.primaryCta")}</Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="border-gray-400 text-white hover:bg-white hover:text-navy"
-            >
-              <Link href="/contact">{t("hero.secondaryCta")}</Link>
-            </Button>
-          </div>
-          {/* orange accent bar */}
-          <span className="mt-2 inline-block h-1.5 w-12 rounded-full bg-brand" />
+          {/* stat strip — calm, tabular proof */}
+          <dl className="mt-10 flex flex-wrap gap-x-12 gap-y-5 border-t border-white/15 pt-6">
+            {heroStats.map((s) => (
+              <div key={s.label}>
+                <dt className="text-display-small font-bold tabular-nums">{s.value}</dt>
+                <dd className="text-body-small text-white/70">{s.label}</dd>
+              </div>
+            ))}
+          </dl>
         </Container>
       </section>
 
       {/* TRUSTED PARTNER */}
       <section className="py-20 lg:py-28">
         <Container>
-          <div className="flex flex-col gap-10 rounded-2xl bg-surface-tint p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
-            <div className="relative aspect-[4/3] shrink-0 overflow-hidden rounded-xl md:aspect-auto md:w-[440px]">
+          <div className="flex flex-col gap-10 rounded-3xl bg-surface-tint p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
+            <div className="relative aspect-[4/3] shrink-0 overflow-hidden rounded-2xl md:aspect-auto md:w-[440px]">
               <Image src="/images/trusted.png" alt={t("trusted.title")} fill className="object-cover" />
             </div>
             <div className="flex flex-1 flex-col justify-center gap-10">
@@ -117,7 +130,7 @@ export default async function HomePage({
               ))}
             </ul>
             <div className="flex flex-col gap-6 self-stretch pt-10">
-              <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-xl">
+              <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-2xl">
                 <Image src="/images/home-services.png" alt={t("services.title")} fill className="object-cover" />
               </div>
               <p className="text-body-large text-muted-foreground">{t("services.caption")}</p>
@@ -132,15 +145,20 @@ export default async function HomePage({
       {/* VISION */}
       <section className="py-20 lg:py-28">
         <Container>
-          <div className="flex flex-col gap-10 rounded-2xl bg-surface-tint p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
-            <div className="relative aspect-square shrink-0 overflow-hidden rounded-xl md:aspect-auto md:w-[360px]">
+          <div className="flex flex-col gap-10 rounded-3xl bg-sand-50 p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
+            <div className="relative aspect-square shrink-0 overflow-hidden rounded-2xl md:aspect-auto md:w-[360px]">
               <Image src="/images/leadership.png" alt="" fill className="object-cover" />
             </div>
             <div className="flex flex-1 flex-col justify-center gap-10">
               <div className="space-y-6">
-                <h2 className="text-headline-small font-semibold uppercase text-foreground">
-                  {t("vision.title")}
-                </h2>
+                <div className="space-y-3">
+                  <p className="text-label-small font-medium uppercase tracking-[0.14em] text-accent-card dark:text-aqua-300">
+                    {t("vision.eyebrow")}
+                  </p>
+                  <h2 className="text-headline-small font-semibold uppercase text-foreground">
+                    {t("vision.title")}
+                  </h2>
+                </div>
                 <p className="text-body-large text-muted-foreground">{t("vision.body")}</p>
               </div>
               <Button asChild size="lg" variant="navy" className="self-start">
@@ -173,7 +191,7 @@ export default async function HomePage({
               ))}
             </ul>
             <div className="flex flex-col gap-6 self-stretch pt-10">
-              <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-xl">
+              <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-2xl">
                 <Image src="/images/solutions.png" alt={t("solutions.title")} fill className="object-cover" />
               </div>
               <p className="text-body-large text-muted-foreground">{t("solutions.caption")}</p>
@@ -188,7 +206,7 @@ export default async function HomePage({
           <SectionHeading title={t("values.title")} />
           <div className="grid w-full items-stretch gap-10 lg:grid-cols-[466px_1fr]">
             <div className="flex flex-col gap-6 self-stretch pt-10">
-              <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-xl">
+              <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-2xl">
                 <Image src={t("values.image")} alt={t("values.title")} fill className="object-cover" />
               </div>
               <p className="text-body-large text-muted-foreground">{t("values.caption")}</p>
@@ -257,7 +275,7 @@ export default async function HomePage({
       {/* PARTNERS — infinite logo carousel (contained card: white in light, elevated in dark) */}
       <section className="bg-muted/40 py-20 lg:py-28">
         <Container>
-          <div className="space-y-10 rounded-2xl border border-border bg-surface px-6 py-10 shadow-card md:px-10">
+          <div className="space-y-10 rounded-3xl border border-border bg-surface px-6 py-10 shadow-card md:px-10">
             <SectionHeading title={t("partners.title")} />
             <PartnersMarquee logos={partners} />
           </div>
@@ -267,9 +285,9 @@ export default async function HomePage({
       {/* CTA BANNER */}
       <section className="py-20 lg:py-28">
         <Container>
-          <div className="relative isolate overflow-hidden rounded-xl">
+          <div className="relative isolate overflow-hidden rounded-3xl">
             <Image src="/images/home-cta.png" alt="" fill className="scale-110 object-cover blur-md" />
-            <div className="absolute inset-0 bg-gradient-to-b from-navy/45 to-navy/75" />
+            <div className="bg-hero-depth absolute inset-0" />
             <div className="relative flex flex-col items-center gap-10 p-6 text-white md:flex-row md:p-10">
               <div className="flex flex-1 flex-col gap-10">
                 <div className="space-y-6">
@@ -282,7 +300,7 @@ export default async function HomePage({
                   <Link href="/contact">{t("cta.button")}</Link>
                 </Button>
               </div>
-              <div className="relative aspect-square w-full shrink-0 overflow-hidden rounded-xl md:w-[316px]">
+              <div className="relative aspect-square w-full shrink-0 overflow-hidden rounded-2xl md:w-[316px]">
                 <Image src="/images/home-cta.png" alt="" fill className="object-cover" />
               </div>
             </div>

@@ -46,6 +46,23 @@
   --color-accent-card: #0008a3;
   --color-navy: #000221;
 
+  /* Marine / Aquatech — the water identity layer (Premium Aquatech Enterprise) */
+  --color-aqua-50: #e8f6fa;
+  --color-aqua-100: #c7eaf3;
+  --color-aqua-200: #93d6e7;
+  --color-aqua-300: #54bbd6;
+  --color-aqua-400: #1f9fc2; /* marine accent — "water light" */
+  --color-aqua-500: #0e7f9f;
+  --color-aqua-600: #0a6080;
+  --color-aqua-700: #084a63;
+  --color-aqua-800: #073a50;
+  --color-aqua-900: #06293a; /* abyss — hero gradient base */
+
+  /* Gulf layer — sand & bronze (strategic moments only: hero / about / vision) */
+  --color-sand-50: #f4f0e8;
+  --color-sand-100: #e9e1d2;
+  --color-bronze-500: #c9a86a;
+
   /* Fonts (variables injected by next/font in layout) */
   --font-sans: var(--font-inter), system-ui, sans-serif;
   --font-arabic: var(--font-cairo), system-ui, sans-serif;
@@ -151,27 +168,41 @@
   --gradient-stat-orange: linear-gradient(135deg, #ff9b5e 0%, #ff6a1f 100%);
   --gradient-card-orange: linear-gradient(115deg, #cc6023 0%, #ff782c 100%);
 
-  /* Faint navy tints used on cards/borders (were raw rgba literals). */
-  --surface-tint: rgba(0, 8, 163, 0.02);
+  /* Water-depth gradients (Premium Aquatech) — looking into the water. */
+  --gradient-depth: linear-gradient(180deg, #021b33 0%, #06293a 60%, #073a50 100%);
+  --gradient-marine: linear-gradient(135deg, #0e7f9f 0%, #06293a 100%);
+  /* Semi-transparent hero/CTA overlay — darker toward the (lower) text edge. */
+  --gradient-hero-overlay: linear-gradient(
+    180deg,
+    rgba(2, 27, 51, 0.3) 0%,
+    rgba(6, 41, 58, 0.55) 50%,
+    rgba(0, 2, 33, 0.88) 100%
+  );
+
+  /* Faint tints used on cards/borders — evolved navy -> marine. */
+  --surface-tint: rgba(15, 127, 158, 0.03);
   --border-tint: rgba(0, 8, 163, 0.04);
 }
 
 .dark {
-  --background: #161c2b;
+  /* Deep Ocean — surfaces are deep-water teal-navy, not gray (native habitat). */
+  --background: #08161e;
   --foreground: #ffffff;
-  --surface: #212839;
+  --surface: #0e2532;
   --surface-foreground: #ffffff;
-  --muted: #212839;
-  --muted-foreground: #ccceed;
-  --border: #303a52;
-  --input: #303a52;
+  --muted: #0b1e29;
+  --muted-foreground: #9fb6c4;
+  --border: #1c3a48;
+  --input: #1c3a48;
   --ring: #ff782c;
   --footer-bg: #000221;
   --footer-foreground: #ffffff;
   /* Darker, neutral elevation shadow in dark mode (bluish light-mode shadow reads wrong on navy) */
-  --shadow-card: 0 4px 16px 0 rgba(0, 0, 0, 0.4);
-  --shadow-card-hover: 0 12px 28px 0 rgba(0, 0, 0, 0.5);
-  --hero-overlay: rgba(0, 2, 33, 0.65);
+  --shadow-card: 0 4px 16px 0 rgba(0, 0, 0, 0.45);
+  --shadow-card-hover: 0 12px 28px 0 rgba(0, 0, 0, 0.55);
+  --hero-overlay: rgba(2, 13, 20, 0.7);
+  /* Faint marine tint reads stronger on deep water */
+  --surface-tint: rgba(31, 159, 194, 0.06);
 }
 
 /* Expose semantic vars as Tailwind color utilities (bg-background, text-foreground, …) */
@@ -265,6 +296,16 @@
   .bg-gradient-card-orange {
     background-image: var(--gradient-card-orange);
   }
+  .bg-gradient-depth {
+    background-image: var(--gradient-depth);
+  }
+  .bg-gradient-marine {
+    background-image: var(--gradient-marine);
+  }
+  /* Semi-transparent water-depth overlay for hero/CTA media. */
+  .bg-hero-depth {
+    background-image: var(--gradient-hero-overlay);
+  }
   .bg-surface-tint {
     background-color: var(--surface-tint);
   }
@@ -351,6 +392,25 @@ html.lenis body {
 }
 .mobile-panel {
   animation: panel-in var(--motion-base) var(--ease-out-soft) both;
+}
+
+/* Home hero — very slow ambient "water" drift (Home only). Off under reduced-motion. */
+@keyframes hero-drift {
+  from {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(1.12) translateY(-1.5%);
+  }
+}
+.hero-drift {
+  animation: hero-drift 22s var(--ease-out-soft) infinite alternate;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-drift {
+    animation: none;
+  }
 }
 
 /* Scroll reveal — only below-fold sections get the initial hidden state (set by JS),
