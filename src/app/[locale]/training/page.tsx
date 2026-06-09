@@ -52,11 +52,16 @@ export default async function TrainingPage({
       {/* INTRO */}
       <section className="py-20 lg:py-28">
         <Container>
-          <div className="grid items-center gap-10 rounded-2xl bg-surface-tint p-6 shadow-card md:p-10 lg:grid-cols-[1.5fr_1fr] dark:bg-surface">
+          <div className="grid items-center gap-10 rounded-3xl bg-surface-tint p-6 shadow-card md:p-10 lg:grid-cols-[1.5fr_1fr] dark:bg-surface">
             <div className="space-y-5">
-              <h2 className="text-headline-small font-semibold uppercase text-foreground">
-                {t("intro.title")}
-              </h2>
+              <div className="space-y-3">
+                <p className="text-label-small font-medium uppercase tracking-[0.14em] text-accent-card dark:text-aqua-300">
+                  {t("intro.eyebrow")}
+                </p>
+                <h2 className="text-headline-small font-semibold uppercase text-foreground">
+                  {t("intro.title")}
+                </h2>
+              </div>
               <p className="text-body-medium text-muted-foreground">{t("intro.body1")}</p>
               <p className="text-body-medium text-muted-foreground">{t("intro.body2")}</p>
             </div>
@@ -75,7 +80,7 @@ export default async function TrainingPage({
             {tracks.map((track) => (
               <article
                 key={track.title}
-                className="space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
+                className="hover-lift space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
               >
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-stat-blue text-white">
                   <Icon name={track.icon} fill className="h-6 w-6" />
@@ -114,7 +119,7 @@ export default async function TrainingPage({
             {steps.map((step, i) => (
               <article
                 key={step.title}
-                className="space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
+                className="hover-lift space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
               >
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-stat-blue text-title-medium font-bold text-white">
                   {String(i + 1).padStart(2, "0")}
@@ -136,7 +141,7 @@ export default async function TrainingPage({
               <article
                 key={card.title}
                 className={cn(
-                  "space-y-4 rounded-3xl p-8 text-white shadow-card md:p-10",
+                  "hover-lift space-y-4 rounded-3xl p-8 text-white shadow-card md:p-10",
                   card.variant === "blue" ? "bg-gradient-navy" : "bg-gradient-card-orange",
                 )}
               >

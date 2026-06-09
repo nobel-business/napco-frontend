@@ -199,7 +199,7 @@
   },
   "training": {
     "hero": { "title": "From Theory to Field Application", "subtitle": "A specialized program qualifying technical and operational aquaculture teams — we build crews that run and manage projects efficiently to accredited professional standards.", "cta": "Schedule Visit" },
-    "intro": { "title": "From Knowledge to Execution", "body1": "At \"NAPCO Aqua\" we believe people drive success, bridging the gap between theory and real production.", "body2": "Our services span three tracks (foundations, technical, operations) to build profitable, sustainable aquaculture teams." },
+    "intro": { "eyebrow": "Capacity Building", "title": "From Knowledge to Execution", "body1": "At \"NAPCO Aqua\" we believe people drive success, bridging the gap between theory and real production.", "body2": "Our services span three tracks (foundations, technical, operations) to build profitable, sustainable aquaculture teams." },
     "tracks": {
       "title": "Three Tracks, One Integrated Journey",
       "items": [
