@@ -502,6 +502,35 @@ html.lenis body {
   animation: fx-icon-swap-in var(--motion-slow) var(--ease-out-soft);
 }
 
+/* NAPCO logo fish — strong twitch/swim on hover. Pivots near the head (fish faces right) so
+   the tail swings; loops while hovered, stops on leave. Reduced-motion disables it. */
+@keyframes fish-twitch {
+  0% {
+    transform: rotate(0deg) translateX(0);
+  }
+  10% {
+    transform: rotate(-18deg) translateX(1px) scale(1.06);
+  }
+  25% {
+    transform: rotate(14deg) translateX(3px);
+  }
+  40% {
+    transform: rotate(-13deg) translateX(1px);
+  }
+  55% {
+    transform: rotate(11deg) translateX(3px);
+  }
+  70% {
+    transform: rotate(-8deg) translateX(1px);
+  }
+  85% {
+    transform: rotate(5deg) translateX(2px);
+  }
+  100% {
+    transform: rotate(0deg) translateX(0);
+  }
+}
+
 /* Subtle card hover elevation — pointer devices only, never on touch. */
 @media (hover: hover) and (pointer: fine) {
   .hover-lift {
@@ -571,6 +600,15 @@ html.lenis body {
     transform: scale(1.12);
     filter: brightness(1.1);
   }
+
+  /* Logo fish — twitch/swim while the logo is hovered. */
+  .logo-fish {
+    transform-origin: 78% 50%;
+  }
+  .logo-mark:hover .logo-fish {
+    animation: fish-twitch 0.6s var(--ease-out-soft) infinite;
+    will-change: transform;
+  }
 }
 
 /* Reduced-motion: no route animation, no reveal offset, no hover transforms. */
@@ -610,5 +648,8 @@ html.lenis body {
   [dir="rtl"] .fx-glide-start:hover,
   [dir="rtl"] .fx-glide-end:hover {
     transform: none;
+  }
+  .logo-mark:hover .logo-fish {
+    animation: none;
   }
 }
