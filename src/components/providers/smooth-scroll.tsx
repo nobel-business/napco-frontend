@@ -25,10 +25,10 @@ export function SmoothScroll() {
     }
 
     const lenis = new Lenis({
-      lerp: 0.1, // responsive, Linear/Stripe-like — not floaty
+      lerp: 0.135, // tighter catch-up to the pointer — responsive, not floaty/laggy
       smoothWheel: true,
       syncTouch: false, // native momentum on touch devices
-      wheelMultiplier: 1,
+      wheelMultiplier: 1.35, // more travel per wheel notch — scrolling feels faster
     });
     lenisRef.current = lenis;
     setLenis(lenis);
