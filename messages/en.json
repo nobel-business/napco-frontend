@@ -394,7 +394,8 @@
     ],
     "shareTitle": "Share Article",
     "relatedTitle": "Related Articles",
-    "heroTitle": "Advanced Water Technologies"
+    "heroTitle": "Advanced Water Technologies",
+    "heroEyebrow": "Aqua Insights"
   },
   "media": {
     "hero": { "title": "The Pulse of Aquaculture", "subtitle": "A visual journey showcasing how environmental challenges are transformed into successful, sustainable investment opportunities powered by smart systems and advanced technologies." },

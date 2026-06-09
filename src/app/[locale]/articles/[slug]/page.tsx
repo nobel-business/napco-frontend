@@ -53,16 +53,21 @@ export default async function ArticlePage({
 
   return (
     <>
-      {/* HERO — generic article banner */}
-      <section className="relative isolate flex min-h-[420px] items-end overflow-hidden">
+      {/* HERO — generic article banner (Aquatech family) */}
+      <section className="relative isolate flex min-h-[480px] items-end overflow-hidden lg:min-h-[560px]">
         <Image src="/images/hero-article.png" alt="" fill priority className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/40 to-navy/85" />
-        <Container className="relative z-10 w-full pb-14 text-white">
-          <h1 className="max-w-3xl text-display-small font-bold uppercase text-brand md:text-headline-large">
-            {t("heroTitle")}
-          </h1>
-          <p className="mt-4 max-w-2xl text-body-medium text-white/80">{t("heroSubtitle")}</p>
-          <span className="mt-6 block h-1.5 w-24 rounded-full bg-brand" />
+        <div className="bg-hero-depth absolute inset-0" />
+        <Container className="relative z-10 w-full pb-14 pt-32 text-white lg:pb-16">
+          <div className="max-w-2xl space-y-5">
+            <p className="text-label-small font-medium uppercase tracking-[0.18em] text-aqua-200">
+              {t("heroEyebrow")}
+            </p>
+            <h1 className="text-display-small font-bold uppercase md:text-headline-large">
+              {t("heroTitle")}
+            </h1>
+            <p className="text-body-medium text-white/85">{t("heroSubtitle")}</p>
+            <span className="block h-1.5 w-16 rounded-full bg-brand" />
+          </div>
         </Container>
       </section>
 
@@ -133,7 +138,7 @@ export default async function ArticlePage({
               <p className="text-body-medium text-muted-foreground">{t("implementationIntro")}</p>
               <div className="grid gap-6 md:grid-cols-3">
                 {implementation.map((item, i) => (
-                  <article key={item.title} className="space-y-3 rounded-2xl border border-border bg-surface p-6 shadow-card">
+                  <article key={item.title} className="hover-lift space-y-3 rounded-2xl border border-border bg-surface p-6 shadow-card">
                     <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-stat-blue text-title-medium font-bold text-white">
                       {String(i + 1).padStart(2, "0")}
                     </span>
