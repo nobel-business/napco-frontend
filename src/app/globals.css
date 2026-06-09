@@ -137,7 +137,8 @@
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-out-quint: cubic-bezier(0.16, 1, 0.3, 1);
   --motion-fast: 150ms; /* hover / press feedback */
-  --motion-base: 220ms; /* route transition, menus */
+  --motion-route: 130ms; /* route cross-dissolve — kept short so navigation feels instant */
+  --motion-base: 220ms; /* menus */
   --motion-slow: 300ms; /* bg/overlay/opacity toggles */
   --motion-image: 500ms; /* image zoom on hover */
   --motion-reveal: 600ms; /* scroll reveals */
@@ -363,7 +364,7 @@ html.lenis body {
 ::view-transition-old(site-header),
 ::view-transition-new(site-header),
 ::view-transition-group(site-header) {
-  animation-duration: var(--motion-base);
+  animation-duration: var(--motion-route);
   animation-timing-function: var(--ease-out-soft);
 }
 /* Keep the persistent navbar visually continuous across routes (shared layout). */
@@ -393,7 +394,7 @@ html.lenis body {
 }
 @supports not (view-transition-name: none) {
   .route-transition {
-    animation: route-fade var(--motion-base) var(--ease-out-soft) both;
+    animation: route-fade var(--motion-route) var(--ease-out-soft) both;
   }
 }
 

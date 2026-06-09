@@ -75,13 +75,14 @@ export function ViewTransitions() {
         () =>
           new Promise<void>((resolve) => {
             finishRef.current = resolve;
-            // Failsafe: never leave the snapshot frozen if the route stalls.
+            // Failsafe: never leave the snapshot frozen if the route stalls. Kept short so a
+            // slow/un-prefetched route un-freezes quickly rather than feeling like a hang.
             window.setTimeout(() => {
               if (finishRef.current) {
                 finishRef.current();
                 finishRef.current = null;
               }
-            }, 700);
+            }, 400);
             router.push(url.pathname + url.search + url.hash);
           }),
       );

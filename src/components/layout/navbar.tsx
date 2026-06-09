@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Menu, X } from "@/components/ui/mingcute-icons";
 
-import { Link, usePathname } from "@/i18n/navigation";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { mainNav } from "@/config/site";
 import { cn } from "@/lib/utils";
 import { Container } from "@/components/ui/container";
@@ -16,8 +16,15 @@ import { LocaleSwitcher } from "./locale-switcher";
 export function Navbar() {
   const t = useTranslations("nav");
   const pathname = usePathname();
+  const router = useRouter();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+
+  // Warm every primary route up front so tab-to-tab navigation commits instantly.
+  useEffect(() => {
+    for (const item of mainNav) router.prefetch(item.href);
+    router.prefetch("/contact");
+  }, [router]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32);
