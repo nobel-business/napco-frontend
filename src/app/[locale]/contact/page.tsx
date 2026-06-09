@@ -38,10 +38,10 @@ function InfoRow({
   valueClass: string;
 }) {
   return (
-    <div className="flex gap-4">
+    <div className="group flex gap-4">
       <span
         className={cn(
-          "inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-white shadow-sm",
+          "fx-icon-tile inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-white shadow-sm",
           color === "orange"
             ? "bg-gradient-to-br from-secondary-300 to-secondary-500"
             : "bg-gradient-to-br from-primary-400 to-primary-600",
