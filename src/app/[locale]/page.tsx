@@ -5,6 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { IconTile } from "@/components/ui/icon";
+import { CountUp } from "@/components/ui/count-up";
 import { MediaImage } from "@/components/ui/media-image";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { HeroVideo } from "@/components/sections/hero-video";
@@ -72,7 +73,9 @@ export default async function HomePage({
           <dl className="mt-10 flex flex-wrap gap-x-12 gap-y-5 border-t border-white/15 pt-6">
             {heroStats.map((s) => (
               <div key={s.label}>
-                <dt className="text-display-small font-bold tabular-nums">{s.value}</dt>
+                <dt className="text-display-small font-bold tabular-nums">
+                  <CountUp value={s.value} />
+                </dt>
                 <dd className="text-body-small text-white/70">{s.label}</dd>
               </div>
             ))}

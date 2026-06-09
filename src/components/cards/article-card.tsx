@@ -29,6 +29,7 @@ export function ArticleCard({ article }: { article: Article }) {
           sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
           placeholder={article.blurDataURL ? "blur" : "empty"}
           blurDataURL={article.blurDataURL}
+          data-vt-name="article-hero"
           className="object-cover transition-transform duration-[var(--motion-image)] group-hover:scale-105"
         />
       </div>

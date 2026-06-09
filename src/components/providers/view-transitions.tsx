@@ -64,6 +64,13 @@ export function ViewTransitions() {
       // Stop Next's <Link> handler so the navigation runs once, inside the transition.
       e.stopImmediatePropagation();
 
+      // Shared-element morph: if the clicked link contains a tagged element (e.g. an article
+      // card image), give it the matching view-transition-name just before the snapshot so it
+      // flies into the destination's element of the same name. Only the clicked card is tagged,
+      // so the name stays unique; the element unmounts on navigation, so no cleanup needed.
+      const shared = anchor.querySelector<HTMLElement>("[data-vt-name]");
+      if (shared?.dataset.vtName) shared.style.viewTransitionName = shared.dataset.vtName;
+
       doc.startViewTransition!(
         () =>
           new Promise<void>((resolve) => {

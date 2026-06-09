@@ -5,6 +5,7 @@ import { Linkedin, Mail, MessageCircle } from "@/components/ui/mingcute-icons";
 import type { Locale } from "@/i18n/routing";
 import { Container } from "@/components/ui/container";
 import { Icon, IconTile } from "@/components/ui/icon";
+import { CountUp } from "@/components/ui/count-up";
 import { PageHero } from "@/components/sections/page-hero";
 import { SectionHeading } from "@/components/sections/section-heading";
 
@@ -226,11 +227,10 @@ export default async function AboutPage({
                     key={s.label}
                     className="flex flex-col items-center gap-1 rounded-xl border border-border bg-surface p-5 text-center dark:bg-white/5"
                   >
-                    <span
+                    <CountUp
+                      value={s.value}
                       className={`text-display-small font-bold ${i === 1 ? "text-accent-card dark:text-primary-300" : "text-brand"}`}
-                    >
-                      {s.value}
-                    </span>
+                    />
                     <span className="text-body-small text-muted-foreground">{s.label}</span>
                   </div>
                 ))}

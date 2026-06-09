@@ -1,4 +1,5 @@
 import { Icon } from "@/components/ui/icon";
+import { CountUp } from "@/components/ui/count-up";
 import { cn } from "@/lib/utils";
 
 /** Stat with gradient icon tile (alternating orange/blue) + value + label. */
@@ -23,7 +24,7 @@ export function StatTile({
       >
         <Icon name={icon} fill className="h-8 w-8" />
       </span>
-      <span className="text-headline-small font-bold text-foreground">{value}</span>
+      <CountUp value={value} className="text-headline-small font-bold text-foreground" />
       <span className="text-body-small text-muted-foreground">{label}</span>
     </div>
   );
