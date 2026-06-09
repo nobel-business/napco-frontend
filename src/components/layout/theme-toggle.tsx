@@ -25,7 +25,11 @@ export function ThemeToggle({ className }: { className?: string }) {
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className={cn(switchButtonClass, className)}
     >
-      {mounted && isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+      {mounted && isDark ? (
+        <Sun key="sun" className="fx-icon-swap h-5 w-5" />
+      ) : (
+        <Moon key="moon" className="fx-icon-swap h-5 w-5" />
+      )}
     </button>
   );
 }

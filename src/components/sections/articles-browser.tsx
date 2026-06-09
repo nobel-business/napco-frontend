@@ -77,7 +77,7 @@ export function ArticlesBrowser({
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={current === 1}
             aria-label="Previous page"
-            className="inline-flex h-10 w-8 items-center justify-center text-muted-foreground transition-colors hover:text-brand disabled:opacity-40"
+            className="fx-glide-start inline-flex h-10 w-8 items-center justify-center text-muted-foreground transition hover:text-brand active:scale-95 disabled:opacity-40"
           >
             <Icon name="chevrons-left" className="h-5 w-5 rtl-flip" />
           </button>
@@ -99,7 +99,7 @@ export function ArticlesBrowser({
             onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
             disabled={current === pageCount}
             aria-label="Next page"
-            className="inline-flex h-10 w-8 items-center justify-center text-muted-foreground transition-colors hover:text-brand disabled:opacity-40"
+            className="fx-glide-end inline-flex h-10 w-8 items-center justify-center text-muted-foreground transition hover:text-brand active:scale-95 disabled:opacity-40"
           >
             <Icon name="chevrons-right" className="h-5 w-5 rtl-flip" />
           </button>

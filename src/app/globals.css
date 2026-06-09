@@ -437,6 +437,23 @@ html.lenis body {
   }
 }
 
+/* Icon Motion — Category C state swap (theme toggle, mobile menu): the incoming glyph
+   arcs + fades in once when the icon changes. Keyed in React so it re-runs per swap.
+   Not hover-gated — it's a state-change response, valid on touch too. */
+@keyframes fx-icon-swap-in {
+  from {
+    opacity: 0;
+    transform: rotate(-25deg) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.fx-icon-swap {
+  animation: fx-icon-swap-in var(--motion-slow) var(--ease-out-soft);
+}
+
 /* Subtle card hover elevation — pointer devices only, never on touch. */
 @media (hover: hover) and (pointer: fine) {
   .hover-lift {
@@ -470,6 +487,42 @@ html.lenis body {
   .group:hover .fx-icon-tile svg {
     transform: translateY(-1.5px);
   }
+
+  /* Icon Motion — Category C controls: glyph depth-near on hover (theme/language). */
+  .fx-ctrl svg {
+    transition: transform var(--motion-base) var(--ease-out-soft);
+  }
+  .fx-ctrl:hover svg {
+    transform: scale(1.12);
+  }
+
+  /* Icon Motion — Category C directional glide: the control nudges in its pointing
+     direction (RTL-aware). Applied to the button so it never fights the icon's rtl-flip.
+     The element carries its own `transition` utility, which animates this transform. */
+  .fx-glide-end:hover {
+    transform: translateX(3px);
+  }
+  .fx-glide-start:hover {
+    transform: translateX(-3px);
+  }
+  [dir="rtl"] .fx-glide-end:hover {
+    transform: translateX(-3px);
+  }
+  [dir="rtl"] .fx-glide-start:hover {
+    transform: translateX(3px);
+  }
+
+  /* Icon Motion — Category E social: glyph glow + scale on hover. The color shift stays
+     on the element's own hover:text-* utility; chip rise (where wanted) via hover:-translate-y. */
+  .fx-social svg {
+    transition:
+      transform var(--motion-base) var(--ease-out-soft),
+      filter var(--motion-base) var(--ease-out-soft);
+  }
+  .fx-social:hover svg {
+    transform: scale(1.12);
+    filter: brightness(1.1);
+  }
 }
 
 /* Reduced-motion: no route animation, no reveal offset, no hover transforms. */
@@ -495,5 +548,19 @@ html.lenis body {
   .group:hover .fx-icon-tile svg {
     transform: none;
     filter: none;
+  }
+  .fx-icon-swap {
+    animation: none;
+  }
+  .fx-ctrl:hover svg,
+  .fx-social:hover svg {
+    transform: none;
+    filter: none;
+  }
+  .fx-glide-start:hover,
+  .fx-glide-end:hover,
+  [dir="rtl"] .fx-glide-start:hover,
+  [dir="rtl"] .fx-glide-end:hover {
+    transform: none;
   }
 }

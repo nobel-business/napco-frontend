@@ -78,7 +78,7 @@ export function Footer() {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="text-white/80 transition-colors hover:text-brand"
+                className="fx-social text-white/80 transition-colors hover:text-brand"
               >
                 <Icon className="h-6 w-6" />
               </a>

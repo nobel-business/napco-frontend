@@ -29,7 +29,7 @@ export function VideoCard({
         <div className="absolute inset-0 bg-navy/30 transition-colors group-hover:bg-navy/45" />
         <button
           aria-label={video.title}
-          className="absolute inset-0 m-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-brand shadow-lg transition-transform group-hover:scale-110"
+          className="absolute inset-0 m-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-brand shadow-lg transition-transform group-hover:scale-110 active:scale-95"
         >
           <Play className="h-7 w-7 fill-current ps-1" />
         </button>

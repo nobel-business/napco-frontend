@@ -11,7 +11,7 @@ import { TranslateIcon } from "@/components/ui/translate-icon";
 
 /** Shared style for the navbar switch buttons (navy gradient rounded square). */
 export const switchButtonClass =
-  "bg-gradient-navy inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-white shadow-sm transition-opacity hover:opacity-90 disabled:opacity-60";
+  "fx-ctrl bg-gradient-navy inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-white shadow-sm transition-opacity hover:opacity-90 disabled:opacity-60";
 
 export function LocaleSwitcher({ className }: { className?: string }) {
   const locale = useLocale() as Locale;

@@ -53,7 +53,7 @@ export default async function MediaPage({
                   className="object-cover transition-transform duration-[var(--motion-image)] group-hover:scale-110"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-navy/0 opacity-0 transition-all duration-[var(--motion-slow)] group-hover:bg-navy/45 group-hover:opacity-100">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/90 text-brand">
+                  <span className="flex h-12 w-12 scale-90 items-center justify-center rounded-full bg-white/90 text-brand transition-transform duration-[var(--motion-base)] group-hover:scale-100">
                     <Maximize2 className="h-5 w-5" />
                   </span>
                 </div>

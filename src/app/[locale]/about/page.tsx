@@ -133,7 +133,7 @@ export default async function AboutPage({
                 {[Linkedin, MessageCircle, Mail].map((Ic, i) => (
                   <span
                     key={i}
-                    className="bg-gradient-navy inline-flex h-10 w-10 items-center justify-center rounded-lg text-white transition-opacity hover:opacity-90"
+                    className="fx-social bg-gradient-navy inline-flex h-10 w-10 items-center justify-center rounded-lg text-white transition hover:-translate-y-0.5 hover:opacity-90"
                   >
                     <Ic className="h-5 w-5" />
                   </span>

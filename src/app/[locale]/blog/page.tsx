@@ -57,7 +57,7 @@ export default async function BlogPage({
           <div className="flex items-center gap-4">
             <button
               aria-label={t("featured.viewAll")}
-              className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-foreground shadow-sm transition-colors hover:bg-muted lg:inline-flex"
+              className="fx-glide-start hidden h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-foreground shadow-sm transition hover:bg-muted active:scale-95 lg:inline-flex"
             >
               <ChevronLeft className="h-5 w-5 rtl-flip" />
             </button>
@@ -81,7 +81,7 @@ export default async function BlogPage({
 
             <button
               aria-label={t("featured.viewAll")}
-              className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-foreground shadow-sm transition-colors hover:bg-muted lg:inline-flex"
+              className="fx-glide-end hidden h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-foreground shadow-sm transition hover:bg-muted active:scale-95 lg:inline-flex"
             >
               <ChevronRight className="h-5 w-5 rtl-flip" />
             </button>

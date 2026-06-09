@@ -163,7 +163,7 @@ export default async function ArticlePage({
               {shareButtons.map(({ Icon, label }) => (
                 <button
                   key={label}
-                  className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-secondary-300 to-secondary-500 px-6 py-3 text-label-small font-medium text-white shadow-sm transition-opacity hover:opacity-90"
+                  className="fx-social inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-secondary-300 to-secondary-500 px-6 py-3 text-label-small font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:opacity-90"
                 >
                   <Icon className="h-5 w-5" />
                   {label}
