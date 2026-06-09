@@ -72,8 +72,8 @@ export default async function AboutPage({
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {introFeatures.map((f, i) => (
-              <div key={f.title} className="flex flex-col items-center gap-3 text-center">
-                <IconTile name={f.icon} size="lg" color={i % 2 === 1 ? "blue" : "orange"} />
+              <div key={f.title} className="group flex flex-col items-center gap-3 text-center">
+                <IconTile name={f.icon} size="lg" color={i % 2 === 1 ? "blue" : "orange"} className="fx-icon-tile" />
                 <h3 className="text-title-small font-semibold text-foreground">{f.title}</h3>
                 <p className="text-body-small text-muted-foreground">{f.desc}</p>
               </div>
@@ -87,18 +87,18 @@ export default async function AboutPage({
         <Container className="space-y-12">
           <SectionHeading title={t("visionMission.title")} />
           <div className="grid items-stretch gap-6 md:grid-cols-2">
-            <article className="bg-gradient-navy hover-lift flex flex-col gap-4 rounded-2xl p-6 text-white">
+            <article className="bg-gradient-navy hover-lift group flex flex-col gap-4 rounded-2xl p-6 text-white">
               <div className="flex items-center gap-4">
-                <span className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-white/15">
+                <span className="fx-icon-tile inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-white/15">
                   <Icon name="flag" fill className="h-8 w-8" />
                 </span>
                 <h3 className="text-label-large font-medium">{t("visionMission.visionLabel")}</h3>
               </div>
               <p className="text-body-medium text-primary-100">{t("visionMission.vision")}</p>
             </article>
-            <article className="bg-gradient-card-orange hover-lift flex flex-col gap-4 rounded-2xl p-6 text-white">
+            <article className="bg-gradient-card-orange hover-lift group flex flex-col gap-4 rounded-2xl p-6 text-white">
               <div className="flex items-center gap-4">
-                <span className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-white/15">
+                <span className="fx-icon-tile inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-white/15">
                   <Icon name="puzzle" fill className="h-8 w-8" />
                 </span>
                 <h3 className="text-label-large font-medium">{t("visionMission.missionLabel")}</h3>
@@ -153,9 +153,9 @@ export default async function AboutPage({
               {standards.map((item) => (
                 <li
                   key={item.title}
-                  className="hover-lift flex gap-4 rounded-2xl border border-border bg-surface p-5 shadow-card"
+                  className="hover-lift group flex gap-4 rounded-2xl border border-border bg-surface p-5 shadow-card"
                 >
-                  <IconTile name={item.icon} />
+                  <IconTile name={item.icon} className="fx-icon-tile" />
                   <div className="space-y-1.5">
                     <h3 className="text-title-small font-semibold text-foreground">{item.title}</h3>
                     <p className="text-body-small text-muted-foreground">{item.desc}</p>
@@ -179,8 +179,8 @@ export default async function AboutPage({
           <SectionHeading title={t("team.title")} />
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {members.map((m, i) => (
-              <div key={m.title} className="flex flex-col items-center gap-3 text-center">
-                <IconTile name={m.icon} size="lg" color={i % 2 === 1 ? "blue" : "orange"} />
+              <div key={m.title} className="group flex flex-col items-center gap-3 text-center">
+                <IconTile name={m.icon} size="lg" color={i % 2 === 1 ? "blue" : "orange"} className="fx-icon-tile" />
                 <h3 className="text-title-small font-semibold text-foreground">{m.title}</h3>
                 <p className="text-body-small text-muted-foreground">{m.desc}</p>
               </div>
