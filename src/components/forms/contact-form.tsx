@@ -55,7 +55,7 @@ export function ContactForm() {
         <h2 className="text-headline-small font-semibold uppercase text-foreground">{t("heading")}</h2>
         <p className="text-body-small text-muted-foreground">{t("sub")}</p>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <Field label={t("name")} htmlFor="name" error={errors.name && t("required")}>
           <Input id="name" placeholder={t("namePh")} {...register("name")} />
         </Field>

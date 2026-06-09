@@ -52,7 +52,7 @@ export default async function BlogPage({
 
       {/* FEATURED */}
       <section className="py-20 lg:py-28">
-        <Container className="space-y-10">
+        <Container className="space-y-12">
           <SectionHeading title={t("featured.sectionTitle")} />
           <div className="flex items-center gap-4">
             <button

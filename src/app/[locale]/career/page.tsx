@@ -131,7 +131,7 @@ export default async function CareerPage({
 
       {/* APPLICATION FORM */}
       <section id="apply" className="bg-muted/40 py-20 lg:py-28 scroll-mt-24">
-        <Container className="max-w-3xl space-y-10">
+        <Container className="max-w-3xl space-y-12">
           <SectionHeading title={t("form.title")} />
           <CareerForm />
         </Container>
