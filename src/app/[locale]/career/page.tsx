@@ -40,7 +40,12 @@ export default async function CareerPage({
 
   return (
     <>
-      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-career.png" />
+      <PageHero
+        eyebrow={t("hero.eyebrow")}
+        title={t("hero.title")}
+        subtitle={t("hero.subtitle")}
+        image="/images/hero-career.png"
+      />
 
       {/* TESTIMONIALS */}
       <section className="py-20 lg:py-28">
@@ -100,7 +105,7 @@ export default async function CareerPage({
             {gains.map((g) => (
               <article
                 key={g.title}
-                className="flex gap-5 rounded-2xl border border-border bg-surface p-6 shadow-card transition-shadow hover:shadow-card-hover"
+                className="hover-lift flex gap-5 rounded-2xl border border-border bg-surface p-6 shadow-card"
               >
                 <IconTile name={g.icon} />
                 <div className="space-y-2">
