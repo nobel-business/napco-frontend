@@ -75,7 +75,12 @@ export default async function ContactPage({
 
   return (
     <>
-      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-contact.png" />
+      <PageHero
+        title={t("hero.title")}
+        subtitle={t("hero.subtitle")}
+        image="/images/hero-contact.png"
+        className="min-h-[420px] lg:min-h-[480px]"
+      />
 
       {/* FORM + INFO */}
       <section className="py-20 lg:py-28">
@@ -118,7 +123,7 @@ export default async function ContactPage({
               </div>
 
               {/* Expert support */}
-              <div className="space-y-4 rounded-3xl bg-accent-card p-6 text-white shadow-card md:p-8">
+              <div className="bg-gradient-navy space-y-4 rounded-3xl p-6 text-white shadow-card md:p-8">
                 <h3 className="text-title-large font-semibold">{t("info.expertTitle")}</h3>
                 <p className="text-body-small text-white/80">{t("info.expertBody")}</p>
                 <div className="flex flex-col items-center gap-1 rounded-2xl bg-white/10 p-4 text-center">
