@@ -85,7 +85,7 @@ export default async function CareerPage({
       {/* AMBASSADOR */}
       <section className="py-12 lg:py-16">
         <Container>
-          <div className="grid items-center gap-8 rounded-3xl border border-border bg-surface p-5 shadow-card md:grid-cols-[280px_1fr] md:p-6">
+          <div className="grid items-center gap-8 rounded-3xl border border-border bg-surface p-6 shadow-card md:grid-cols-[280px_1fr] md:p-8">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <MediaImage
                 src="/images/trusted.png"

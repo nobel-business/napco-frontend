@@ -166,7 +166,7 @@ export default async function AboutPage({
               {standards.map((item) => (
                 <li
                   key={item.title}
-                  className="hover-lift group flex gap-4 rounded-2xl border border-border bg-surface p-5 shadow-card"
+                  className="hover-lift group flex gap-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
                 >
                   <IconTile name={item.icon} className="fx-icon-tile" />
                   <div className="space-y-1.5">
@@ -225,7 +225,7 @@ export default async function AboutPage({
                 {stats.map((s, i) => (
                   <div
                     key={s.label}
-                    className="flex flex-col items-center gap-1 rounded-xl border border-border bg-surface p-5 text-center dark:bg-white/5"
+                    className="flex flex-col items-center gap-1 rounded-xl border border-border bg-surface p-6 text-center dark:bg-white/5"
                   >
                     <CountUp
                       value={s.value}

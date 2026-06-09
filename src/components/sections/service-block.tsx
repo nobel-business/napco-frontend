@@ -45,7 +45,7 @@ export function ServiceBlock({
           {data.items.map((item) => (
             <li
               key={item}
-              className="flex items-center gap-4 rounded-xl border border-border bg-surface p-3.5 shadow-sm"
+              className="flex items-center gap-4 rounded-xl border border-border bg-surface p-4 shadow-sm"
             >
               <span className="bg-gradient-tile-orange inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-white shadow-sm">
                 <Icon name="check-circle" fill className="h-5 w-5" />

@@ -33,7 +33,7 @@ export function ArticleCard({ article }: { article: Article }) {
           className="object-cover transition-transform duration-[var(--motion-image)] group-hover:scale-105"
         />
       </div>
-      <div className="flex flex-1 flex-col gap-3 p-5">
+      <div className="flex flex-1 flex-col gap-3 p-6">
         <div className="flex items-center justify-between gap-2">
           <Badge>{article.category}</Badge>
           <span className="flex items-center gap-1.5 text-body-small text-muted-foreground">

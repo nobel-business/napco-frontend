@@ -46,7 +46,7 @@ export function TrainingForm() {
 
   if (done) {
     return (
-      <div className="flex flex-col items-center gap-4 rounded-3xl border border-border bg-surface p-12 text-center shadow-card">
+      <div className="flex flex-col items-center gap-4 rounded-3xl border border-border bg-surface p-6 text-center shadow-card md:p-10">
         <CheckCircle2 className="h-14 w-14 text-brand" />
         <h3 className="text-headline-small font-semibold text-foreground">{t("successTitle")}</h3>
         <p className="max-w-md text-body-medium text-muted-foreground">{t("successBody")}</p>

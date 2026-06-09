@@ -62,7 +62,7 @@ export default async function BlogPage({
               <ChevronLeft className="h-5 w-5 rtl-flip" />
             </button>
 
-            <article className="flex flex-1 flex-col gap-6 rounded-3xl border border-border bg-surface p-5 shadow-card md:flex-row md:items-center md:p-6">
+            <article className="flex flex-1 flex-col gap-6 rounded-3xl border border-border bg-surface p-6 shadow-card md:flex-row md:items-center md:p-8">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl md:w-72 md:shrink-0">
                 <MediaImage
                   src="/images/blog-featured.png"

@@ -38,7 +38,7 @@ export function ContactForm() {
 
   if (done) {
     return (
-      <div className="flex h-full flex-col items-center justify-center gap-4 rounded-3xl border border-border bg-surface p-10 text-center shadow-card">
+      <div className="flex h-full flex-col items-center justify-center gap-4 rounded-3xl border border-border bg-surface p-6 text-center shadow-card md:p-10">
         <CheckCircle2 className="h-14 w-14 text-brand" />
         <h3 className="text-headline-small font-semibold text-foreground">{t("successTitle")}</h3>
         <p className="max-w-md text-body-medium text-muted-foreground">{t("successBody")}</p>
@@ -50,7 +50,7 @@ export function ContactForm() {
   }
 
   return (
-    <div className="rounded-3xl border border-border bg-surface p-6 shadow-card md:p-8">
+    <div className="rounded-3xl border border-border bg-surface p-6 shadow-card md:p-10">
       <div className="mb-6 space-y-2">
         <h2 className="text-headline-small font-semibold uppercase text-foreground">{t("heading")}</h2>
         <p className="text-body-small text-muted-foreground">{t("sub")}</p>
