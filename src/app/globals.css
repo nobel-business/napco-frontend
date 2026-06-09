@@ -323,6 +323,30 @@
   }
 }
 
+/* ------------------------------------------------------------------ */
+/* SECTION RHYTHM — the two vertical-spacing tiers named in one place so */
+/* the page-to-page rhythm stays consistent and drift-proof. Output is   */
+/* identical to the py-20 lg:py-28 / py-12 lg:py-16 utilities they replace. */
+/* (Bottom-only closers — pb-20 lg:pb-28 / pb-12 lg:pb-16 — stay inline as */
+/* intentional asymmetric spacers.)                                      */
+/* ------------------------------------------------------------------ */
+@layer components {
+  .section {
+    padding-block: 5rem; /* 80px — py-20 */
+  }
+  .section-light {
+    padding-block: 3rem; /* 48px — py-12 */
+  }
+  @media (min-width: 64rem) {
+    .section {
+      padding-block: 7rem; /* 112px — lg:py-28 */
+    }
+    .section-light {
+      padding-block: 4rem; /* 64px — lg:py-16 */
+    }
+  }
+}
+
 /* Infinite logo marquee — track holds two copies; -50% = one full set */
 @keyframes marquee {
   from {

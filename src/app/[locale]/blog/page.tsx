@@ -51,7 +51,7 @@ export default async function BlogPage({
       <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-blog.png" />
 
       {/* FEATURED */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="space-y-12">
           <SectionHeading title={t("featured.sectionTitle")} />
           <div className="flex items-center gap-4">
@@ -101,7 +101,7 @@ export default async function BlogPage({
       </section>
 
       {/* STATS */}
-      <section className="py-12 lg:py-16">
+      <section className="section-light">
         <Container className="grid grid-cols-2 gap-8 lg:grid-cols-4">
           {stats.map((s) => (
             <StatTile key={s.label} icon={s.icon} value={s.value} label={s.label} color={s.color} />
@@ -110,7 +110,7 @@ export default async function BlogPage({
       </section>
 
       {/* SYSTEMS GRID */}
-      <section className="bg-muted/40 py-20 lg:py-28">
+      <section className="bg-muted/40 section">
         <Container className="space-y-12">
           <SectionHeading title={t("systems.title")} />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

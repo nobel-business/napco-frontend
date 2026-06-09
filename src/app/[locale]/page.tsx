@@ -84,7 +84,7 @@ export default async function HomePage({
       </section>
 
       {/* TRUSTED PARTNER */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container>
           <div className="flex flex-col gap-10 rounded-3xl bg-surface-tint p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
             <div className="relative aspect-[4/3] shrink-0 overflow-hidden rounded-2xl md:aspect-auto md:w-[440px]">
@@ -117,7 +117,7 @@ export default async function HomePage({
       </section>
 
       {/* SERVICES */}
-      <section className="bg-muted/40 py-20 lg:py-28">
+      <section className="bg-muted/40 section">
         <Container className="flex flex-col items-center gap-10">
           <SectionHeading title={t("services.title")} />
           <div className="grid w-full items-end gap-10 lg:grid-cols-[1fr_466px]">
@@ -154,7 +154,7 @@ export default async function HomePage({
       </section>
 
       {/* VISION */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container>
           <div className="flex flex-col gap-10 rounded-3xl bg-sand-50 p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
             <div className="relative aspect-square shrink-0 overflow-hidden rounded-2xl md:aspect-auto md:w-[360px]">
@@ -187,7 +187,7 @@ export default async function HomePage({
       </section>
 
       {/* SOLUTIONS */}
-      <section className="bg-muted/40 py-20 lg:py-28">
+      <section className="bg-muted/40 section">
         <Container className="flex flex-col items-center gap-10">
           <SectionHeading title={t("solutions.title")} />
           <div className="grid w-full items-stretch gap-10 lg:grid-cols-[1fr_466px]">
@@ -224,7 +224,7 @@ export default async function HomePage({
       </section>
 
       {/* VALUES */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="flex flex-col items-center gap-10">
           <SectionHeading title={t("values.title")} />
           <div className="grid w-full items-stretch gap-10 lg:grid-cols-[466px_1fr]">
@@ -259,7 +259,7 @@ export default async function HomePage({
       </section>
 
       {/* DEEP EXPERTISE — Middle Eastern markets */}
-      <section className="bg-muted/40 py-20 lg:py-28">
+      <section className="bg-muted/40 section">
         <Container className="flex flex-col items-center gap-10">
           <SectionHeading title={t("markets.title")} />
           <div className="grid w-full grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
@@ -286,7 +286,7 @@ export default async function HomePage({
       </section>
 
       {/* WHY CHOOSE */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="flex flex-col items-center gap-10">
           <SectionHeading title={t("whyChoose.title")} />
           <div className="grid w-full gap-6 md:grid-cols-2">
@@ -309,7 +309,7 @@ export default async function HomePage({
       </section>
 
       {/* PARTNERS — infinite logo carousel (contained card: white in light, elevated in dark) */}
-      <section className="bg-muted/40 py-20 lg:py-28">
+      <section className="bg-muted/40 section">
         <Container>
           <div className="space-y-12 rounded-3xl border border-border bg-surface px-6 py-10 shadow-card md:px-10">
             <SectionHeading title={t("partners.title")} />
@@ -319,7 +319,7 @@ export default async function HomePage({
       </section>
 
       {/* CTA BANNER */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container>
           <div className="relative isolate overflow-hidden rounded-3xl">
             <MediaImage src="/images/home-cta.png" alt="" fill sizes="100vw" className="scale-110 object-cover blur-md" />

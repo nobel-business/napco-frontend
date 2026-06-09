@@ -50,7 +50,7 @@ export default async function TrainingPage({
       />
 
       {/* INTRO */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container>
           <div className="grid items-center gap-10 rounded-3xl bg-surface-tint p-6 shadow-card md:p-10 lg:grid-cols-[1.5fr_1fr] dark:bg-surface">
             <div className="space-y-5">
@@ -79,7 +79,7 @@ export default async function TrainingPage({
       </section>
 
       {/* TRACKS */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="space-y-12">
           <SectionHeading title={t("tracks.title")} />
           <div className="grid gap-6 lg:grid-cols-3">
@@ -106,7 +106,7 @@ export default async function TrainingPage({
       </section>
 
       {/* PROGRAMS IN DETAIL */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="space-y-12 lg:space-y-16">
           <SectionHeading title={t("programs.title")} />
           <div className="space-y-16 lg:space-y-20">
@@ -118,7 +118,7 @@ export default async function TrainingPage({
       </section>
 
       {/* STEPS */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="space-y-12">
           <SectionHeading title={t("steps.title")} />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -139,7 +139,7 @@ export default async function TrainingPage({
       </section>
 
       {/* DUAL CTA */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="space-y-12">
           <SectionHeading title={t("dualCta.title")} />
           <div className="grid gap-6 md:grid-cols-2">
@@ -175,7 +175,7 @@ export default async function TrainingPage({
       </section>
 
       {/* ENROLLMENT FORM */}
-      <section id="enroll" className="bg-muted/40 py-20 lg:py-28 scroll-mt-24">
+      <section id="enroll" className="bg-muted/40 section scroll-mt-24">
         <Container className="max-w-3xl space-y-12">
           <SectionHeading title={t("form.title")} />
           <TrainingForm />

@@ -80,7 +80,7 @@ export default async function ArticlePage({
       </section>
 
       {/* BODY */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container>
           <div className="mx-auto max-w-4xl space-y-8">
             {/* Meta */}
@@ -189,7 +189,7 @@ export default async function ArticlePage({
       </section>
 
       {/* RELATED */}
-      <section className="bg-muted/40 py-20 lg:py-28">
+      <section className="bg-muted/40 section">
         <Container className="space-y-12">
           <SectionHeading title={t("relatedTitle")} />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -47,7 +47,7 @@ export default async function AboutPage({
       />
 
       {/* INTRO — national partner */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="space-y-12">
           <div className="grid items-center gap-10 rounded-3xl bg-sand-50 p-6 shadow-card md:p-10 lg:grid-cols-[1.6fr_1fr] dark:bg-surface">
             <div className="space-y-5">
@@ -90,7 +90,7 @@ export default async function AboutPage({
       </section>
 
       {/* VISION & MISSION */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="space-y-12">
           <SectionHeading title={t("visionMission.title")} />
           <div className="grid items-stretch gap-6 md:grid-cols-2">
@@ -117,7 +117,7 @@ export default async function AboutPage({
       </section>
 
       {/* CEO MESSAGE */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container>
           <div className="grid items-center gap-10 rounded-3xl border border-border bg-surface p-6 shadow-card md:grid-cols-[360px_1fr] md:p-10">
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
@@ -158,7 +158,7 @@ export default async function AboutPage({
       </section>
 
       {/* WORK STANDARDS */}
-      <section className="bg-muted/40 py-20 lg:py-28">
+      <section className="bg-muted/40 section">
         <Container className="space-y-12">
           <SectionHeading title={t("standards.title")} />
           <div className="grid items-start gap-10 lg:grid-cols-[1fr_420px]">
@@ -193,7 +193,7 @@ export default async function AboutPage({
       </section>
 
       {/* TEAM */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="space-y-12">
           <SectionHeading title={t("team.title")} />
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">

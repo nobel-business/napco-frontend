@@ -53,7 +53,7 @@ export default async function CareerPage({
       />
 
       {/* TESTIMONIALS */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="space-y-12">
           <SectionHeading title={t("testimonials.title")} />
           <TestimonialCarousel items={testimonials} />
@@ -83,7 +83,7 @@ export default async function CareerPage({
       </section>
 
       {/* AMBASSADOR */}
-      <section className="py-12 lg:py-16">
+      <section className="section-light">
         <Container>
           <div className="grid items-center gap-8 rounded-3xl border border-border bg-surface p-6 shadow-card md:grid-cols-[280px_1fr] md:p-8">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
@@ -109,7 +109,7 @@ export default async function CareerPage({
       </section>
 
       {/* WHAT WILL YOU GAIN */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="space-y-12">
           <SectionHeading title={t("gain.title")} />
           <div className="grid gap-6 md:grid-cols-2">
@@ -130,7 +130,7 @@ export default async function CareerPage({
       </section>
 
       {/* APPLICATION FORM */}
-      <section id="apply" className="bg-muted/40 py-20 lg:py-28 scroll-mt-24">
+      <section id="apply" className="bg-muted/40 section scroll-mt-24">
         <Container className="max-w-3xl space-y-12">
           <SectionHeading title={t("form.title")} />
           <CareerForm />

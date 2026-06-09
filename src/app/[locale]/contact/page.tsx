@@ -83,7 +83,7 @@ export default async function ContactPage({
       />
 
       {/* FORM + INFO */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="space-y-12">
           <SectionHeading title={t("mainTitle")} />
           <div className="grid gap-8 lg:grid-cols-2">

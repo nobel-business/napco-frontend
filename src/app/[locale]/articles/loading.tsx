@@ -12,7 +12,7 @@ export default function ArticlesLoading() {
       {/* hero placeholder */}
       <div className="bg-gradient-depth min-h-[520px] lg:min-h-[640px]" />
 
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="space-y-12">
           {/* filter chips */}
           <div className="flex flex-wrap gap-2">

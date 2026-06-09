@@ -39,7 +39,7 @@ export default async function ServicesPage({
       <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-services.png" />
 
       {/* INTRO */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container>
           <div className="grid items-center gap-10 rounded-3xl bg-surface-tint p-6 shadow-card md:p-10 lg:grid-cols-[1.5fr_1fr] dark:bg-surface">
             <div className="space-y-5">
@@ -68,7 +68,7 @@ export default async function ServicesPage({
       </section>
 
       {/* SERVICE BLOCKS */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="space-y-12 lg:space-y-16">
           <SectionHeading title={t("blocksTitle")} />
           <div className="space-y-16 lg:space-y-20">
@@ -80,7 +80,7 @@ export default async function ServicesPage({
       </section>
 
       {/* WHY — numbered grid */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="space-y-12">
           <SectionHeading title={t("why.title")} />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -101,7 +101,7 @@ export default async function ServicesPage({
       </section>
 
       {/* SYSTEMS — icon grid */}
-      <section className="py-20 lg:py-28">
+      <section className="section">
         <Container className="space-y-12">
           <SectionHeading title={t("systems.title")} />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
