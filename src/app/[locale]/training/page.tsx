@@ -80,9 +80,9 @@ export default async function TrainingPage({
             {tracks.map((track) => (
               <article
                 key={track.title}
-                className="hover-lift space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
+                className="hover-lift group space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
               >
-                <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-stat-blue text-white">
+                <span className="fx-icon-tile inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-stat-blue text-white">
                   <Icon name={track.icon} fill className="h-6 w-6" />
                 </span>
                 <h3 className="text-title-medium font-semibold text-foreground">{track.title}</h3>
@@ -141,7 +141,7 @@ export default async function TrainingPage({
               <article
                 key={card.title}
                 className={cn(
-                  "hover-lift space-y-4 rounded-3xl p-8 text-white shadow-card md:p-10",
+                  "hover-lift group space-y-4 rounded-3xl p-8 text-white shadow-card md:p-10",
                   card.variant === "blue" ? "bg-gradient-navy" : "bg-gradient-card-orange",
                 )}
               >
@@ -150,7 +150,7 @@ export default async function TrainingPage({
                     <h3 className="text-title-large font-semibold">{card.title}</h3>
                     <p className="text-body-medium text-white/85">{card.desc}</p>
                   </div>
-                  <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15">
+                  <span className="fx-icon-tile inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15">
                     <Icon name={card.icon} fill className="h-6 w-6" />
                   </span>
                 </div>
