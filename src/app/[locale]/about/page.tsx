@@ -38,16 +38,26 @@ export default async function AboutPage({
 
   return (
     <>
-      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-about.png" />
+      <PageHero
+        eyebrow={t("hero.eyebrow")}
+        title={t("hero.title")}
+        subtitle={t("hero.subtitle")}
+        image="/images/hero-about.png"
+      />
 
       {/* INTRO — national partner */}
       <section className="py-20 lg:py-28">
         <Container className="space-y-12">
-          <div className="grid items-center gap-10 rounded-2xl bg-surface-tint p-6 shadow-card md:p-10 lg:grid-cols-[1.6fr_1fr] dark:bg-surface">
+          <div className="grid items-center gap-10 rounded-3xl bg-sand-50 p-6 shadow-card md:p-10 lg:grid-cols-[1.6fr_1fr] dark:bg-surface">
             <div className="space-y-5">
-              <h2 className="text-headline-small font-semibold uppercase text-foreground">
-                {t("intro.title")}
-              </h2>
+              <div className="space-y-3">
+                <p className="text-label-small font-medium uppercase tracking-[0.14em] text-accent-card dark:text-aqua-300">
+                  {t("intro.eyebrow")}
+                </p>
+                <h2 className="text-headline-small font-semibold uppercase text-foreground">
+                  {t("intro.title")}
+                </h2>
+              </div>
               {t("intro.body")
                 .split("\n\n")
                 .map((p, i) => (
@@ -177,7 +187,7 @@ export default async function AboutPage({
             ))}
           </div>
 
-          <div className="grid items-center gap-8 rounded-2xl bg-surface-tint p-6 shadow-card md:grid-cols-[300px_1fr] md:p-10 dark:bg-surface">
+          <div className="grid items-center gap-8 rounded-3xl bg-surface-tint p-6 shadow-card md:grid-cols-[300px_1fr] md:p-10 dark:bg-surface">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image src="/images/about-team.png" alt="" fill className="object-cover" />
             </div>
@@ -209,7 +219,7 @@ export default async function AboutPage({
       {/* VISION 2030 BANNER */}
       <section className="pb-20 lg:pb-28">
         <Container>
-          <div className="grid items-center gap-8 overflow-hidden rounded-2xl border border-border bg-surface shadow-card md:grid-cols-[240px_1fr]">
+          <div className="grid items-center gap-8 overflow-hidden rounded-3xl border border-border bg-surface shadow-card md:grid-cols-[240px_1fr]">
             <div className="relative h-[220px] w-full md:h-[300px]">
               <Image
                 src="/images/vision-2030.png"
