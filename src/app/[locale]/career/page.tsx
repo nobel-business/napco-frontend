@@ -59,10 +59,10 @@ export default async function CareerPage({
       <section className="pb-12 lg:pb-16">
         <Container className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((f) => (
-            <div key={f.title} className="flex flex-col items-center gap-3 text-center">
+            <div key={f.title} className="group flex flex-col items-center gap-3 text-center">
               <span
                 className={cn(
-                  "inline-flex h-14 w-14 items-center justify-center rounded-xl text-white shadow-sm",
+                  "fx-icon-tile inline-flex h-14 w-14 items-center justify-center rounded-xl text-white shadow-sm",
                   f.color === "orange"
                     ? "bg-gradient-to-br from-secondary-300 to-secondary-500"
                     : "bg-gradient-to-br from-primary-400 to-primary-600",
@@ -105,9 +105,9 @@ export default async function CareerPage({
             {gains.map((g) => (
               <article
                 key={g.title}
-                className="hover-lift flex gap-5 rounded-2xl border border-border bg-surface p-6 shadow-card"
+                className="hover-lift group flex gap-5 rounded-2xl border border-border bg-surface p-6 shadow-card"
               >
-                <IconTile name={g.icon} />
+                <IconTile name={g.icon} className="fx-icon-tile" />
                 <div className="space-y-2">
                   <h3 className="text-title-medium font-semibold text-foreground">{g.title}</h3>
                   <p className="text-body-small text-muted-foreground">{g.desc}</p>
