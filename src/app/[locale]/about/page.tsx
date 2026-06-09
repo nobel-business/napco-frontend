@@ -87,7 +87,7 @@ export default async function AboutPage({
         <Container className="space-y-12">
           <SectionHeading title={t("visionMission.title")} />
           <div className="grid items-stretch gap-6 md:grid-cols-2">
-            <article className="bg-gradient-navy flex flex-col gap-4 rounded-2xl p-6 text-white">
+            <article className="bg-gradient-navy hover-lift flex flex-col gap-4 rounded-2xl p-6 text-white">
               <div className="flex items-center gap-4">
                 <span className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-white/15">
                   <Icon name="flag" fill className="h-8 w-8" />
@@ -96,7 +96,7 @@ export default async function AboutPage({
               </div>
               <p className="text-body-medium text-primary-100">{t("visionMission.vision")}</p>
             </article>
-            <article className="bg-gradient-card-orange flex flex-col gap-4 rounded-2xl p-6 text-white">
+            <article className="bg-gradient-card-orange hover-lift flex flex-col gap-4 rounded-2xl p-6 text-white">
               <div className="flex items-center gap-4">
                 <span className="inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-white/15">
                   <Icon name="puzzle" fill className="h-8 w-8" />
@@ -153,7 +153,7 @@ export default async function AboutPage({
               {standards.map((item) => (
                 <li
                   key={item.title}
-                  className="flex gap-4 rounded-2xl border border-border bg-surface p-5 shadow-card"
+                  className="hover-lift flex gap-4 rounded-2xl border border-border bg-surface p-5 shadow-card"
                 >
                   <IconTile name={item.icon} />
                   <div className="space-y-1.5">
