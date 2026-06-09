@@ -256,13 +256,16 @@
     letter-spacing: -0.02em;
   }
 
-  /* Smooth theme transition */
-  body,
-  body * {
+  /* Smooth color changes on INTERACTIVE elements only. The previous `body *` rule attached
+     a transition to every node on the page (thousands of them) — a real source of style-recalc
+     work and scroll/hover micro-stutter. Theme switching no longer relies on this: it's a single
+     View Transition crossfade (see theme-toggle). `:where()` keeps specificity 0 so component
+     utilities still win. */
+  :where(a, button, input, textarea, select, summary, [role="button"]) {
     transition:
+      color 0.2s var(--ease-out-soft),
       background-color 0.2s var(--ease-out-soft),
-      border-color 0.2s var(--ease-out-soft),
-      color 0.2s var(--ease-out-soft);
+      border-color 0.2s var(--ease-out-soft);
   }
 
   @media (prefers-reduced-motion: reduce) {

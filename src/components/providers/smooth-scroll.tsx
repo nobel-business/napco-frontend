@@ -4,6 +4,8 @@ import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Lenis from "lenis";
 
+import { setLenis } from "@/lib/smooth-scroll-instance";
+
 /**
  * Lenis smooth scrolling — responsive (lerp-based, no heavy inertia), wheel/trackpad
  * only (native momentum on touch for full control + perf), disabled under reduced-motion.
@@ -29,6 +31,7 @@ export function SmoothScroll() {
       wheelMultiplier: 1,
     });
     lenisRef.current = lenis;
+    setLenis(lenis);
 
     let rafId = 0;
     const raf = (time: number) => {
@@ -37,10 +40,38 @@ export function SmoothScroll() {
     };
     rafId = requestAnimationFrame(raf);
 
+    // Same-page anchor links (#enroll, #apply, …) must scroll through Lenis, not native
+    // scroll-behavior, or the two fight and the jump is instant/janky. Offset clears the
+    // fixed navbar (matches the targets' scroll-mt).
+    const onAnchorClick = (e: MouseEvent) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
+        return;
+      }
+      const anchor = (e.target as HTMLElement | null)?.closest?.("a");
+      if (!anchor || !anchor.getAttribute("href")) return;
+      let url: URL;
+      try {
+        url = new URL(anchor.href, location.href);
+      } catch {
+        return;
+      }
+      // Only same-page hash links (the localized href may be "/en/training#enroll").
+      if (url.origin !== location.origin || url.pathname !== location.pathname) return;
+      if (url.hash.length < 2) return;
+      const target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+      if (!target) return;
+      e.preventDefault();
+      lenis.scrollTo(target, { offset: -96 });
+      history.pushState(null, "", url.hash);
+    };
+    document.addEventListener("click", onAnchorClick);
+
     return () => {
+      document.removeEventListener("click", onAnchorClick);
       cancelAnimationFrame(rafId);
       lenis.destroy();
       lenisRef.current = null;
+      setLenis(null);
     };
   }, []);
 

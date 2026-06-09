@@ -21,7 +21,7 @@ export function Logo({
       height={36}
       priority
       className={cn(
-        "h-9 w-auto",
+        "h-9 w-auto transition-[filter] duration-[var(--motion-base)] ease-[var(--ease-out-soft)]",
         variant === "dark" && "brightness-0",
         className,
       )}
