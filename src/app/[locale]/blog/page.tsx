@@ -111,13 +111,13 @@ export default async function BlogPage({
             {systems.map((card) => (
               <article
                 key={card.title}
-                className="hover-lift flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-card"
+                className="hover-lift group flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-card"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <Image src={card.image} alt={card.title} fill className="object-cover" />
                   <span
                     className={cn(
-                      "absolute bottom-3 start-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-surface shadow-md",
+                      "fx-icon-tile absolute bottom-3 start-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-surface shadow-md",
                       card.iconColor === "blue" ? "text-accent-card" : "text-brand",
                     )}
                   >
