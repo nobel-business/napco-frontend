@@ -120,9 +120,9 @@ export default async function HomePage({
               {services.map((item) => (
                 <li
                   key={item.label}
-                  className="hover-lift flex h-24 items-center gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
+                  className="group hover-lift flex h-24 items-center gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
                 >
-                  <IconTile name={item.icon} />
+                  <IconTile name={item.icon} className="fx-icon-tile" />
                   <span className="text-label-large font-medium text-foreground">
                     {item.label}
                   </span>
@@ -178,9 +178,9 @@ export default async function HomePage({
               {solutions.map((item) => (
                 <li
                   key={item.title}
-                  className="hover-lift flex gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
+                  className="group hover-lift flex gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
                 >
-                  <IconTile name={item.icon} size="lg" />
+                  <IconTile name={item.icon} size="lg" className="fx-icon-tile" />
                   <div className="space-y-4">
                     <h3 className="text-label-large font-medium text-foreground">
                       {item.title}
@@ -215,9 +215,9 @@ export default async function HomePage({
               {values.map((item) => (
                 <li
                   key={item.title}
-                  className="hover-lift flex gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
+                  className="group hover-lift flex gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
                 >
-                  <IconTile name={item.icon} size="lg" />
+                  <IconTile name={item.icon} size="lg" className="fx-icon-tile" />
                   <div className="space-y-4">
                     <h3 className="text-label-large font-medium text-foreground">{item.title}</h3>
                     <p className="text-body-medium text-muted-foreground">{item.desc}</p>
@@ -257,9 +257,9 @@ export default async function HomePage({
             {whyChoose.map((item) => (
               <article
                 key={item.title}
-                className="hover-lift flex gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
+                className="group hover-lift flex gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
               >
-                <IconTile name={item.icon} size="lg" />
+                <IconTile name={item.icon} size="lg" className="fx-icon-tile" />
                 <div className="space-y-4">
                   <h3 className="text-label-large font-medium text-foreground">
                     {item.title}

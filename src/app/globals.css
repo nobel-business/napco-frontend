@@ -448,6 +448,28 @@ html.lenis body {
     transform: translateY(-4px);
     box-shadow: var(--shadow-card-hover);
   }
+
+  /* Icon Motion — Category A (Feature/Service IconTile). Opt-in per page via .fx-icon-tile
+     on the tile + .group on its card. Water primitive: depth-near + glyph surface-rise +
+     micro-tilt (no spin/flip). Pointer devices only. */
+  .fx-icon-tile {
+    transition:
+      transform var(--motion-base) var(--ease-out-soft),
+      filter var(--motion-base) var(--ease-out-soft);
+  }
+  .fx-icon-tile svg {
+    transition: transform var(--motion-base) var(--ease-out-soft);
+  }
+  .group:hover .fx-icon-tile {
+    transform: scale(1.04) rotate(1.5deg);
+    filter: brightness(1.06);
+  }
+  [dir="rtl"] .group:hover .fx-icon-tile {
+    transform: scale(1.04) rotate(-1.5deg);
+  }
+  .group:hover .fx-icon-tile svg {
+    transform: translateY(-1.5px);
+  }
 }
 
 /* Reduced-motion: no route animation, no reveal offset, no hover transforms. */
@@ -468,5 +490,10 @@ html.lenis body {
   }
   .hover-lift:hover {
     transform: none;
+  }
+  .group:hover .fx-icon-tile,
+  .group:hover .fx-icon-tile svg {
+    transform: none;
+    filter: none;
   }
 }
