@@ -653,3 +653,262 @@ html.lenis body {
     animation: none;
   }
 }
+
+/* ------------------------------------------------------------------ */
+/* SONAR INTRO — first-visit brand reveal overlay (home only).         */
+/* Ported from the Cloud Design landing artifact; keyframes prefixed   */
+/* `sonar-`, scene classes scoped under .sonar-stage.                  */
+/* ------------------------------------------------------------------ */
+
+/* Pre-paint cover (set by the no-flash inline script before hydration) + scroll lock. */
+html.intro-active {
+  overflow: hidden;
+}
+html.intro-active::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: #020e15;
+  z-index: 100;
+}
+
+.sonar-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 101;
+  cursor: pointer;
+  animation: sonar-overlay-in 0.5s ease both;
+}
+.sonar-overlay--leaving {
+  opacity: 0;
+  transition: opacity 0.6s var(--ease-out-soft);
+  pointer-events: none;
+}
+@keyframes sonar-overlay-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.sonar-skip {
+  position: fixed;
+  top: 1.5rem;
+  inset-inline-end: 1.5rem;
+  z-index: 102;
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(84, 187, 214, 0.4);
+  background: rgba(2, 14, 21, 0.4);
+  color: #93d6e7;
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background-color 0.2s;
+}
+.sonar-skip:hover {
+  color: #c7eaf3;
+  border-color: rgba(84, 187, 214, 0.8);
+  background: rgba(2, 14, 21, 0.7);
+}
+
+.sonar-stage {
+  position: absolute;
+  inset: 0;
+  background: #020e15;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+/* Deep-ocean atmosphere */
+.sonar-stage .ocean {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.sonar-stage .ocean__base {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120% 90% at 50% 38%, #0b3a4d 0%, #06293a 34%, #041a26 66%, #020e15 100%);
+}
+.sonar-stage .ocean__rays {
+  position: absolute;
+  left: 50%;
+  top: -30%;
+  width: 140%;
+  height: 120%;
+  transform: translateX(-50%);
+  background:
+    linear-gradient(178deg, rgba(147, 214, 231, 0.1) 0%, rgba(147, 214, 231, 0) 42%),
+    conic-gradient(
+      from 178deg at 50% -10%,
+      transparent 0deg, rgba(199, 234, 243, 0.07) 4deg, transparent 9deg,
+      transparent 16deg, rgba(199, 234, 243, 0.05) 20deg, transparent 25deg,
+      transparent 34deg, rgba(199, 234, 243, 0.06) 38deg, transparent 44deg
+    );
+  mix-blend-mode: screen;
+  opacity: 0.6;
+  animation: sonar-rayShift 14s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+@keyframes sonar-rayShift {
+  from {
+    transform: translateX(-50%) rotate(-1.2deg);
+  }
+  to {
+    transform: translateX(-50%) rotate(1.2deg);
+  }
+}
+.sonar-stage .caustic {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+}
+.sonar-stage .caustic.a {
+  width: 680px;
+  height: 680px;
+  left: 30%;
+  top: 18%;
+  background: radial-gradient(circle, rgba(31, 159, 194, 0.18), transparent 68%);
+  animation: sonar-drift1 17s ease-in-out infinite alternate;
+}
+.sonar-stage .caustic.b {
+  width: 520px;
+  height: 520px;
+  left: 58%;
+  top: 40%;
+  background: radial-gradient(circle, rgba(84, 187, 214, 0.14), transparent 68%);
+  animation: sonar-drift2 21s ease-in-out infinite alternate;
+}
+.sonar-stage .caustic.c {
+  width: 420px;
+  height: 420px;
+  left: 44%;
+  top: 60%;
+  background: radial-gradient(circle, rgba(14, 127, 159, 0.16), transparent 70%);
+  animation: sonar-drift3 19s ease-in-out infinite alternate;
+}
+@keyframes sonar-drift1 {
+  from {
+    transform: translate(-20px, -10px) scale(1);
+    opacity: 0.7;
+  }
+  to {
+    transform: translate(30px, 20px) scale(1.12);
+    opacity: 1;
+  }
+}
+@keyframes sonar-drift2 {
+  from {
+    transform: translate(15px, 10px) scale(1.05);
+    opacity: 0.6;
+  }
+  to {
+    transform: translate(-25px, -15px) scale(0.95);
+    opacity: 0.9;
+  }
+}
+@keyframes sonar-drift3 {
+  from {
+    transform: translate(0, 15px) scale(1);
+    opacity: 0.5;
+  }
+  to {
+    transform: translate(20px, -20px) scale(1.1);
+    opacity: 0.85;
+  }
+}
+.sonar-stage .vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(125% 105% at 50% 42%, transparent 52%, rgba(2, 8, 14, 0.55) 86%, rgba(2, 8, 14, 0.9) 100%);
+}
+.sonar-stage .particle {
+  position: absolute;
+  border-radius: 50%;
+  background: #c7eaf3;
+  will-change: transform, opacity;
+}
+@keyframes sonar-rise {
+  0% {
+    transform: translateY(18px);
+    opacity: 0;
+  }
+  16% {
+    opacity: var(--o);
+  }
+  84% {
+    opacity: var(--o);
+  }
+  100% {
+    transform: translateY(-190px);
+    opacity: 0;
+  }
+}
+.sonar-stage .ambient-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(84, 187, 214, 0.5);
+  transform: translate(-50%, -50%) scale(0.2);
+  opacity: 0;
+  animation: sonar-ambientPing 6s ease-out infinite;
+  will-change: transform, opacity;
+}
+@keyframes sonar-ambientPing {
+  0% {
+    transform: translate(-50%, -50%) scale(0.15);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.4);
+    opacity: 0;
+  }
+}
+@keyframes sonar-lockDrift {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.006);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes sonar-enterBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+@keyframes sonar-blink {
+  0%,
+  55% {
+    opacity: 1;
+  }
+  56%,
+  100% {
+    opacity: 0.18;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sonar-stage .ocean__rays,
+  .sonar-stage .caustic,
+  .sonar-stage .ambient-ring,
+  .sonar-stage .particle {
+    animation: none;
+  }
+}

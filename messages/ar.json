@@ -1,6 +1,6 @@
 {
   "meta": { "siteName": "نابكو أكوا", "defaultTitle": "نابكو أكوا — شريكك الموثوق في الاستزراع المائي", "description": "تقدم نابكو أكوا خدمات الاستشارات والتدريب والدعم التشغيلي لتعزيز النمو والاستدامة والابتكار في قطاع الاستزراع المائي." },
-  "common": { "toggleTheme": "تبديل المظهر", "readMore": "اقرأ المزيد", "learnMore": "اعرف المزيد", "viewAll": "عرض الكل", "submit": "إرسال", "previous": "السابق", "next": "التالي", "joinCommunity": "انضم إلى مجتمعنا", "backToTop": "العودة إلى الأعلى" },
+  "common": { "toggleTheme": "تبديل المظهر", "readMore": "اقرأ المزيد", "learnMore": "اعرف المزيد", "viewAll": "عرض الكل", "submit": "إرسال", "previous": "السابق", "next": "التالي", "joinCommunity": "انضم إلى مجتمعنا", "backToTop": "العودة إلى الأعلى", "skipIntro": "تخطّي" },
   "nav": { "home": "الرئيسية", "about": "من نحن", "services": "الخدمات", "training": "التدريب", "blog": "المدونة", "media": "الوسائط", "career": "الوظائف", "contact": "تواصل معنا", "search": "بحث" },
   "footer": { "quickLinks": "روابط سريعة", "getStarted": "ابدأ الآن", "bookConsultation": "احجز استشارة", "copyright": "© 2025 نابكو أكوا. جميع الحقوق محفوظة.", "poweredBy": "Powered by" },
   "notFound": { "title": "الصفحة غير موجودة", "description": "الصفحة التي تبحث عنها غير موجودة أو تم نقلها.", "backHome": "العودة إلى الرئيسية" },

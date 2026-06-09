@@ -1,6 +1,6 @@
 {
   "meta": { "siteName": "NAPCO Aqua", "defaultTitle": "NAPCO Aqua — Trusted Partner in Aquaculture", "description": "NAPCO Aqua offers consulting, training, and operational support to drive growth, sustainability, and innovation in the aquaculture industry." },
-  "common": { "toggleTheme": "Toggle theme", "readMore": "Read more", "learnMore": "Learn more", "viewAll": "View all", "submit": "Submit", "previous": "Previous", "next": "Next", "joinCommunity": "Join our community", "backToTop": "Back to top" },
+  "common": { "toggleTheme": "Toggle theme", "readMore": "Read more", "learnMore": "Learn more", "viewAll": "View all", "submit": "Submit", "previous": "Previous", "next": "Next", "joinCommunity": "Join our community", "backToTop": "Back to top", "skipIntro": "Skip intro" },
   "nav": { "home": "Home", "about": "About us", "services": "Services", "training": "Training", "blog": "Blog", "media": "Media", "career": "Careers", "contact": "Contact us", "search": "Search" },
   "footer": { "quickLinks": "Quick Links", "getStarted": "Get Started", "bookConsultation": "Book a Consultation", "copyright": "© 2025 NAPCO Aqua. All rights reserved.", "poweredBy": "Powered by" },
   "notFound": { "title": "Page not found", "description": "The page you are looking for doesn't exist or has been moved.", "backHome": "Back to home" },

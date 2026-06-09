@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
-import { Inter, Cairo } from "next/font/google";
+import { Inter, Cairo, JetBrains_Mono } from "next/font/google";
 
 import { routing, localeDirection, type Locale } from "@/i18n/routing";
 import { ThemeProvider } from "@/components/providers/theme-provider";
@@ -24,6 +24,15 @@ const cairo = Cairo({
   subsets: ["arabic", "latin"],
   variable: "--font-cairo",
   display: "swap",
+});
+
+// Mono — only used by the Sonar intro HUD. preload:false so it isn't fetched until used.
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500"],
+  display: "swap",
+  preload: false,
 });
 
 export function generateStaticParams() {
@@ -78,9 +87,17 @@ export default async function LocaleLayout({
       suppressHydrationWarning
       // Load only the active locale's font: Inter for en, Cairo for ar (Cairo's latin subset
       // covers Latin text on Arabic pages). Avoids shipping Arabic glyphs to English visitors.
-      className={locale === "ar" ? cairo.variable : inter.variable}
+      className={`${locale === "ar" ? cairo.variable : inter.variable} ${jetbrainsMono.variable}`}
     >
       <body>
+        {/* No-flash: on a first-visit home load (motion ok), paint the abyss cover before
+            hydration so the homepage never flickers behind the Sonar intro. IntroGate clears it. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var p=location.pathname.replace(/\\/+$/,'');if((p===''||p==='/en'||p==='/ar')&&!sessionStorage.getItem('napco-intro-seen')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('intro-active');}}catch(e){}})();",
+          }}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

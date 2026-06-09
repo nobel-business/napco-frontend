@@ -9,6 +9,7 @@ import { CountUp } from "@/components/ui/count-up";
 import { MediaImage } from "@/components/ui/media-image";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { HeroVideo } from "@/components/sections/hero-video";
+import { IntroGate } from "@/components/providers/intro-gate";
 import { PartnersMarquee } from "@/components/sections/partners-marquee";
 
 type ListItem = { icon: string; label: string };
@@ -36,6 +37,9 @@ export default async function HomePage({
 
   return (
     <>
+      {/* First-visit Sonar brand intro (client; once per session, reduced-motion-safe) */}
+      <IntroGate />
+
       {/* HERO — aerial fish-cages video under a water-depth overlay; lower-left composition */}
       <section className="relative isolate flex max-h-[920px] min-h-[80vh] items-end overflow-hidden bg-aqua-900">
         <HeroVideo
