@@ -116,7 +116,7 @@ export default async function CareerPage({
             {gains.map((g) => (
               <article
                 key={g.title}
-                className="hover-lift group flex gap-5 rounded-2xl border border-border bg-surface p-6 shadow-card"
+                className="hover-lift group flex gap-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
               >
                 <IconTile name={g.icon} className="fx-icon-tile" />
                 <div className="space-y-2">

@@ -59,7 +59,7 @@ export function ContactForm() {
         <Field label={t("name")} htmlFor="name" error={errors.name && t("required")}>
           <Input id="name" placeholder={t("namePh")} {...register("name")} />
         </Field>
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2">
           <Field label={t("email")} htmlFor="email" error={errors.email && t("invalidEmail")}>
             <Input id="email" type="email" placeholder={t("emailPh")} {...register("email")} />
           </Field>

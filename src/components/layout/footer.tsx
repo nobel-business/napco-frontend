@@ -72,7 +72,7 @@ export function Footer() {
               <Link href="/training">{t("footer.bookConsultation")}</Link>
             </Button>
           </div>
-          <div className="flex items-center gap-5 pt-2">
+          <div className="flex items-center gap-4 pt-2">
             {socials.map(({ Icon, href, label }) => (
               <a
                 key={label}

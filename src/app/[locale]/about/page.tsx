@@ -77,7 +77,7 @@ export default async function AboutPage({
               />
             </div>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {introFeatures.map((f, i) => (
               <div key={f.title} className="group flex flex-col items-center gap-3 text-center">
                 <IconTile name={f.icon} size="lg" color={i % 2 === 1 ? "blue" : "orange"} className="fx-icon-tile" />
@@ -161,7 +161,7 @@ export default async function AboutPage({
       <section className="bg-muted/40 py-20 lg:py-28">
         <Container className="space-y-12">
           <SectionHeading title={t("standards.title")} />
-          <div className="grid items-start gap-12 lg:grid-cols-[1fr_420px]">
+          <div className="grid items-start gap-10 lg:grid-cols-[1fr_420px]">
             <ul className="space-y-4">
               {standards.map((item) => (
                 <li
