@@ -110,7 +110,7 @@
   },
   "services": {
     "hero": { "title": "Aquaculture for Growth and Sustainability", "subtitle": "An integrated suite of engineering and technical services across the aquaculture value chain, for stable operations and sustainable growth." },
-    "intro": { "title": "Practical Aquaculture Solutions, Zero Theory", "body1": "We take part in building, operating, and developing projects, drawing on practical experience.", "body2": "We deliver solutions covering the full cycle, from assessment, studies, design, supervision, to operation, capacity building, and continuous improvement." },
+    "intro": { "eyebrow": "What We Do", "title": "Practical Aquaculture Solutions, Zero Theory", "body1": "We take part in building, operating, and developing projects, drawing on practical experience.", "body2": "We deliver solutions covering the full cycle, from assessment, studies, design, supervision, to operation, capacity building, and continuous improvement." },
     "blocks": [
       {
         "title": "Site Assessment",
