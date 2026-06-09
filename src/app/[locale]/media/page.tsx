@@ -44,7 +44,7 @@ export default async function MediaPage({
             {galleryImages.map((src, i) => (
               <div
                 key={i}
-                className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-card"
+                className="group hover-lift relative aspect-[4/3] overflow-hidden rounded-2xl shadow-card"
               >
                 <Image
                   src={src}
