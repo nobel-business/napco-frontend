@@ -76,7 +76,9 @@ export default async function LocaleLayout({
       lang={locale}
       dir={dir}
       suppressHydrationWarning
-      className={`${inter.variable} ${cairo.variable}`}
+      // Load only the active locale's font: Inter for en, Cairo for ar (Cairo's latin subset
+      // covers Latin text on Arabic pages). Avoids shipping Arabic glyphs to English visitors.
+      className={locale === "ar" ? cairo.variable : inter.variable}
     >
       <body>
         <ThemeProvider

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { MediaImage } from "@/components/ui/media-image";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
@@ -33,7 +33,7 @@ export function PageHero({
     >
       {image ? (
         <>
-          <Image src={image} alt="" fill priority className="object-cover" />
+          <MediaImage src={image} alt="" fill priority sizes="100vw" className="object-cover" />
           <div className="bg-hero-depth absolute inset-0" />
         </>
       ) : (

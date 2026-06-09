@@ -1,5 +1,7 @@
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+
+import { getBlur } from "@/lib/blur";
+import { MediaImage } from "@/components/ui/media-image";
 
 import type { Locale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
@@ -34,7 +36,10 @@ export default async function CareerPage({
   setRequestLocale(locale);
   const t = await getTranslations("career");
 
-  const testimonials = t.raw("testimonials.items") as Testimonial[];
+  const testimonials = (t.raw("testimonials.items") as Testimonial[]).map((item) => ({
+    ...item,
+    blurDataURL: getBlur(item.image),
+  }));
   const features = t.raw("features") as Feature[];
   const gains = t.raw("gain.items") as Gain[];
 
@@ -82,7 +87,13 @@ export default async function CareerPage({
         <Container>
           <div className="grid items-center gap-8 rounded-3xl border border-border bg-surface p-5 shadow-card md:grid-cols-[280px_1fr] md:p-6">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-              <Image src="/images/trusted.png" alt="" fill className="object-cover" />
+              <MediaImage
+                src="/images/trusted.png"
+                alt=""
+                fill
+                sizes="(min-width: 768px) 280px, 100vw"
+                className="object-cover"
+              />
             </div>
             <div className="space-y-4">
               <h2 className="text-headline-small font-semibold uppercase text-foreground">

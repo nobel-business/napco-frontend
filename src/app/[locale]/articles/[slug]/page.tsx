@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { notFound } from "next/navigation";
+import { MediaImage } from "@/components/ui/media-image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Calendar, User, Eye, Check, Lightbulb, Facebook, Linkedin, MessageCircle } from "@/components/ui/mingcute-icons";
 
@@ -55,7 +55,7 @@ export default async function ArticlePage({
     <>
       {/* HERO — generic article banner (Aquatech family) */}
       <section className="relative isolate flex min-h-[480px] items-end overflow-hidden lg:min-h-[560px]">
-        <Image src="/images/hero-article.png" alt="" fill priority className="object-cover" />
+        <MediaImage src="/images/hero-article.png" alt="" fill priority sizes="100vw" className="object-cover" />
         <div className="bg-hero-depth absolute inset-0" />
         <Container className="relative z-10 w-full pb-14 pt-32 text-white lg:pb-16">
           <div className="max-w-2xl space-y-5">
@@ -110,7 +110,13 @@ export default async function ArticlePage({
 
             {/* Feature image */}
             <div className="relative aspect-[16/7] overflow-hidden rounded-2xl shadow-card">
-              <Image src="/images/article-feature.png" alt="" fill className="object-cover" />
+              <MediaImage
+                src="/images/article-feature.png"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 896px, 100vw"
+                className="object-cover"
+              />
             </div>
 
             {/* Key benefits */}

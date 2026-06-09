@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { MediaImage } from "@/components/ui/media-image";
 import { Maximize2 } from "lucide-react";
 
 import type { Locale } from "@/i18n/routing";
@@ -46,10 +46,11 @@ export default async function MediaPage({
                 key={i}
                 className="group hover-lift relative aspect-[4/3] overflow-hidden rounded-2xl shadow-card"
               >
-                <Image
+                <MediaImage
                   src={src}
                   alt=""
                   fill
+                  sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
                   className="object-cover transition-transform duration-[var(--motion-image)] group-hover:scale-110"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-navy/0 opacity-0 transition-all duration-[var(--motion-slow)] group-hover:bg-navy/45 group-hover:opacity-100">

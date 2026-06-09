@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { MediaImage } from "@/components/ui/media-image";
 import { Play } from "lucide-react";
 import { Clock } from "@/components/ui/mingcute-icons";
 
@@ -20,10 +20,11 @@ export function VideoCard({
   return (
     <article className="group hover-lift flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-card">
       <div className="relative aspect-[16/9] overflow-hidden">
-        <Image
+        <MediaImage
           src={video.image}
           alt={video.title}
           fill
+          sizes="(min-width: 768px) 50vw, 100vw"
           className="object-cover transition-transform duration-[var(--motion-image)] group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-navy/30 transition-colors group-hover:bg-navy/45" />

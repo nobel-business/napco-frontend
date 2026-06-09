@@ -240,7 +240,12 @@
     text-rendering: optimizeLegibility;
   }
 
-  /* Arabic locale uses Cairo */
+  /* Arabic locale uses Cairo. Only Cairo's font variable is attached on ar pages (see
+     layout.tsx), so remap --font-sans to Cairo too — any `font-sans` utility on an Arabic
+     page then resolves to Cairo rather than falling back to a system font. */
+  html[lang="ar"] {
+    --font-sans: var(--font-arabic);
+  }
   html[lang="ar"] body {
     font-family: var(--font-arabic);
   }

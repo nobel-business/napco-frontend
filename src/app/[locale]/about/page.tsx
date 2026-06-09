@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { MediaImage } from "@/components/ui/media-image";
 import { Linkedin, Mail, MessageCircle } from "@/components/ui/mingcute-icons";
 
 import type { Locale } from "@/i18n/routing";
@@ -67,7 +67,13 @@ export default async function AboutPage({
                 ))}
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-              <Image src="/images/about-intro.png" alt={t("intro.title")} fill className="object-cover" />
+              <MediaImage
+                src="/images/about-intro.png"
+                alt={t("intro.title")}
+                fill
+                sizes="(min-width: 1024px) 460px, 100vw"
+                className="object-cover"
+              />
             </div>
           </div>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -114,7 +120,13 @@ export default async function AboutPage({
         <Container>
           <div className="grid items-center gap-10 rounded-3xl border border-border bg-surface p-6 shadow-card md:grid-cols-[360px_1fr] md:p-10">
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
-              <Image src="/images/leadership.png" alt={t("ceo.name")} fill className="object-cover" />
+              <MediaImage
+                src="/images/leadership.png"
+                alt={t("ceo.name")}
+                fill
+                sizes="(min-width: 768px) 360px, 100vw"
+                className="object-cover"
+              />
             </div>
             <div className="space-y-4">
               <p className="text-headline-small font-semibold uppercase text-foreground">
@@ -165,7 +177,13 @@ export default async function AboutPage({
             </ul>
             <div className="space-y-4 lg:sticky lg:top-28">
               <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-card">
-                <Image src="/images/about-standards.png" alt={t("standards.title")} fill className="object-cover" />
+                <MediaImage
+                  src="/images/about-standards.png"
+                  alt={t("standards.title")}
+                  fill
+                  sizes="(min-width: 1024px) 420px, 100vw"
+                  className="object-cover"
+                />
               </div>
               <p className="text-body-small text-muted-foreground">{t("standards.intro")}</p>
             </div>
@@ -189,7 +207,13 @@ export default async function AboutPage({
 
           <div className="grid items-center gap-8 rounded-3xl bg-surface-tint p-6 shadow-card md:grid-cols-[300px_1fr] md:p-10 dark:bg-surface">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
-              <Image src="/images/about-team.png" alt="" fill className="object-cover" />
+              <MediaImage
+                src="/images/about-team.png"
+                alt=""
+                fill
+                sizes="(min-width: 768px) 300px, 100vw"
+                className="object-cover"
+              />
             </div>
             <div className="space-y-5">
               <h3 className="text-headline-small font-semibold uppercase text-foreground">
@@ -221,16 +245,18 @@ export default async function AboutPage({
         <Container>
           <div className="grid items-center gap-8 overflow-hidden rounded-3xl border border-border bg-surface shadow-card md:grid-cols-[240px_1fr]">
             <div className="relative h-[220px] w-full md:h-[300px]">
-              <Image
+              <MediaImage
                 src="/images/vision-2030.png"
                 alt={t("vision2030.badge")}
                 fill
+                sizes="(min-width: 768px) 240px, 100vw"
                 className="object-cover object-left dark:hidden"
               />
-              <Image
+              <MediaImage
                 src="/images/vision-2030-dark.png"
                 alt=""
                 fill
+                sizes="(min-width: 768px) 240px, 100vw"
                 className="hidden object-cover object-left dark:block"
               />
             </div>

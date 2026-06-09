@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "@/components/ui/mingcute-icons";
 
-export type Testimonial = { name: string; role: string; quote: string; image: string };
+export type Testimonial = { name: string; role: string; quote: string; image: string; blurDataURL?: string };
 
 export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
   const [index, setIndex] = useState(0);
@@ -24,7 +24,15 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
 
       <article className="flex flex-1 flex-col items-center gap-6 rounded-3xl border border-border bg-surface p-6 shadow-card md:flex-row md:items-center md:p-8">
         <div className="relative aspect-square w-28 shrink-0 overflow-hidden rounded-2xl md:w-40">
-          <Image src={t.image} alt={t.name} fill className="object-cover" />
+          <Image
+            src={t.image}
+            alt={t.name}
+            fill
+            sizes="(min-width: 768px) 160px, 112px"
+            placeholder={t.blurDataURL ? "blur" : "empty"}
+            blurDataURL={t.blurDataURL}
+            className="object-cover"
+          />
         </div>
         <div className="space-y-2 text-center md:text-start">
           <h3 className="text-title-large font-semibold uppercase text-foreground">{t.name}</h3>

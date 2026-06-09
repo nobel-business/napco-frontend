@@ -1,4 +1,5 @@
 import type { Locale } from "@/i18n/routing";
+import { getBlur } from "@/lib/blur";
 
 export type ArticleData = {
   slug: string;
@@ -8,6 +9,7 @@ export type ArticleData = {
   excerpt: string;
   date: string;
   image: string;
+  blurDataURL?: string;
 };
 
 export type Category = { key: string; label: string };
@@ -80,8 +82,13 @@ const ar: { categories: Category[]; articles: ArticleData[] } = {
 
 const byLocale: Record<Locale, { categories: Category[]; articles: ArticleData[] }> = { en, ar };
 
+/** Attach the build-time blur placeholder for the article image (server-side). */
+function withBlur(a: ArticleData): ArticleData {
+  return { ...a, blurDataURL: getBlur(a.image) };
+}
+
 export function getArticles(locale: Locale): ArticleData[] {
-  return byLocale[locale].articles;
+  return byLocale[locale].articles.map(withBlur);
 }
 
 export function getCategories(locale: Locale): Category[] {
@@ -89,5 +96,6 @@ export function getCategories(locale: Locale): Category[] {
 }
 
 export function getArticle(locale: Locale, slug: string): ArticleData | undefined {
-  return byLocale[locale].articles.find((a) => a.slug === slug);
+  const article = byLocale[locale].articles.find((a) => a.slug === slug);
+  return article ? withBlur(article) : undefined;
 }

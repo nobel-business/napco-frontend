@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { MediaImage } from "@/components/ui/media-image";
 import { Check } from "@/components/ui/mingcute-icons";
 
 import type { Locale } from "@/i18n/routing";
@@ -66,7 +66,13 @@ export default async function TrainingPage({
               <p className="text-body-medium text-muted-foreground">{t("intro.body2")}</p>
             </div>
             <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
-              <Image src="/images/train-intro.png" alt={t("intro.title")} fill className="object-cover" />
+              <MediaImage
+                src="/images/train-intro.png"
+                alt={t("intro.title")}
+                fill
+                sizes="(min-width: 1024px) 420px, 100vw"
+                className="object-cover"
+              />
             </div>
           </div>
         </Container>

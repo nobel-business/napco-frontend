@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { MediaImage } from "@/components/ui/media-image";
 import { Mail, Phone, Clock } from "@/components/ui/mingcute-icons";
 
 import type { Locale } from "@/i18n/routing";
@@ -140,7 +140,13 @@ export default async function ContactPage({
       <section className="pb-20 lg:pb-28">
         <Container className="flex justify-center">
           <div className="relative aspect-[800/520] w-full max-w-[800px]">
-            <Image src="/images/contact-map.png" alt={t("map.label")} fill className="object-contain" />
+            <MediaImage
+              src="/images/contact-map.png"
+              alt={t("map.label")}
+              fill
+              sizes="(min-width: 800px) 800px, 100vw"
+              className="object-contain"
+            />
           </div>
         </Container>
       </section>

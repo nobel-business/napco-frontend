@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { MediaImage } from "@/components/ui/media-image";
 
 import type { Locale } from "@/i18n/routing";
 import { Container } from "@/components/ui/container";
@@ -55,7 +55,13 @@ export default async function ServicesPage({
               <p className="text-body-medium text-muted-foreground">{t("intro.body2")}</p>
             </div>
             <div className="relative aspect-[3/2] overflow-hidden rounded-2xl">
-              <Image src="/images/services-intro.png" alt={t("intro.title")} fill className="object-cover" />
+              <MediaImage
+                src="/images/services-intro.png"
+                alt={t("intro.title")}
+                fill
+                sizes="(min-width: 1024px) 420px, 100vw"
+                className="object-cover"
+              />
             </div>
           </div>
         </Container>

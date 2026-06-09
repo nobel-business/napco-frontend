@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
 import type { Locale } from "@/i18n/routing";
@@ -6,7 +5,9 @@ import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { IconTile } from "@/components/ui/icon";
+import { MediaImage } from "@/components/ui/media-image";
 import { SectionHeading } from "@/components/sections/section-heading";
+import { HeroVideo } from "@/components/sections/hero-video";
 import { PartnersMarquee } from "@/components/sections/partners-marquee";
 
 type ListItem = { icon: string; label: string };
@@ -36,16 +37,11 @@ export default async function HomePage({
     <>
       {/* HERO — aerial fish-cages video under a water-depth overlay; lower-left composition */}
       <section className="relative isolate flex max-h-[920px] min-h-[80vh] items-end overflow-hidden bg-aqua-900">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
+        <HeroVideo
+          src="/videos/hero-aqua.mp4"
           poster="/images/hero.png"
           className="hero-drift absolute inset-0 -z-10 h-full w-full object-cover"
-        >
-          <source src="/videos/hero-aqua.mp4" type="video/mp4" />
-        </video>
+        />
         <div className="bg-hero-depth absolute inset-0 -z-10" />
         <Container className="relative z-10 w-full pb-14 pt-32 text-white lg:pb-20">
           <div className="max-w-2xl space-y-6">
@@ -89,7 +85,13 @@ export default async function HomePage({
         <Container>
           <div className="flex flex-col gap-10 rounded-3xl bg-surface-tint p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
             <div className="relative aspect-[4/3] shrink-0 overflow-hidden rounded-2xl md:aspect-auto md:w-[440px]">
-              <Image src="/images/trusted.png" alt={t("trusted.title")} fill className="object-cover" />
+              <MediaImage
+                src="/images/trusted.png"
+                alt={t("trusted.title")}
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
             </div>
             <div className="flex flex-1 flex-col justify-center gap-10">
               <div className="space-y-6">
@@ -131,7 +133,13 @@ export default async function HomePage({
             </ul>
             <div className="flex flex-col gap-6 self-stretch pt-10">
               <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-2xl">
-                <Image src="/images/home-services.png" alt={t("services.title")} fill className="object-cover" />
+                <MediaImage
+                  src="/images/home-services.png"
+                  alt={t("services.title")}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
               </div>
               <p className="text-body-large text-muted-foreground">{t("services.caption")}</p>
             </div>
@@ -147,7 +155,13 @@ export default async function HomePage({
         <Container>
           <div className="flex flex-col gap-10 rounded-3xl bg-sand-50 p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
             <div className="relative aspect-square shrink-0 overflow-hidden rounded-2xl md:aspect-auto md:w-[360px]">
-              <Image src="/images/leadership.png" alt="" fill className="object-cover" />
+              <MediaImage
+                src="/images/leadership.png"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
             </div>
             <div className="flex flex-1 flex-col justify-center gap-10">
               <div className="space-y-6">
@@ -192,7 +206,13 @@ export default async function HomePage({
             </ul>
             <div className="flex flex-col gap-6 self-stretch pt-10">
               <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-2xl">
-                <Image src="/images/solutions.png" alt={t("solutions.title")} fill className="object-cover" />
+                <MediaImage
+                  src="/images/solutions.png"
+                  alt={t("solutions.title")}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
               </div>
               <p className="text-body-large text-muted-foreground">{t("solutions.caption")}</p>
             </div>
@@ -207,7 +227,13 @@ export default async function HomePage({
           <div className="grid w-full items-stretch gap-10 lg:grid-cols-[466px_1fr]">
             <div className="flex flex-col gap-6 self-stretch pt-10">
               <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-2xl">
-                <Image src={t("values.image")} alt={t("values.title")} fill className="object-cover" />
+                <MediaImage
+                  src={t("values.image")}
+                  alt={t("values.title")}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
               </div>
               <p className="text-body-large text-muted-foreground">{t("values.caption")}</p>
             </div>
@@ -240,7 +266,14 @@ export default async function HomePage({
                 className="flex h-[162px] flex-col items-center justify-center gap-4 rounded-2xl bg-surface-tint p-6 shadow-card dark:bg-surface"
               >
                 <div className="relative h-[62px] w-20">
-                  <Image src={c.icon} alt={c.name} fill className="object-contain dark:brightness-0 dark:invert" />
+                  <MediaImage
+                    src={c.icon}
+                    alt={c.name}
+                    fill
+                    sizes="80px"
+                    placeholder="empty"
+                    className="object-contain dark:brightness-0 dark:invert"
+                  />
                 </div>
                 <span className="text-label-medium font-medium text-foreground">{c.name}</span>
               </div>
@@ -286,7 +319,7 @@ export default async function HomePage({
       <section className="py-20 lg:py-28">
         <Container>
           <div className="relative isolate overflow-hidden rounded-3xl">
-            <Image src="/images/home-cta.png" alt="" fill className="scale-110 object-cover blur-md" />
+            <MediaImage src="/images/home-cta.png" alt="" fill sizes="100vw" className="scale-110 object-cover blur-md" />
             <div className="bg-hero-depth absolute inset-0" />
             <div className="relative flex flex-col items-center gap-10 p-6 text-white md:flex-row md:p-10">
               <div className="flex flex-1 flex-col gap-10">
@@ -301,7 +334,13 @@ export default async function HomePage({
                 </Button>
               </div>
               <div className="relative aspect-square w-full shrink-0 overflow-hidden rounded-2xl md:w-[316px]">
-                <Image src="/images/home-cta.png" alt="" fill className="object-cover" />
+                <MediaImage
+                  src="/images/home-cta.png"
+                  alt=""
+                  fill
+                  sizes="(min-width: 768px) 316px, 100vw"
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { MediaImage } from "@/components/ui/media-image";
 import { Calendar, Check, ChevronLeft, ChevronRight } from "@/components/ui/mingcute-icons";
 
 import type { Locale } from "@/i18n/routing";
@@ -64,7 +64,13 @@ export default async function BlogPage({
 
             <article className="flex flex-1 flex-col gap-6 rounded-3xl border border-border bg-surface p-5 shadow-card md:flex-row md:items-center md:p-6">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl md:w-72 md:shrink-0">
-                <Image src="/images/blog-featured.png" alt={t("featured.title")} fill className="object-cover" />
+                <MediaImage
+                  src="/images/blog-featured.png"
+                  alt={t("featured.title")}
+                  fill
+                  sizes="(min-width: 768px) 288px, 100vw"
+                  className="object-cover"
+                />
               </div>
               <div className="space-y-4">
                 <Badge>{t("featured.tag")}</Badge>
@@ -114,7 +120,13 @@ export default async function BlogPage({
                 className="hover-lift group flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-card"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image src={card.image} alt={card.title} fill className="object-cover" />
+                  <MediaImage
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover"
+                  />
                   <span
                     className={cn(
                       "fx-icon-tile absolute bottom-3 start-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-surface shadow-md",
