@@ -33,13 +33,11 @@ yarn-error.log*
 !.vscode/extensions.json
 .idea
 
-# figma audit scratch (screenshots + raw exports kept locally, not committed)
-/.figma-audit/shots/
-/.figma-audit/*.zip
-/.figma-audit/img/
-/.figma-audit/_final/
-/.figma-audit/_*.png
-/.figma-audit/*.log
+# figma audit scratch — design reference (PDFs/exports), kept locally only, never committed
+/.figma-audit/
 
 # dark-mode capture helper (local QA only)
 /public/_setdark.html
+
+# vercel
+.vercel
