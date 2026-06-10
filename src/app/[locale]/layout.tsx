@@ -5,6 +5,7 @@ import { getMessages, getTranslations, setRequestLocale } from "next-intl/server
 import { Inter, Cairo, JetBrains_Mono } from "next/font/google";
 
 import { routing, localeDirection, type Locale } from "@/i18n/routing";
+import { INTRO_ENABLED } from "@/config/site";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { SmoothScroll } from "@/components/providers/smooth-scroll";
 import { ScrollReveal } from "@/components/providers/scroll-reveal";
@@ -91,13 +92,16 @@ export default async function LocaleLayout({
     >
       <body>
         {/* No-flash: on a first-visit home load (motion ok), paint the abyss cover before
-            hydration so the homepage never flickers behind the Sonar intro. IntroGate clears it. */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html:
-              "(function(){try{var p=location.pathname.replace(/\\/+$/,'');if((p===''||p==='/en'||p==='/ar')&&!sessionStorage.getItem('napco-intro-seen')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('intro-active');}}catch(e){}})();",
-          }}
-        />
+            hydration so the homepage never flickers behind the Sonar intro. IntroGate clears it.
+            Gated by INTRO_ENABLED so it never runs while the intro is disabled. */}
+        {INTRO_ENABLED && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html:
+                "(function(){try{var p=location.pathname.replace(/\\/+$/,'');if((p===''||p==='/en'||p==='/ar')&&!sessionStorage.getItem('napco-intro-seen')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('intro-active');}}catch(e){}})();",
+            }}
+          />
+        )}
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

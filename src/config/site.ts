@@ -1,5 +1,12 @@
 /** Site-wide configuration: navigation, contact details, socials. */
 
+/**
+ * Master switch for the first-visit Sonar brand intro (home only). Set to `true` to re-activate
+ * it (the IntroGate overlay + the layout's no-flash pre-paint script both read this flag, so they
+ * always toggle together). Code stays intact either way.
+ */
+export const INTRO_ENABLED: boolean = false;
+
 export type NavItem = {
   /** i18n key under `nav.*` */
   key: string;

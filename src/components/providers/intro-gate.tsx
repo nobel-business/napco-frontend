@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
+import { INTRO_ENABLED } from "@/config/site";
 import { SonarIntro } from "@/components/sections/sonar-intro";
 
 const KEY = "napco-intro-seen";
@@ -20,6 +21,10 @@ export function IntroGate() {
 
   // Decide on mount (client only) — keep SSR output null so the homepage HTML is clean.
   useEffect(() => {
+    if (!INTRO_ENABLED) {
+      document.documentElement.classList.remove("intro-active");
+      return;
+    }
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       document.documentElement.classList.remove("intro-active");
       return;
