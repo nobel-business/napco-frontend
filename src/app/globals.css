@@ -502,6 +502,18 @@ html.lenis body {
   animation: fx-icon-swap-in var(--motion-slow) var(--ease-out-soft);
 }
 
+/* NAPCO logo pieces — the white art rendered as a mask filled with currentColor, so the lockup
+   recolors via text color (white over hero/footer, brand blue on a light surface, white in dark).
+   Color eases on the navbar scroll-state flip. */
+.logo-piece {
+  height: 100%;
+  aspect-ratio: var(--logo-aspect);
+  background-color: currentColor;
+  -webkit-mask: var(--logo-src) no-repeat center / contain;
+  mask: var(--logo-src) no-repeat center / contain;
+  transition: background-color var(--motion-base) var(--ease-out-soft);
+}
+
 /* NAPCO logo fish — strong twitch/swim on hover. Pivots near the head (fish faces right) so
    the tail swings; loops while hovered, stops on leave. Reduced-motion disables it. */
 @keyframes fish-twitch {
