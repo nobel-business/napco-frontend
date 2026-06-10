@@ -44,7 +44,7 @@ export function Navbar() {
       className={cn(
         "site-header fixed inset-x-0 top-0 z-50 transition-colors duration-[var(--motion-slow)]",
         scrolled
-          ? "border-b border-border/60 bg-[var(--background)]/80 text-foreground backdrop-blur-xl"
+          ? "border-b border-border/60 text-foreground backdrop-blur-xl"
           : "bg-transparent text-white",
       )}
     >
