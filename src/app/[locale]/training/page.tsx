@@ -80,7 +80,7 @@ export default async function TrainingPage({
 
       {/* TRACKS */}
       <section className="section">
-        <Container className="space-y-12">
+        <Container className="space-y-10">
           <SectionHeading title={t("tracks.title")} />
           <div className="grid gap-6 lg:grid-cols-3">
             {tracks.map((track) => (
@@ -107,7 +107,7 @@ export default async function TrainingPage({
 
       {/* PROGRAMS IN DETAIL */}
       <section className="section">
-        <Container className="space-y-12 lg:space-y-16">
+        <Container className="space-y-10 lg:space-y-16">
           <SectionHeading title={t("programs.title")} />
           <div className="space-y-16 lg:space-y-20">
             {groups.map((group, i) => (
@@ -119,7 +119,7 @@ export default async function TrainingPage({
 
       {/* STEPS */}
       <section className="section">
-        <Container className="space-y-12">
+        <Container className="space-y-10">
           <SectionHeading title={t("steps.title")} />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((step, i) => (
@@ -140,7 +140,7 @@ export default async function TrainingPage({
 
       {/* DUAL CTA */}
       <section className="section">
-        <Container className="space-y-12">
+        <Container className="space-y-10">
           <SectionHeading title={t("dualCta.title")} />
           <div className="grid gap-6 md:grid-cols-2">
             {cards.map((card) => (
@@ -176,7 +176,7 @@ export default async function TrainingPage({
 
       {/* ENROLLMENT FORM */}
       <section id="enroll" className="bg-muted/40 section scroll-mt-24">
-        <Container className="max-w-3xl space-y-12">
+        <Container className="max-w-3xl space-y-10">
           <SectionHeading title={t("form.title")} />
           <TrainingForm />
         </Container>

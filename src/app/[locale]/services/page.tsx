@@ -69,7 +69,7 @@ export default async function ServicesPage({
 
       {/* SERVICE BLOCKS */}
       <section className="section">
-        <Container className="space-y-12 lg:space-y-16">
+        <Container className="space-y-10 lg:space-y-16">
           <SectionHeading title={t("blocksTitle")} />
           <div className="space-y-16 lg:space-y-20">
             {blocks.map((block, i) => (
@@ -81,7 +81,7 @@ export default async function ServicesPage({
 
       {/* WHY — numbered grid */}
       <section className="section">
-        <Container className="space-y-12">
+        <Container className="space-y-10">
           <SectionHeading title={t("why.title")} />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {why.map((item, i) => (
@@ -102,7 +102,7 @@ export default async function ServicesPage({
 
       {/* SYSTEMS — icon grid */}
       <section className="section">
-        <Container className="space-y-12">
+        <Container className="space-y-10">
           <SectionHeading title={t("systems.title")} />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {systems.map((item) => (

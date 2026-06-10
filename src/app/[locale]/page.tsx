@@ -315,7 +315,7 @@ export default async function HomePage({
       {/* PARTNERS — infinite logo carousel (contained card: white in light, elevated in dark) */}
       <section className="bg-muted/40 section">
         <Container>
-          <div className="space-y-12 rounded-3xl border border-border bg-surface px-6 py-10 shadow-card md:px-10">
+          <div className="space-y-10 rounded-3xl border border-border bg-surface px-6 py-10 shadow-card md:px-10">
             <SectionHeading title={t("partners.title")} />
             <PartnersMarquee logos={partners} />
           </div>

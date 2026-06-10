@@ -48,7 +48,7 @@ export default async function AboutPage({
 
       {/* INTRO — national partner */}
       <section className="section">
-        <Container className="space-y-12">
+        <Container className="space-y-10">
           <div className="grid items-center gap-10 rounded-3xl bg-sand-50 p-6 shadow-card md:p-10 lg:grid-cols-[1.6fr_1fr] dark:bg-surface">
             <div className="space-y-5">
               <div className="space-y-3">
@@ -91,7 +91,7 @@ export default async function AboutPage({
 
       {/* VISION & MISSION */}
       <section className="section">
-        <Container className="space-y-12">
+        <Container className="space-y-10">
           <SectionHeading title={t("visionMission.title")} />
           <div className="grid items-stretch gap-6 md:grid-cols-2">
             <article className="bg-gradient-navy hover-lift group flex flex-col gap-4 rounded-2xl p-6 text-white">
@@ -159,7 +159,7 @@ export default async function AboutPage({
 
       {/* WORK STANDARDS */}
       <section className="bg-muted/40 section">
-        <Container className="space-y-12">
+        <Container className="space-y-10">
           <SectionHeading title={t("standards.title")} />
           <div className="grid items-start gap-10 lg:grid-cols-[1fr_420px]">
             <ul className="space-y-4">
@@ -194,7 +194,7 @@ export default async function AboutPage({
 
       {/* TEAM */}
       <section className="section">
-        <Container className="space-y-12">
+        <Container className="space-y-10">
           <SectionHeading title={t("team.title")} />
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {members.map((m, i) => (
@@ -241,7 +241,7 @@ export default async function AboutPage({
       </section>
 
       {/* VISION 2030 BANNER */}
-      <section className="pb-20 lg:pb-28">
+      <section className="pb-12 lg:pb-16">
         <Container>
           <div className="grid items-center gap-8 overflow-hidden rounded-3xl border border-border bg-surface shadow-card md:grid-cols-[240px_1fr]">
             <div className="relative h-[220px] w-full md:h-[300px]">

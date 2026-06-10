@@ -167,7 +167,7 @@ export default async function ArticlePage({
       </section>
 
       {/* SHARE */}
-      <section className="pb-12 lg:pb-16">
+      <section className="pb-8 lg:pb-12">
         <Container>
           <div className="mx-auto max-w-4xl space-y-6 rounded-3xl border border-border bg-surface p-10 text-center shadow-card">
             <h2 className="text-headline-small font-semibold uppercase text-foreground">
@@ -190,7 +190,7 @@ export default async function ArticlePage({
 
       {/* RELATED */}
       <section className="bg-muted/40 section">
-        <Container className="space-y-12">
+        <Container className="space-y-10">
           <SectionHeading title={t("relatedTitle")} />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((a) => (

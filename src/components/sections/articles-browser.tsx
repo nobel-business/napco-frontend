@@ -37,7 +37,7 @@ export function ArticlesBrowser({
   }
 
   return (
-    <div className="space-y-12">
+    <div className="space-y-10">
       {/* Filter chips */}
       <div className="flex flex-wrap items-center gap-2">
         {categories.map((cat) => (

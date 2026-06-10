@@ -84,7 +84,7 @@ export default async function ContactPage({
 
       {/* FORM + INFO */}
       <section className="section">
-        <Container className="space-y-12">
+        <Container className="space-y-10">
           <SectionHeading title={t("mainTitle")} />
           <div className="grid gap-8 lg:grid-cols-2">
             <ContactForm />
@@ -137,7 +137,7 @@ export default async function ContactPage({
       </section>
 
       {/* MAP — illustrated world map (Figma "image 9") */}
-      <section className="pb-20 lg:pb-28">
+      <section className="pb-12 lg:pb-16">
         <Container className="flex justify-center">
           <div className="relative aspect-[800/520] w-full max-w-[800px]">
             <MediaImage

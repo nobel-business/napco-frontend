@@ -52,7 +52,7 @@ export default async function BlogPage({
 
       {/* FEATURED */}
       <section className="section">
-        <Container className="space-y-12">
+        <Container className="space-y-10">
           <SectionHeading title={t("featured.sectionTitle")} />
           <div className="flex items-center gap-4">
             <button
@@ -111,7 +111,7 @@ export default async function BlogPage({
 
       {/* SYSTEMS GRID */}
       <section className="bg-muted/40 section">
-        <Container className="space-y-12">
+        <Container className="space-y-10">
           <SectionHeading title={t("systems.title")} />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {systems.map((card) => (

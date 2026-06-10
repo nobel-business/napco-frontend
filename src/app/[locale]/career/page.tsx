@@ -54,14 +54,14 @@ export default async function CareerPage({
 
       {/* TESTIMONIALS */}
       <section className="section">
-        <Container className="space-y-12">
+        <Container className="space-y-10">
           <SectionHeading title={t("testimonials.title")} />
           <TestimonialCarousel items={testimonials} />
         </Container>
       </section>
 
       {/* FEATURES */}
-      <section className="pb-12 lg:pb-16">
+      <section className="pb-8 lg:pb-12">
         <Container className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((f) => (
             <div key={f.title} className="group flex flex-col items-center gap-3 text-center">
@@ -110,7 +110,7 @@ export default async function CareerPage({
 
       {/* WHAT WILL YOU GAIN */}
       <section className="section">
-        <Container className="space-y-12">
+        <Container className="space-y-10">
           <SectionHeading title={t("gain.title")} />
           <div className="grid gap-6 md:grid-cols-2">
             {gains.map((g) => (
@@ -131,7 +131,7 @@ export default async function CareerPage({
 
       {/* APPLICATION FORM */}
       <section id="apply" className="bg-muted/40 section scroll-mt-24">
-        <Container className="max-w-3xl space-y-12">
+        <Container className="max-w-3xl space-y-10">
           <SectionHeading title={t("form.title")} />
           <CareerForm />
         </Container>
