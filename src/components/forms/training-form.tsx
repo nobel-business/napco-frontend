@@ -104,7 +104,7 @@ export function TrainingForm() {
       </Field>
 
       <div className="flex flex-wrap gap-4 pt-2">
-        <Button type="submit" disabled={isSubmitting} className="flex-1">
+        <Button type="submit" disabled={isSubmitting}>
           {t("submit")}
         </Button>
         <Button type="button" variant="outline" onClick={() => reset()} className="min-w-[120px]">

@@ -68,7 +68,7 @@ export function Footer() {
             <Button asChild>
               <Link href="/contact">{t("nav.contact")}</Link>
             </Button>
-            <Button asChild variant="outline" className="border-white/30 text-white hover:bg-white hover:text-navy">
+            <Button asChild variant="outline" className="border-aqua-400 text-aqua-200">
               <Link href="/training">{t("footer.bookConsultation")}</Link>
             </Button>
           </div>

@@ -157,7 +157,7 @@
   --border: #e1e1e1;
   --input: #e1e1e1;
   --ring: #ff782c;
-  --footer-bg: #000221;
+  --footer-bg: #06293a;
   --footer-foreground: #ffffff;
   --hero-overlay: rgba(0, 2, 33, 0.55);
 
@@ -200,7 +200,7 @@
   --border: #1c3a48;
   --input: #1c3a48;
   --ring: #ff782c;
-  --footer-bg: #000221;
+  --footer-bg: #06293a;
   --footer-foreground: #ffffff;
   /* Darker, neutral elevation shadow in dark mode (bluish light-mode shadow reads wrong on navy) */
   --shadow-card: 0 4px 16px 0 rgba(0, 0, 0, 0.45);

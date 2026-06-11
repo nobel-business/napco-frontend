@@ -109,7 +109,7 @@ export function CareerForm() {
         <Textarea id="details" rows={5} placeholder={t("detailsPh")} {...register("details")} />
       </Field>
 
-      <Button type="submit" disabled={isSubmitting} className="w-full">
+      <Button type="submit" disabled={isSubmitting}>
         {t("submit")}
       </Button>
     </form>

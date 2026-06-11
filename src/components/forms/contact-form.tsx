@@ -70,7 +70,7 @@ export function ContactForm() {
         <Field label={t("project")} htmlFor="project">
           <Textarea id="project" rows={5} placeholder={t("projectPh")} {...register("project")} />
         </Field>
-        <Button type="submit" disabled={isSubmitting} className="w-full">
+        <Button type="submit" disabled={isSubmitting}>
           {t("submit")}
         </Button>
       </form>
