@@ -51,14 +51,9 @@ export default async function AboutPage({
         <Container className="space-y-10">
           <div className="grid items-center gap-10 rounded-3xl bg-surface p-6 shadow-card md:p-10 lg:grid-cols-[1.6fr_1fr]">
             <div className="space-y-5">
-              <div className="space-y-3">
-                <p className="text-label-small font-medium uppercase tracking-[0.14em] text-accent-card dark:text-aqua-300">
-                  {t("intro.eyebrow")}
-                </p>
-                <h2 className="text-headline-small font-semibold uppercase text-foreground">
-                  {t("intro.title")}
-                </h2>
-              </div>
+              <h2 className="text-headline-small font-semibold uppercase text-foreground">
+                {t("intro.title")}
+              </h2>
               {t("intro.body")
                 .split("\n\n")
                 .map((p, i) => (

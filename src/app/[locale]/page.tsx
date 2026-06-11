@@ -172,14 +172,9 @@ export default async function HomePage({
             </div>
             <div className="flex flex-1 flex-col justify-center gap-10">
               <div className="space-y-6">
-                <div className="space-y-3">
-                  <p className="text-label-small font-medium uppercase tracking-[0.14em] text-accent-card dark:text-aqua-300">
-                    {t("vision.eyebrow")}
-                  </p>
-                  <h2 className="text-headline-small font-semibold uppercase text-foreground">
-                    {t("vision.title")}
-                  </h2>
-                </div>
+                <h2 className="text-headline-small font-semibold uppercase text-foreground">
+                  {t("vision.title")}
+                </h2>
                 <p className="text-body-large text-muted-foreground">{t("vision.body")}</p>
               </div>
               <Button asChild size="lg" variant="secondary" className="self-start">
