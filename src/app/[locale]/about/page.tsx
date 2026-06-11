@@ -49,7 +49,7 @@ export default async function AboutPage({
       {/* INTRO — national partner */}
       <section className="section">
         <Container className="space-y-10">
-          <div className="grid items-center gap-10 rounded-3xl bg-sand-50 p-6 shadow-card md:p-10 lg:grid-cols-[1.6fr_1fr] dark:bg-surface">
+          <div className="grid items-center gap-10 rounded-3xl bg-surface p-6 shadow-card md:p-10 lg:grid-cols-[1.6fr_1fr]">
             <div className="space-y-5">
               <div className="space-y-3">
                 <p className="text-label-small font-medium uppercase tracking-[0.14em] text-accent-card dark:text-aqua-300">

@@ -160,7 +160,7 @@ export default async function HomePage({
       {/* VISION */}
       <section className="section">
         <Container>
-          <div className="flex flex-col gap-10 rounded-3xl bg-sand-50 p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
+          <div className="flex flex-col gap-10 rounded-3xl bg-surface p-6 shadow-card md:flex-row md:items-stretch md:p-10">
             <div className="relative aspect-square shrink-0 overflow-hidden rounded-2xl md:aspect-auto md:w-[360px]">
               <MediaImage
                 src="/images/leadership.png"
