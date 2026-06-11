@@ -76,6 +76,7 @@ export default async function ContactPage({
   return (
     <>
       <PageHero
+        eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}
         subtitle={t("hero.subtitle")}
         image="/images/hero-contact.png"

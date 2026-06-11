@@ -6,8 +6,9 @@ import { cn } from "@/lib/utils";
 
 /**
  * Inner-page hero — Premium Aquatech family.
- * Deep-water image under a water-depth overlay, lower-left composition, optional cyan
- * eyebrow, white display title, single orange accent bar. (Home has its own taller hero.)
+ * Deep-water image under a water-depth overlay, CENTERED composition, aqua eyebrow (a thematic
+ * blue phrase per page), white display title (balanced wrap — single line where it fits), single
+ * orange accent bar. (Home has its own taller, lower-left hero.)
  */
 export function PageHero({
   title,
@@ -27,7 +28,7 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "relative isolate flex min-h-[520px] items-end overflow-hidden lg:min-h-[640px]",
+        "relative isolate flex min-h-[520px] items-center overflow-hidden lg:min-h-[640px]",
         className,
       )}
     >
@@ -39,17 +40,17 @@ export function PageHero({
       ) : (
         <div className="bg-gradient-depth absolute inset-0" />
       )}
-      <Container className="relative z-10 w-full pb-14 pt-32 text-white lg:pb-16">
-        <div className="max-w-2xl space-y-5">
+      <Container className="relative z-10 w-full py-28 text-white">
+        <div className="mx-auto flex max-w-4xl flex-col items-center space-y-5 text-center">
           {eyebrow && (
             <p className="text-label-small font-medium uppercase tracking-[0.18em] text-aqua-200">
               {eyebrow}
             </p>
           )}
-          <h1 className="text-display-small font-bold uppercase md:text-headline-large">
+          <h1 className="text-balance text-display-small font-bold uppercase md:text-headline-large">
             {title}
           </h1>
-          {subtitle && <p className="max-w-xl text-body-medium text-white/85">{subtitle}</p>}
+          {subtitle && <p className="max-w-4xl text-body-medium text-white/85">{subtitle}</p>}
           {/* orange accent bar */}
           <span className="block h-1.5 w-16 rounded-full bg-brand" />
           {cta && (

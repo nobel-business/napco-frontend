@@ -36,7 +36,7 @@ export default async function ServicesPage({
 
   return (
     <>
-      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-services.png" />
+      <PageHero eyebrow={t("hero.eyebrow")} title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-services.png" />
 
       {/* INTRO */}
       <section className="section">

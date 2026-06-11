@@ -48,7 +48,7 @@ export default async function BlogPage({
 
   return (
     <>
-      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-blog.png" />
+      <PageHero eyebrow={t("hero.eyebrow")} title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-blog.png" />
 
       {/* FEATURED */}
       <section className="section">

@@ -34,7 +34,7 @@ export default async function MediaPage({
 
   return (
     <>
-      <PageHero title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-media.png" />
+      <PageHero eyebrow={t("hero.eyebrow")} title={t("hero.title")} subtitle={t("hero.subtitle")} image="/images/hero-media.png" />
 
       {/* GALLERY */}
       <section className="section">

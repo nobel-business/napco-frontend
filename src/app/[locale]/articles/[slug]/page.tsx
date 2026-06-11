@@ -54,7 +54,7 @@ export default async function ArticlePage({
   return (
     <>
       {/* HERO — generic article banner (Aquatech family) */}
-      <section className="relative isolate flex min-h-[480px] items-end overflow-hidden lg:min-h-[560px]">
+      <section className="relative isolate flex min-h-[480px] items-center overflow-hidden lg:min-h-[560px]">
         <MediaImage
           src="/images/hero-article.png"
           alt=""
@@ -65,15 +65,15 @@ export default async function ArticlePage({
           className="object-cover"
         />
         <div className="bg-hero-depth absolute inset-0" />
-        <Container className="relative z-10 w-full pb-14 pt-32 text-white lg:pb-16">
-          <div className="max-w-2xl space-y-5">
+        <Container className="relative z-10 w-full py-28 text-white">
+          <div className="mx-auto flex max-w-4xl flex-col items-center space-y-5 text-center">
             <p className="text-label-small font-medium uppercase tracking-[0.18em] text-aqua-200">
               {t("heroEyebrow")}
             </p>
-            <h1 className="text-display-small font-bold uppercase md:text-headline-large">
+            <h1 className="text-balance text-display-small font-bold uppercase md:text-headline-large">
               {t("heroTitle")}
             </h1>
-            <p className="text-body-medium text-white/85">{t("heroSubtitle")}</p>
+            <p className="max-w-4xl text-body-medium text-white/85">{t("heroSubtitle")}</p>
             <span className="block h-1.5 w-16 rounded-full bg-brand" />
           </div>
         </Container>

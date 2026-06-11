@@ -109,7 +109,7 @@
     "vision2030": { "badge": "Vision 2030", "country": "Kingdom of Saudi Arabia", "title": "Toward Sustainable Aquaculture Aligned with the Kingdom's Vision", "body": "At Napco Aqua, we believe that aquaculture is not merely an economic activity, but a core pillar of the Kingdom's food security and environmental sustainability.\n\nWe develop projects that enhance aquaculture's contribution to the national economy, create quality jobs for youth, reduce import dependency, and preserve water resources through smart technologies and recirculation solutions." }
   },
   "services": {
-    "hero": { "title": "Aquaculture for Growth and Sustainability", "subtitle": "An integrated suite of engineering and technical services across the aquaculture value chain, for stable operations and sustainable growth." },
+    "hero": { "eyebrow": "What We Do", "title": "Aquaculture for Growth and Sustainability", "subtitle": "An integrated suite of engineering and technical services across the aquaculture value chain, for stable operations and sustainable growth." },
     "intro": { "eyebrow": "What We Do", "title": "Practical Aquaculture Solutions, Zero Theory", "body1": "We take part in building, operating, and developing projects, drawing on practical experience.", "body2": "We deliver solutions covering the full cycle, from assessment, studies, design, supervision, to operation, capacity building, and continuous improvement." },
     "blocks": [
       {
@@ -198,7 +198,7 @@
     "blocksTitle": "Integrated Solutions for Every Stage of Project"
   },
   "training": {
-    "hero": { "title": "From Theory to Field Application", "subtitle": "A specialized program qualifying technical and operational aquaculture teams — we build crews that run and manage projects efficiently to accredited professional standards.", "cta": "Schedule Visit" },
+    "hero": { "eyebrow": "Capacity Building", "title": "From Theory to Field Application", "subtitle": "A specialized program qualifying technical and operational aquaculture teams — we build crews that run and manage projects efficiently to accredited professional standards.", "cta": "Schedule Visit" },
     "intro": { "eyebrow": "Capacity Building", "title": "From Knowledge to Execution", "body1": "At \"NAPCO Aqua\" we believe people drive success, bridging the gap between theory and real production.", "body2": "Our services span three tracks (foundations, technical, operations) to build profitable, sustainable aquaculture teams." },
     "tracks": {
       "title": "Three Tracks, One Integrated Journey",
@@ -314,7 +314,7 @@
     }
   },
   "blog": {
-    "hero": { "title": "Insights That Shape the Future, Innovations That Make the Difference", "subtitle": "Explore the latest analyses and field stories in aquaculture technology drawn from hands-on practice and deep technical expertise." },
+    "hero": { "eyebrow": "Insights & Innovation", "title": "Insights That Shape the Future, Innovations That Make the Difference", "subtitle": "Explore the latest analyses and field stories in aquaculture technology drawn from hands-on practice and deep technical expertise." },
     "featured": { "sectionTitle": "Fish Farm Design & Operations", "viewAll": "View All Articles", "tag": "Nutrition", "title": "Feeding Strategies for Maximum Growth Rate", "desc": "Discover proven feeding techniques and nutrition plans that maximize fish growth while minimizing costs.", "date": "Jan 20, 2025" },
     "stats": [
       { "icon": "newspaper", "color": "orange", "value": "250+", "label": "Published Articles" },
@@ -368,7 +368,7 @@
     }
   },
   "articles": {
-    "hero": { "title": "All Articles", "subtitle": "Stay updated with the latest insights, innovations and expertise in aquaculture solutions." },
+    "hero": { "eyebrow": "Knowledge Hub", "title": "All Articles", "subtitle": "Stay updated with the latest insights, innovations and expertise in aquaculture solutions." },
     "more": "More"
   },
   "articleDetail": {
@@ -398,7 +398,7 @@
     "heroEyebrow": "Aqua Insights"
   },
   "media": {
-    "hero": { "title": "The Pulse of Aquaculture", "subtitle": "A visual journey showcasing how environmental challenges are transformed into successful, sustainable investment opportunities powered by smart systems and advanced technologies." },
+    "hero": { "eyebrow": "Media & Stories", "title": "The Pulse of Aquaculture", "subtitle": "A visual journey showcasing how environmental challenges are transformed into successful, sustainable investment opportunities powered by smart systems and advanced technologies." },
     "gallery": { "title": "Outstanding Examples of Our Work" },
     "videos": {
       "title": "Projects That Prove Our Methodology",
@@ -470,7 +470,7 @@
     }
   },
   "contact": {
-    "hero": { "title": "Contact Us... Let's Shape Your Vision", "subtitle": "Let's build your fish farm — speak with our aquaculture experts to start your project." },
+    "hero": { "eyebrow": "Get in Touch", "title": "Contact Us... Let's Shape Your Vision", "subtitle": "Let's build your fish farm — speak with our aquaculture experts to start your project." },
     "mainTitle": "Let's Discuss Your Next Project",
     "form": { "heading": "Get in Touch", "sub": "Fill out the form. We'll reply within 24 hours.", "name": "Name", "namePh": "Your Full Name", "email": "Email Address", "emailPh": "Your@email.com", "phone": "Phone Number", "phonePh": "+1 (555) 000-000", "project": "Project Details", "projectPh": "Tell us about your project, goals and how we can help you...", "submit": "Request Call Back", "required": "This field is required", "invalidEmail": "Please enter a valid email", "successTitle": "Message Sent", "successBody": "Thank you for reaching out. Our team will reply within 24 hours.", "again": "Send another message" },
     "info": { "heading": "Contact Information", "emailTitle": "Email Address", "emailNote": "Send us an email anytime", "phoneTitle": "Phone Number", "phoneNote": "Call us during business hours", "hoursTitle": "Business Hours", "hoursValue": "Sunday – Thursday: 8:00 AM – 4:00 PM", "expertTitle": "Expert Support Available", "expertBody": "Our team of aquaculture specialists brings decades of combined experience in project development, investment analysis, and sustainable farming practices.", "expertStatValue": "30+", "expertStatLabel": "Years Experience" },

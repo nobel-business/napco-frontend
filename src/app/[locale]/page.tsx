@@ -41,25 +41,25 @@ export default async function HomePage({
       <IntroGate />
 
       {/* HERO — aerial fish-cages video under a water-depth overlay; lower-left composition */}
-      <section className="relative isolate flex max-h-[920px] min-h-[80vh] items-end overflow-hidden bg-aqua-900">
+      <section className="relative isolate flex max-h-[920px] min-h-[80vh] items-center overflow-hidden bg-aqua-900">
         <HeroVideo
           src="/videos/hero-aqua.mp4"
           poster="/images/hero.png"
           className="hero-drift absolute inset-0 -z-10 h-full w-full object-cover"
         />
         <div className="bg-hero-depth absolute inset-0 -z-10" />
-        <Container className="relative z-10 w-full pb-14 pt-32 text-white lg:pb-20">
-          <div className="max-w-2xl space-y-6">
+        <Container className="relative z-10 w-full py-24 text-white">
+          <div className="mx-auto flex max-w-4xl flex-col items-center space-y-6 text-center">
             <p className="text-label-small font-medium uppercase tracking-[0.18em] text-aqua-200">
               {t("hero.eyebrow")}
             </p>
-            <h1 className="text-display-small font-bold uppercase md:text-display-large">
+            <h1 className="text-balance text-display-small font-bold uppercase md:text-display-large">
               {t("hero.title")}
             </h1>
-            <p className="max-w-xl text-label-large text-white/85">{t("hero.subtitle")}</p>
+            <p className="max-w-4xl text-label-large text-white/85">{t("hero.subtitle")}</p>
             {/* orange accent bar */}
             <span className="block h-1.5 w-12 rounded-full bg-brand" />
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
               <Button asChild size="lg">
                 <Link href="/services">{t("hero.primaryCta")}</Link>
               </Button>
@@ -74,7 +74,7 @@ export default async function HomePage({
             </div>
           </div>
           {/* stat strip — calm, tabular proof */}
-          <dl className="mt-10 flex flex-wrap gap-x-12 gap-y-5 border-t border-white/15 pt-6">
+          <dl className="mx-auto mt-10 flex max-w-4xl flex-wrap justify-center gap-x-12 gap-y-5 border-t border-white/15 pt-6 text-center">
             {heroStats.map((s) => (
               <div key={s.label}>
                 <dt className="text-display-small font-bold tabular-nums">
