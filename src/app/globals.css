@@ -136,6 +136,7 @@
   /* Easing / motion — one coherent system used by every interaction */
   --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-out-quint: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* slight overshoot — bouncy hover pop */
   --motion-fast: 150ms; /* hover / press feedback */
   --motion-route: 130ms; /* route cross-dissolve — kept short so navigation feels instant */
   --motion-base: 220ms; /* menus */
@@ -557,11 +558,12 @@ html.lenis body {
 @media (hover: hover) and (pointer: fine) {
   .hover-lift {
     transition:
-      transform var(--motion-base) var(--ease-out-soft),
+      transform var(--motion-base) var(--ease-spring),
       box-shadow var(--motion-base) var(--ease-out-soft);
+    will-change: transform;
   }
   .hover-lift:hover {
-    transform: translateY(-4px);
+    transform: translateY(-10px) scale(1.025);
     box-shadow: var(--shadow-card-hover);
   }
 
@@ -570,57 +572,60 @@ html.lenis body {
      micro-tilt (no spin/flip). Pointer devices only. */
   .fx-icon-tile {
     transition:
-      transform var(--motion-base) var(--ease-out-soft),
+      transform var(--motion-base) var(--ease-spring),
       filter var(--motion-base) var(--ease-out-soft);
   }
   .fx-icon-tile svg {
-    transition: transform var(--motion-base) var(--ease-out-soft);
+    transition: transform var(--motion-base) var(--ease-spring);
   }
   .group:hover .fx-icon-tile {
-    transform: scale(1.04) rotate(1.5deg);
-    filter: brightness(1.06);
+    transform: scale(1.14) rotate(5deg);
+    filter: brightness(1.14) drop-shadow(0 6px 14px rgba(255, 120, 44, 0.45));
+  }
+  .group:hover .fx-icon-tile.bg-gradient-tile-blue {
+    filter: brightness(1.14) drop-shadow(0 6px 14px rgba(0, 8, 163, 0.5));
   }
   [dir="rtl"] .group:hover .fx-icon-tile {
-    transform: scale(1.04) rotate(-1.5deg);
+    transform: scale(1.14) rotate(-5deg);
   }
   .group:hover .fx-icon-tile svg {
-    transform: translateY(-1.5px);
+    transform: translateY(-3.5px) scale(1.12);
   }
 
   /* Icon Motion — Category C controls: glyph depth-near on hover (theme/language). */
   .fx-ctrl svg {
-    transition: transform var(--motion-base) var(--ease-out-soft);
+    transition: transform var(--motion-base) var(--ease-spring);
   }
   .fx-ctrl:hover svg {
-    transform: scale(1.12);
+    transform: scale(1.22) rotate(-6deg);
   }
 
   /* Icon Motion — Category C directional glide: the control nudges in its pointing
      direction (RTL-aware). Applied to the button so it never fights the icon's rtl-flip.
      The element carries its own `transition` utility, which animates this transform. */
   .fx-glide-end:hover {
-    transform: translateX(3px);
+    transform: translateX(6px);
   }
   .fx-glide-start:hover {
-    transform: translateX(-3px);
+    transform: translateX(-6px);
   }
   [dir="rtl"] .fx-glide-end:hover {
-    transform: translateX(-3px);
+    transform: translateX(-6px);
   }
   [dir="rtl"] .fx-glide-start:hover {
-    transform: translateX(3px);
+    transform: translateX(6px);
   }
 
   /* Icon Motion — Category E social: glyph glow + scale on hover. The color shift stays
      on the element's own hover:text-* utility; chip rise (where wanted) via hover:-translate-y. */
   .fx-social svg {
     transition:
-      transform var(--motion-base) var(--ease-out-soft),
+      transform var(--motion-base) var(--ease-spring),
       filter var(--motion-base) var(--ease-out-soft);
   }
   .fx-social:hover svg {
-    transform: scale(1.12);
-    filter: brightness(1.1);
+    transform: scale(1.28) translateY(-2px);
+    filter: brightness(1.15);
   }
 
   /* Logo fish — twitch/swim while the logo is hovered. */
@@ -653,6 +658,7 @@ html.lenis body {
     transform: none;
   }
   .group:hover .fx-icon-tile,
+  .group:hover .fx-icon-tile.bg-gradient-tile-blue,
   .group:hover .fx-icon-tile svg {
     transform: none;
     filter: none;
