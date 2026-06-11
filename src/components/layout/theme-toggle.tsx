@@ -7,7 +7,7 @@ import { Moon, Sun } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 import { cn } from "@/lib/utils";
-import { switchButtonClass } from "./locale-switcher";
+import { Button } from "@/components/ui/button";
 
 type VTDocument = Document & { startViewTransition?: (cb: () => void) => unknown };
 
@@ -37,18 +37,20 @@ export function ThemeToggle({ className }: { className?: string }) {
   };
 
   return (
-    <button
+    <Button
       type="button"
+      variant="secondary"
+      size="icon-sm"
       aria-label={t("toggleTheme")}
       title={t("toggleTheme")}
       onClick={toggleTheme}
-      className={cn(switchButtonClass, className)}
+      className={cn("fx-ctrl", className)}
     >
       {mounted && isDark ? (
         <Sun key="sun" className="fx-icon-swap h-5 w-5" />
       ) : (
         <Moon key="moon" className="fx-icon-swap h-5 w-5" />
       )}
-    </button>
+    </Button>
   );
 }

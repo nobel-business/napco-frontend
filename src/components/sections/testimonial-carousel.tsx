@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "@/components/ui/mingcute-icons";
+import { Button } from "@/components/ui/button";
 
 export type Testimonial = { name: string; role: string; quote: string; image: string; blurDataURL?: string };
 
@@ -14,13 +15,16 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
 
   return (
     <div className="flex items-center gap-4">
-      <button
+      <Button
+        type="button"
         onClick={() => go(-1)}
         aria-label="Previous"
-        className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-foreground shadow-sm transition-colors hover:bg-muted lg:inline-flex"
+        variant="ghost"
+        size="icon"
+        className="hidden shrink-0 border border-border bg-surface shadow-sm lg:inline-flex"
       >
         <ChevronLeft className="h-5 w-5 rtl-flip" />
-      </button>
+      </Button>
 
       <article className="flex flex-1 flex-col items-center gap-6 rounded-3xl border border-border bg-surface p-6 shadow-card md:flex-row md:items-center md:p-8">
         <div className="relative aspect-square w-28 shrink-0 overflow-hidden rounded-2xl md:w-40">
@@ -41,13 +45,16 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
         </div>
       </article>
 
-      <button
+      <Button
+        type="button"
         onClick={() => go(1)}
         aria-label="Next"
-        className="hidden h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-foreground shadow-sm transition-colors hover:bg-muted lg:inline-flex"
+        variant="ghost"
+        size="icon"
+        className="hidden shrink-0 border border-border bg-surface shadow-sm lg:inline-flex"
       >
         <ChevronRight className="h-5 w-5 rtl-flip" />
-      </button>
+      </Button>
     </div>
   );
 }

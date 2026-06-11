@@ -4,26 +4,32 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
+/**
+ * Global button system — one pill family.
+ * Variants: primary (orange gradient) · secondary (marine gradient) · outline (marine) · ghost.
+ * Icon-only buttons = circular sizes (icon / icon-sm / icon-lg) composed with any variant.
+ * Shared hover (lift + brightness + shadow), press (scale 0.97), and one focus ring; light + dark.
+ */
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-medium transition-[transform,box-shadow,background-color,border-color,color,filter] duration-200 ease-[var(--ease-out-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background active:translate-y-0 active:scale-[0.97] disabled:pointer-events-none disabled:opacity-50 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         primary:
-          "bg-brand text-white hover:bg-[var(--color-brand-hover)] active:scale-[0.98]",
+          "bg-gradient-btn-orange text-white shadow-card hover:-translate-y-0.5 hover:shadow-card-hover hover:brightness-105",
         secondary:
-          "bg-accent-card text-white hover:opacity-90 active:scale-[0.98]",
+          "bg-gradient-btn-marine text-white shadow-card hover:-translate-y-0.5 hover:shadow-card-hover hover:brightness-105",
         outline:
-          "border border-brand bg-transparent text-brand shadow-none hover:bg-brand hover:text-white active:scale-[0.98]",
-        ghost:
-          "bg-transparent text-foreground shadow-none hover:bg-muted active:scale-[0.98]",
-        navy: "bg-gradient-navy text-white hover:opacity-90 active:scale-[0.98]",
+          "border border-aqua-500 text-aqua-600 hover:bg-aqua-500 hover:text-white dark:border-aqua-400 dark:text-aqua-200 dark:hover:bg-aqua-500 dark:hover:text-white",
+        ghost: "text-foreground hover:bg-muted",
       },
       size: {
-        sm: "h-9 px-4 text-label-small",
-        md: "h-11 px-6 text-label-small",
-        lg: "h-12 px-10 text-label-small",
-        icon: "h-10 w-10 p-0",
+        sm: "h-10 px-5 text-label-small",
+        md: "h-12 px-7 text-label-small",
+        lg: "h-14 px-9 text-label-small",
+        icon: "h-12 w-12 p-0",
+        "icon-sm": "h-10 w-10 p-0",
+        "icon-lg": "h-16 w-16 p-0",
       },
     },
     defaultVariants: {
@@ -43,11 +49,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
     return (
-      <Comp
-        ref={ref}
-        className={cn(buttonVariants({ variant, size, className }))}
-        {...props}
-      />
+      <Comp ref={ref} className={cn(buttonVariants({ variant, size, className }))} {...props} />
     );
   },
 );

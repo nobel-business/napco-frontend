@@ -55,12 +55,15 @@ export default async function BlogPage({
         <Container className="space-y-10">
           <SectionHeading title={t("featured.sectionTitle")} />
           <div className="flex items-center gap-4">
-            <button
+            <Button
+              type="button"
               aria-label={t("featured.viewAll")}
-              className="fx-glide-start hidden h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-foreground shadow-sm transition hover:bg-muted active:scale-95 lg:inline-flex"
+              variant="ghost"
+              size="icon"
+              className="fx-glide-start hidden shrink-0 border border-border bg-surface shadow-sm lg:inline-flex"
             >
               <ChevronLeft className="h-5 w-5 rtl-flip" />
-            </button>
+            </Button>
 
             <article className="flex flex-1 flex-col gap-6 rounded-3xl border border-border bg-surface p-6 shadow-card md:flex-row md:items-center md:p-8">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl md:w-72 md:shrink-0">
@@ -85,12 +88,15 @@ export default async function BlogPage({
               </div>
             </article>
 
-            <button
+            <Button
+              type="button"
               aria-label={t("featured.viewAll")}
-              className="fx-glide-end hidden h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-foreground shadow-sm transition hover:bg-muted active:scale-95 lg:inline-flex"
+              variant="ghost"
+              size="icon"
+              className="fx-glide-end hidden shrink-0 border border-border bg-surface shadow-sm lg:inline-flex"
             >
               <ChevronRight className="h-5 w-5 rtl-flip" />
-            </button>
+            </Button>
           </div>
           <div className="flex justify-center">
             <Button asChild>

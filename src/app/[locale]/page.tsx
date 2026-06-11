@@ -182,7 +182,7 @@ export default async function HomePage({
                 </div>
                 <p className="text-body-large text-muted-foreground">{t("vision.body")}</p>
               </div>
-              <Button asChild size="lg" variant="navy" className="self-start">
+              <Button asChild size="lg" variant="secondary" className="self-start">
                 <Link href="/about">{t("vision.cta")}</Link>
               </Button>
             </div>
@@ -336,7 +336,7 @@ export default async function HomePage({
                   </h2>
                   <p className="text-body-large">{t("cta.body")}</p>
                 </div>
-                <Button asChild size="lg" variant="navy" className="self-start">
+                <Button asChild size="lg" variant="primary" className="self-start">
                   <Link href="/contact">{t("cta.button")}</Link>
                 </Button>
               </div>

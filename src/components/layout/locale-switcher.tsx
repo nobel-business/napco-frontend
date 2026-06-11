@@ -7,11 +7,8 @@ import { useTransition } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import type { Locale } from "@/i18n/routing";
+import { Button } from "@/components/ui/button";
 import { TranslateIcon } from "@/components/ui/translate-icon";
-
-/** Shared style for the navbar switch buttons (navy gradient rounded square). */
-export const switchButtonClass =
-  "fx-ctrl bg-gradient-navy inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-white shadow-sm transition-opacity hover:opacity-90 disabled:opacity-60";
 
 export function LocaleSwitcher({ className }: { className?: string }) {
   const locale = useLocale() as Locale;
@@ -30,15 +27,17 @@ export function LocaleSwitcher({ className }: { className?: string }) {
   }
 
   return (
-    <button
+    <Button
       type="button"
+      variant="secondary"
+      size="icon-sm"
       onClick={switchLocale}
       disabled={isPending}
       aria-label={`Switch language to ${next === "ar" ? "Arabic" : "English"}`}
       title={next === "ar" ? "العربية" : "English"}
-      className={cn(switchButtonClass, className)}
+      className={cn("fx-ctrl", className)}
     >
       <TranslateIcon className="h-5 w-5" />
-    </button>
+    </Button>
   );
 }

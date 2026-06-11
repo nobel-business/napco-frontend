@@ -6,6 +6,7 @@ import { Calendar, User, Eye, Check, Lightbulb, Facebook, Linkedin, MessageCircl
 import type { Locale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { Container } from "@/components/ui/container";
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SectionHeading } from "@/components/sections/section-heading";
 import { ArticleCard } from "@/components/cards/article-card";
@@ -175,13 +176,10 @@ export default async function ArticlePage({
             </h2>
             <div className="flex flex-wrap items-center justify-center gap-4">
               {shareButtons.map(({ Icon, label }) => (
-                <button
-                  key={label}
-                  className="fx-social inline-flex items-center gap-2 rounded-xl bg-gradient-to-br from-secondary-300 to-secondary-500 px-6 py-3 text-label-small font-medium text-white shadow-sm transition hover:-translate-y-0.5 hover:opacity-90"
-                >
+                <Button key={label} type="button" variant="secondary" className="fx-social">
                   <Icon className="h-5 w-5" />
                   {label}
-                </button>
+                </Button>
               ))}
             </div>
           </div>

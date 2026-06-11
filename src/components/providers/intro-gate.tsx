@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { INTRO_ENABLED } from "@/config/site";
+import { Button } from "@/components/ui/button";
 import { SonarIntro } from "@/components/sections/sonar-intro";
 
 const KEY = "napco-intro-seen";
@@ -78,8 +79,10 @@ export function IntroGate() {
       onTouchMove={dismiss}
     >
       <SonarIntro />
-      <button
+      <Button
         type="button"
+        variant="ghost"
+        size="sm"
         className="sonar-skip"
         onClick={(e) => {
           e.stopPropagation();
@@ -87,7 +90,7 @@ export function IntroGate() {
         }}
       >
         {t("skipIntro")}
-      </button>
+      </Button>
     </div>
   );
 }

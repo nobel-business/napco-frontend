@@ -64,7 +64,7 @@ export function Footer() {
           <h3 className="text-title-small font-semibold">
             {t("footer.getStarted")}
           </h3>
-          <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+          <div className="flex flex-col items-start gap-3 sm:flex-row lg:flex-col">
             <Button asChild>
               <Link href="/contact">{t("nav.contact")}</Link>
             </Button>

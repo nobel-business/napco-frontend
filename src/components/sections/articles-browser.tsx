@@ -3,8 +3,8 @@
 import { useMemo, useState } from "react";
 import { ChevronDown } from "@/components/ui/mingcute-icons";
 
-import { cn } from "@/lib/utils";
 import { Icon } from "@/components/ui/icon";
+import { Button } from "@/components/ui/button";
 import { ArticleCard } from "@/components/cards/article-card";
 import type { ArticleData, Category } from "@/content/articles";
 
@@ -41,26 +41,20 @@ export function ArticlesBrowser({
       {/* Filter chips */}
       <div className="flex flex-wrap items-center gap-2">
         {categories.map((cat) => (
-          <button
+          <Button
             key={cat.key}
+            type="button"
             onClick={() => selectCategory(cat.key)}
-            className={cn(
-              "rounded-lg px-5 py-2.5 text-label-small font-medium transition-colors",
-              active === cat.key
-                ? "bg-brand text-white shadow-sm"
-                : "text-muted-foreground hover:text-brand",
-            )}
+            variant={active === cat.key ? "primary" : "ghost"}
+            size="sm"
           >
             {cat.label}
-          </button>
+          </Button>
         ))}
-        <button
-          type="button"
-          className="inline-flex items-center gap-1 rounded-lg px-4 py-2.5 text-label-small font-medium text-muted-foreground transition-colors hover:text-brand"
-        >
+        <Button type="button" variant="ghost" size="sm">
           {moreLabel}
           <ChevronDown className="h-4 w-4" />
-        </button>
+        </Button>
       </div>
 
       {/* Grid */}
@@ -73,36 +67,39 @@ export function ArticlesBrowser({
       {/* Pagination */}
       {pageCount > 1 && (
         <div className="flex items-center justify-center gap-3 pt-4">
-          <button
+          <Button
+            type="button"
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={current === 1}
             aria-label="Previous page"
-            className="fx-glide-start inline-flex h-10 w-8 items-center justify-center text-muted-foreground transition hover:text-brand active:scale-95 disabled:opacity-40"
+            variant="ghost"
+            size="icon-sm"
+            className="fx-glide-start"
           >
             <Icon name="chevrons-left" className="h-5 w-5 rtl-flip" />
-          </button>
+          </Button>
           {Array.from({ length: pageCount }, (_, i) => i + 1).map((n) => (
-            <button
+            <Button
               key={n}
+              type="button"
               onClick={() => setPage(n)}
-              className={cn(
-                "inline-flex h-10 items-center justify-center rounded-lg text-label-small transition-colors",
-                n === current
-                  ? "w-10 bg-brand font-semibold text-white"
-                  : "min-w-[1.75rem] px-1 font-medium text-muted-foreground hover:text-brand",
-              )}
+              variant={n === current ? "primary" : "ghost"}
+              size="icon-sm"
             >
               {n}
-            </button>
+            </Button>
           ))}
-          <button
+          <Button
+            type="button"
             onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
             disabled={current === pageCount}
             aria-label="Next page"
-            className="fx-glide-end inline-flex h-10 w-8 items-center justify-center text-muted-foreground transition hover:text-brand active:scale-95 disabled:opacity-40"
+            variant="ghost"
+            size="icon-sm"
+            className="fx-glide-end"
           >
             <Icon name="chevrons-right" className="h-5 w-5 rtl-flip" />
-          </button>
+          </Button>
         </div>
       )}
     </div>

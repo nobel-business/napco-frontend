@@ -60,9 +60,9 @@ export function Navbar() {
               key={item.key}
               href={item.href}
               className={cn(
-                "whitespace-nowrap rounded-lg py-2 text-label-small font-medium uppercase transition-colors",
+                "whitespace-nowrap rounded-full px-4 py-2 text-label-small font-medium uppercase transition-[background-color,color,box-shadow,filter] duration-200",
                 isActive(item.href)
-                  ? "bg-brand px-4 text-white"
+                  ? "bg-gradient-btn-orange text-white shadow-card hover:brightness-105"
                   : "hover:text-brand",
               )}
             >
@@ -73,26 +73,28 @@ export function Navbar() {
 
         {/* Actions — Contact Us (navy gradient) + matching language & theme switch buttons */}
         <div className="flex items-center gap-3">
-          <Button asChild size="sm" variant="navy" className="hidden md:inline-flex">
+          <Button asChild size="sm" variant="secondary" className="hidden md:inline-flex">
             <Link href="/contact">{t("contact")}</Link>
           </Button>
           <LocaleSwitcher className="hidden sm:inline-flex" />
           <ThemeToggle className="hidden sm:inline-flex" />
 
           {/* Mobile menu toggle */}
-          <button
+          <Button
             type="button"
+            variant="ghost"
+            size="icon-sm"
             aria-label="Menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-white/10 lg:hidden"
+            className="hover:bg-white/10 lg:hidden"
           >
             {open ? (
               <X key="x" className="fx-icon-swap h-6 w-6" />
             ) : (
               <Menu key="menu" className="fx-icon-swap h-6 w-6" />
             )}
-          </button>
+          </Button>
         </div>
       </Container>
 
@@ -105,8 +107,10 @@ export function Navbar() {
                 key={item.key}
                 href={item.href}
                 className={cn(
-                  "rounded-lg px-3 py-2.5 text-title-small uppercase transition-colors hover:bg-muted",
-                  isActive(item.href) && "text-brand",
+                  "rounded-full px-4 py-2.5 text-title-small uppercase transition-colors",
+                  isActive(item.href)
+                    ? "bg-gradient-btn-orange text-white shadow-card"
+                    : "hover:bg-muted",
                 )}
               >
                 {t(item.key)}
@@ -115,7 +119,7 @@ export function Navbar() {
             <div className="mt-2 flex items-center gap-2">
               <LocaleSwitcher className="hover:bg-muted" />
               <ThemeToggle />
-              <Button asChild size="sm" variant="navy" className="flex-1">
+              <Button asChild size="sm" variant="secondary" className="flex-1">
                 <Link href="/contact">{t("contact")}</Link>
               </Button>
             </div>

@@ -169,6 +169,10 @@
   --gradient-stat-orange: linear-gradient(135deg, #ff9b5e 0%, #ff6a1f 100%);
   --gradient-card-orange: linear-gradient(115deg, #cc6023 0%, #ff782c 100%);
 
+  /* Button gradients — the global pill CTA language (Primary orange · Secondary marine). */
+  --gradient-btn-orange: linear-gradient(180deg, #ff9a4d 0%, #ee6a1f 100%);
+  --gradient-btn-marine: linear-gradient(180deg, #1f9fc2 0%, #0a6080 100%);
+
   /* Water-depth gradients (Premium Aquatech) — looking into the water. */
   --gradient-depth: linear-gradient(180deg, #021b33 0%, #06293a 60%, #073a50 100%);
   --gradient-marine: linear-gradient(135deg, #0e7f9f 0%, #06293a 100%);
@@ -304,6 +308,12 @@
   }
   .bg-gradient-card-orange {
     background-image: var(--gradient-card-orange);
+  }
+  .bg-gradient-btn-orange {
+    background-image: var(--gradient-btn-orange);
+  }
+  .bg-gradient-btn-marine {
+    background-image: var(--gradient-btn-marine);
   }
   .bg-gradient-depth {
     background-image: var(--gradient-depth);

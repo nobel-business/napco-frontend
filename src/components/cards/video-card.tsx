@@ -1,6 +1,7 @@
 import { MediaImage } from "@/components/ui/media-image";
 import { Play } from "lucide-react";
 import { Clock } from "@/components/ui/mingcute-icons";
+import { Button } from "@/components/ui/button";
 
 export type VideoItem = {
   image: string;
@@ -28,12 +29,14 @@ export function VideoCard({
           className="object-cover transition-transform duration-[var(--motion-image)] group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-navy/30 transition-colors group-hover:bg-navy/45" />
-        <button
+        <Button
+          variant="ghost"
+          size="icon-lg"
           aria-label={video.title}
-          className="absolute inset-0 m-auto flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-brand shadow-lg transition-transform group-hover:scale-110 active:scale-95"
+          className="absolute inset-0 m-auto bg-white/90 text-brand shadow-lg hover:bg-white group-hover:scale-110"
         >
           <Play className="h-7 w-7 fill-current ps-1" />
-        </button>
+        </Button>
       </div>
       <div className="flex flex-1 flex-col gap-3 p-6">
         <h3 className="text-title-medium font-semibold text-foreground">{video.title}</h3>
