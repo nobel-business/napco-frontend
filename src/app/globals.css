@@ -541,6 +541,51 @@ html.lenis body {
   }
 }
 
+/* Orbiting border light — a slow conic-gradient highlight (orange · marine · blue, the brand's
+   key colors) travels around the edge of hero/feature cards. Always-on but subtle: the mask
+   paints only a ~1.5px ring so content is untouched. Becomes a static gradient edge under
+   reduced-motion. */
+@property --orbit-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.fx-orbit {
+  position: relative;
+}
+.fx-orbit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--orbit-angle),
+    transparent 0deg,
+    #ff782c 36deg,
+    transparent 96deg,
+    transparent 156deg,
+    #1f9fc2 192deg,
+    transparent 252deg,
+    #3b4ad8 300deg,
+    transparent 350deg,
+    transparent 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: fx-orbit-spin 6s linear infinite;
+  pointer-events: none;
+}
+@keyframes fx-orbit-spin {
+  to {
+    --orbit-angle: 360deg;
+  }
+}
+
 @keyframes fish-twitch {
   0% {
     transform: rotate(0deg) translateX(0);
@@ -596,8 +641,14 @@ html.lenis body {
     transform: scale(1.14) rotate(5deg);
     filter: brightness(1.14) drop-shadow(0 6px 14px rgba(255, 120, 44, 0.45));
   }
-  .group:hover .fx-icon-tile.bg-gradient-tile-blue {
-    filter: brightness(1.14) drop-shadow(0 6px 14px rgba(0, 8, 163, 0.5));
+  /* Blue / navy icon tiles glow turquoise (the default fx-icon-tile glow is orange). Covers the
+     gradient-tile-blue + stat-blue tiles, the primary-gradient tiles (career / contact), and any
+     tile inside a teal-accent card (e.g. white/15 tiles on navy cards). */
+  .group:hover .fx-icon-tile.bg-gradient-tile-blue,
+  .group:hover .fx-icon-tile.bg-gradient-stat-blue,
+  .group:hover .fx-icon-tile.from-primary-400,
+  .fx-glow-teal:hover .fx-icon-tile {
+    filter: brightness(1.14) drop-shadow(0 6px 14px rgba(31, 159, 194, 0.55));
   }
   [dir="rtl"] .group:hover .fx-icon-tile {
     transform: scale(1.14) rotate(-5deg);
@@ -716,6 +767,45 @@ html.lenis body {
     animation: fx-point-sheen 0.7s var(--ease-out-soft) 0.12s;
   }
 
+  /* ---- Hover lighting system — colored ambient glow keyed to each card's accent.
+     Animate only box-shadow / text-shadow / color (no transform) so these compose with
+     .hover-lift and stay reduced-motion-safe. Defined AFTER .hover-lift so the glow's
+     box-shadow wins on cards that have both (the lift transform still applies). ---- */
+
+  /* 1 — orange aura (orange-accent cards) */
+  .fx-glow-orange {
+    transition: box-shadow var(--motion-base) var(--ease-out-soft);
+  }
+  .fx-glow-orange:hover {
+    box-shadow:
+      var(--shadow-card-hover),
+      0 0 0 1px rgba(255, 120, 44, 0.3),
+      0 8px 36px -4px rgba(255, 120, 44, 0.45);
+  }
+
+  /* 2 — turquoise aura (blue / navy-accent cards) */
+  .fx-glow-teal {
+    transition: box-shadow var(--motion-base) var(--ease-out-soft);
+  }
+  .fx-glow-teal:hover {
+    box-shadow:
+      var(--shadow-card-hover),
+      0 0 0 1px rgba(31, 159, 194, 0.32),
+      0 8px 36px -4px rgba(31, 159, 194, 0.48);
+  }
+
+  /* 3 — text illumination (neutral / text cards): inner text rises to full strength
+     with a soft aqua halo. Targets only headings/paragraphs so button/link text is left alone. */
+  .fx-glow-text :where(h2, h3, h4, p) {
+    transition:
+      color var(--motion-base) var(--ease-out-soft),
+      text-shadow var(--motion-base) var(--ease-out-soft);
+  }
+  .fx-glow-text:hover :where(h2, h3, h4, p) {
+    color: var(--foreground);
+    text-shadow: 0 0 18px rgba(147, 214, 231, 0.35);
+  }
+
   /* Logo fish — twitch/swim while the logo is hovered. */
   .logo-fish {
     transform-origin: 78% 50%;
@@ -747,6 +837,9 @@ html.lenis body {
   }
   .group:hover .fx-icon-tile,
   .group:hover .fx-icon-tile.bg-gradient-tile-blue,
+  .group:hover .fx-icon-tile.bg-gradient-stat-blue,
+  .group:hover .fx-icon-tile.from-primary-400,
+  .fx-glow-teal:hover .fx-icon-tile,
   .group:hover .fx-icon-tile svg {
     transform: none;
     filter: none;
@@ -773,6 +866,13 @@ html.lenis body {
     filter: none;
   }
   .fx-point:hover::after {
+    animation: none;
+  }
+  .fx-glow-text:hover :where(h2, h3, h4, p) {
+    color: inherit;
+    text-shadow: none;
+  }
+  .fx-orbit::before {
     animation: none;
   }
   .logo-mark:hover .logo-fish {

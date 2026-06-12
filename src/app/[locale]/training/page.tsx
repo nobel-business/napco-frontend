@@ -53,7 +53,7 @@ export default async function TrainingPage({
       {/* INTRO */}
       <section className="section">
         <Container>
-          <div className="grid items-center gap-10 rounded-3xl bg-surface-tint p-6 shadow-card md:p-10 lg:grid-cols-[1.5fr_1fr] dark:bg-surface">
+          <div className="fx-glow-text grid items-center gap-10 rounded-3xl bg-surface-tint p-6 shadow-card md:p-10 lg:grid-cols-[1.5fr_1fr] dark:bg-surface">
             <div className="space-y-5">
               <h2 className="text-headline-small font-semibold uppercase text-foreground">
                 {t("intro.title")}
@@ -82,7 +82,7 @@ export default async function TrainingPage({
             {tracks.map((track) => (
               <article
                 key={track.title}
-                className="hover-lift group space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
+                className="hover-lift group fx-glow-teal space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
               >
                 <span className="fx-icon-tile inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-stat-blue text-white">
                   <Icon name={track.icon} fill className="h-6 w-6" />
@@ -121,7 +121,7 @@ export default async function TrainingPage({
             {steps.map((step, i) => (
               <article
                 key={step.title}
-                className="hover-lift space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
+                className="hover-lift fx-glow-teal space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
               >
                 <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-stat-blue text-title-medium font-bold text-white">
                   {String(i + 1).padStart(2, "0")}
@@ -144,7 +144,9 @@ export default async function TrainingPage({
                 key={card.title}
                 className={cn(
                   "hover-lift group space-y-4 rounded-3xl p-8 text-white shadow-card md:p-10",
-                  card.variant === "blue" ? "bg-gradient-navy" : "bg-gradient-card-orange",
+                  card.variant === "blue"
+                    ? "bg-gradient-navy fx-glow-teal"
+                    : "bg-gradient-card-orange fx-glow-orange",
                 )}
               >
                 <div className="flex items-start justify-between gap-4">

@@ -15,11 +15,13 @@ export function StatTile({
   color?: "orange" | "blue";
 }) {
   return (
-    <div className="flex flex-col items-center gap-3 text-center">
+    <div className="group flex flex-col items-center gap-3 text-center">
       <span
         className={cn(
-          "inline-flex h-16 w-16 items-center justify-center rounded-xl text-white shadow-sm",
-          color === "orange" ? "bg-gradient-stat-orange" : "bg-gradient-stat-blue",
+          "inline-flex h-16 w-16 items-center justify-center rounded-xl text-white shadow-sm transition-[filter,transform] duration-[var(--motion-base)] ease-[var(--ease-spring)] motion-safe:group-hover:scale-110",
+          color === "orange"
+            ? "bg-gradient-stat-orange group-hover:[filter:drop-shadow(0_6px_14px_rgba(255,120,44,0.5))]"
+            : "bg-gradient-stat-blue group-hover:[filter:drop-shadow(0_6px_14px_rgba(31,159,194,0.55))]",
         )}
       >
         <Icon name={icon} fill className="h-8 w-8" />

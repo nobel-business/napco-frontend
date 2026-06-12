@@ -19,7 +19,7 @@ export function ArticleCard({ article }: { article: Article }) {
   return (
     <Link
       href={`/articles/${article.slug}`}
-      className="group hover-lift flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-card"
+      className="group hover-lift fx-glow-text flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-card"
     >
       <div className="relative aspect-[16/10] overflow-hidden">
         <Image
@@ -41,7 +41,7 @@ export function ArticleCard({ article }: { article: Article }) {
             {article.date}
           </span>
         </div>
-        <h3 className="text-title-medium font-semibold text-foreground transition-colors group-hover:text-brand">
+        <h3 className="text-title-medium font-semibold text-foreground">
           {article.title}
         </h3>
         <p className="line-clamp-2 flex-1 text-body-small text-muted-foreground">

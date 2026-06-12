@@ -41,7 +41,7 @@ export default async function ServicesPage({
       {/* INTRO */}
       <section className="section">
         <Container>
-          <div className="grid items-center gap-10 rounded-3xl bg-surface-tint p-6 shadow-card md:p-10 lg:grid-cols-[1.5fr_1fr] dark:bg-surface">
+          <div className="fx-glow-text grid items-center gap-10 rounded-3xl bg-surface-tint p-6 shadow-card md:p-10 lg:grid-cols-[1.5fr_1fr] dark:bg-surface">
             <div className="space-y-5">
               <h2 className="text-headline-small font-semibold uppercase text-foreground">
                 {t("intro.title")}
@@ -82,7 +82,7 @@ export default async function ServicesPage({
             {why.map((item, i) => (
               <article
                 key={item.title}
-                className="hover-lift space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
+                className="hover-lift fx-glow-teal space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
               >
                 <span className="bg-gradient-stat-blue inline-flex h-12 w-12 items-center justify-center rounded-xl text-title-medium font-bold text-white">
                   {String(i + 1).padStart(2, "0")}
@@ -103,7 +103,7 @@ export default async function ServicesPage({
             {systems.map((item) => (
               <article
                 key={item.title}
-                className="hover-lift group flex flex-col items-center gap-4 rounded-2xl border border-border bg-surface p-8 text-center shadow-card"
+                className="hover-lift group fx-glow-orange flex flex-col items-center gap-4 rounded-2xl border border-border bg-surface p-8 text-center shadow-card"
               >
                 <IconTile name={item.icon} className="fx-icon-tile" />
                 <h3 className="text-title-medium font-semibold text-foreground">{item.title}</h3>

@@ -49,7 +49,7 @@ export default async function AboutPage({
       {/* INTRO — national partner */}
       <section className="section">
         <Container className="space-y-10">
-          <div className="grid items-center gap-10 rounded-3xl bg-surface p-6 shadow-card md:p-10 lg:grid-cols-[1.6fr_1fr]">
+          <div className="fx-glow-text grid items-center gap-10 rounded-3xl bg-surface p-6 shadow-card md:p-10 lg:grid-cols-[1.6fr_1fr]">
             <div className="space-y-5">
               <h2 className="text-headline-small font-semibold uppercase text-foreground">
                 {t("intro.title")}
@@ -89,7 +89,7 @@ export default async function AboutPage({
         <Container className="space-y-10">
           <SectionHeading title={t("visionMission.title")} />
           <div className="grid items-stretch gap-6 md:grid-cols-2">
-            <article className="bg-gradient-navy hover-lift group flex flex-col gap-4 rounded-2xl p-6 text-white">
+            <article className="bg-gradient-navy hover-lift group fx-glow-teal flex flex-col gap-4 rounded-2xl p-6 text-white">
               <div className="flex items-center gap-4">
                 <span className="fx-icon-tile inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-white/15">
                   <Icon name="flag" fill className="h-8 w-8" />
@@ -98,7 +98,7 @@ export default async function AboutPage({
               </div>
               <p className="text-body-medium text-primary-100">{t("visionMission.vision")}</p>
             </article>
-            <article className="bg-gradient-card-orange hover-lift group flex flex-col gap-4 rounded-2xl p-6 text-white">
+            <article className="bg-gradient-card-orange hover-lift group fx-glow-orange flex flex-col gap-4 rounded-2xl p-6 text-white">
               <div className="flex items-center gap-4">
                 <span className="fx-icon-tile inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-lg bg-white/15">
                   <Icon name="puzzle" fill className="h-8 w-8" />
@@ -114,7 +114,7 @@ export default async function AboutPage({
       {/* CEO MESSAGE */}
       <section className="section">
         <Container>
-          <div className="grid items-center gap-10 rounded-3xl border border-border bg-surface p-6 shadow-card md:grid-cols-[360px_1fr] md:p-10">
+          <div className="fx-glow-text fx-orbit grid items-center gap-10 rounded-3xl border border-border bg-surface p-6 shadow-card md:grid-cols-[360px_1fr] md:p-10">
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
               <MediaImage
                 src="/images/leadership.png"
@@ -141,7 +141,7 @@ export default async function AboutPage({
                 {[Linkedin, MessageCircle, Mail].map((Ic, i) => (
                   <span
                     key={i}
-                    className="fx-social bg-gradient-navy inline-flex h-10 w-10 items-center justify-center rounded-lg text-white transition hover:-translate-y-0.5 hover:opacity-90"
+                    className="fx-social fx-glow-teal bg-gradient-navy inline-flex h-10 w-10 items-center justify-center rounded-lg text-white transition hover:-translate-y-0.5 hover:opacity-90"
                   >
                     <Ic className="h-5 w-5" />
                   </span>
@@ -161,7 +161,7 @@ export default async function AboutPage({
               {standards.map((item) => (
                 <li
                   key={item.title}
-                  className="hover-lift group flex gap-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
+                  className="hover-lift group fx-glow-orange flex gap-4 rounded-2xl border border-border bg-surface p-6 shadow-card"
                 >
                   <IconTile name={item.icon} className="fx-icon-tile" />
                   <div className="space-y-1.5">
@@ -201,7 +201,7 @@ export default async function AboutPage({
             ))}
           </div>
 
-          <div className="grid items-center gap-8 rounded-3xl bg-surface-tint p-6 shadow-card md:grid-cols-[300px_1fr] md:p-10 dark:bg-surface">
+          <div className="fx-glow-text grid items-center gap-8 rounded-3xl bg-surface-tint p-6 shadow-card md:grid-cols-[300px_1fr] md:p-10 dark:bg-surface">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <MediaImage
                 src="/images/about-team.png"
@@ -238,7 +238,7 @@ export default async function AboutPage({
       {/* VISION 2030 BANNER */}
       <section className="pb-12 lg:pb-16">
         <Container>
-          <div className="grid items-center gap-8 overflow-hidden rounded-3xl border border-border bg-surface shadow-card md:grid-cols-[240px_1fr]">
+          <div className="fx-glow-text grid items-center gap-8 overflow-hidden rounded-3xl border border-border bg-surface shadow-card md:grid-cols-[240px_1fr]">
             <div className="relative h-[220px] w-full md:h-[300px]">
               <MediaImage
                 src="/images/vision-2030.png"
