@@ -265,9 +265,9 @@ export default async function HomePage({
             {markets.map((c) => (
               <div
                 key={c.name}
-                className="flex h-[162px] flex-col items-center justify-center gap-4 rounded-2xl bg-surface-tint p-6 shadow-card dark:bg-surface"
+                className="group hover-lift flex h-[162px] flex-col items-center justify-center gap-4 rounded-2xl bg-surface-tint p-6 shadow-card dark:bg-surface"
               >
-                <div className="relative h-[62px] w-20">
+                <div className="relative h-[62px] w-20 transition-[transform,filter] duration-[var(--motion-base)] ease-[var(--ease-spring)] motion-safe:group-hover:-translate-y-1.5 motion-safe:group-hover:scale-110 motion-safe:group-hover:[filter:drop-shadow(0_6px_14px_rgba(84,187,214,0.45))]">
                   <MediaImage
                     src={c.icon}
                     alt={c.name}
