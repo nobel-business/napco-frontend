@@ -224,7 +224,7 @@ export default async function AboutPage({
                   >
                     <CountUp
                       value={s.value}
-                      className={`text-display-small font-bold ${i === 1 ? "text-accent-card dark:text-primary-300" : "text-brand"}`}
+                      className={`text-display-small font-bold ${i === 1 ? "text-aqua-600 dark:text-aqua-400" : "text-brand"}`}
                     />
                     <span className="text-body-small text-muted-foreground">{s.label}</span>
                   </div>
