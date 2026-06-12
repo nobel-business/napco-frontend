@@ -527,6 +527,20 @@ html.lenis body {
 
 /* NAPCO logo fish — strong twitch/swim on hover. Pivots near the head (fish faces right) so
    the tail swings; loops while hovered, stops on leave. Reduced-motion disables it. */
+@keyframes fx-point-sheen {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
 @keyframes fish-twitch {
   0% {
     transform: rotate(0deg) translateX(0);
@@ -628,6 +642,80 @@ html.lenis body {
     filter: brightness(1.15);
   }
 
+  /* Checklist points (ServiceBlock) — a choreographed hover sequence: the card slides
+     forward, then the icon pops, the checkmark bounces, the text follows, and a light
+     sheen sweeps across last. Reading-direction aware; pointer-only. */
+  .fx-point {
+    position: relative;
+    overflow: hidden;
+    transition:
+      transform var(--motion-base) var(--ease-spring),
+      box-shadow var(--motion-base) var(--ease-out-soft),
+      border-color var(--motion-base) var(--ease-out-soft);
+  }
+  .fx-point:hover {
+    transform: translateX(6px);
+    box-shadow: var(--shadow-card-hover);
+    border-color: rgba(255, 120, 44, 0.55);
+  }
+  [dir="rtl"] .fx-point:hover {
+    transform: translateX(-6px);
+  }
+
+  /* 1 — icon tile pops first */
+  .fx-point-icon {
+    transition:
+      transform var(--motion-base) var(--ease-spring),
+      filter var(--motion-base) var(--ease-out-soft);
+  }
+  .fx-point:hover .fx-point-icon {
+    transform: scale(1.18) rotate(8deg);
+    filter: brightness(1.12) drop-shadow(0 6px 14px rgba(255, 120, 44, 0.5));
+  }
+  [dir="rtl"] .fx-point:hover .fx-point-icon {
+    transform: scale(1.18) rotate(-8deg);
+  }
+  /* 2 — checkmark glyph gives a secondary bounce, slightly delayed */
+  .fx-point-icon svg {
+    transition: transform var(--motion-base) var(--ease-spring);
+    transition-delay: 90ms;
+  }
+  .fx-point:hover .fx-point-icon svg {
+    transform: scale(1.16);
+  }
+  /* 3 — text follows the icon */
+  .fx-point-text {
+    transition:
+      transform var(--motion-base) var(--ease-out-soft),
+      color var(--motion-base) var(--ease-out-soft);
+    transition-delay: 60ms;
+  }
+  .fx-point:hover .fx-point-text {
+    transform: translateX(5px);
+    color: var(--foreground);
+  }
+  [dir="rtl"] .fx-point:hover .fx-point-text {
+    transform: translateX(-5px);
+  }
+  /* 4 — a light sheen sweeps across the card last */
+  .fx-point::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 70%
+    );
+    transform: translateX(-120%);
+    opacity: 0;
+    pointer-events: none;
+  }
+  .fx-point:hover::after {
+    animation: fx-point-sheen 0.7s var(--ease-out-soft) 0.12s;
+  }
+
   /* Logo fish — twitch/swim while the logo is hovered. */
   .logo-fish {
     transform-origin: 78% 50%;
@@ -676,6 +764,16 @@ html.lenis body {
   [dir="rtl"] .fx-glide-start:hover,
   [dir="rtl"] .fx-glide-end:hover {
     transform: none;
+  }
+  .fx-point:hover,
+  .fx-point:hover .fx-point-icon,
+  .fx-point:hover .fx-point-icon svg,
+  .fx-point:hover .fx-point-text {
+    transform: none;
+    filter: none;
+  }
+  .fx-point:hover::after {
+    animation: none;
   }
   .logo-mark:hover .logo-fish {
     animation: none;
