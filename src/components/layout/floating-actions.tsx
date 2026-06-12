@@ -43,7 +43,7 @@ export function FloatingActions() {
         }}
         aria-label={t("backToTop")}
         className={cn(
-          "fixed bottom-6 end-6 z-40 shadow-lg transition-opacity duration-[var(--motion-slow)]",
+          "fx-totop fixed bottom-6 end-6 z-40 transition-opacity duration-[var(--motion-slow)]",
           showTop ? "opacity-100" : "pointer-events-none opacity-0",
         )}
       >

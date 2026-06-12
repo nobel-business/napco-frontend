@@ -586,6 +586,36 @@ html.lenis body {
   }
 }
 
+/* Back-to-top button — a soft breathing orange glow, with the arrow bouncing up on hover.
+   Glow is box-shadow only (no transform) so it never fights the button's own hover-lift. */
+.fx-totop {
+  animation: fx-totop-glow 2.6s ease-in-out infinite;
+}
+@keyframes fx-totop-glow {
+  0%,
+  100% {
+    box-shadow: 0 6px 18px -4px rgba(255, 120, 44, 0.4);
+  }
+  50% {
+    box-shadow: 0 10px 28px -2px rgba(255, 120, 44, 0.65);
+  }
+}
+.fx-totop svg {
+  transition: transform var(--motion-base) var(--ease-spring);
+}
+.fx-totop:hover svg {
+  animation: fx-totop-bounce 0.9s var(--ease-out-soft) infinite;
+}
+@keyframes fx-totop-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
 @keyframes fish-twitch {
   0% {
     transform: rotate(0deg) translateX(0);
@@ -873,6 +903,10 @@ html.lenis body {
     text-shadow: none;
   }
   .fx-orbit::before {
+    animation: none;
+  }
+  .fx-totop,
+  .fx-totop:hover svg {
     animation: none;
   }
   .logo-mark:hover .logo-fish {
