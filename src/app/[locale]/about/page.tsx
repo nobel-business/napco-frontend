@@ -156,7 +156,7 @@ export default async function AboutPage({
       <section className="bg-muted/40 section">
         <Container className="space-y-10">
           <SectionHeading title={t("standards.title")} />
-          <div className="grid items-start gap-10 lg:grid-cols-[1fr_420px]">
+          <div className="grid items-stretch gap-10 lg:grid-cols-[1fr_420px]">
             <ul className="space-y-4">
               {standards.map((item) => (
                 <li
@@ -171,8 +171,8 @@ export default async function AboutPage({
                 </li>
               ))}
             </ul>
-            <div className="space-y-4 lg:sticky lg:top-28">
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-card">
+            <div className="flex h-full flex-col gap-4">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-card lg:aspect-auto lg:flex-1">
                 <MediaImage
                   src="/images/about-standards.png"
                   alt={t("standards.title")}
