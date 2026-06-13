@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useTranslations } from "next-intl";
@@ -31,6 +31,7 @@ export function CareerForm() {
   const [fileName, setFileName] = useState("");
   const {
     register,
+    control,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
@@ -93,12 +94,21 @@ export function CareerForm() {
 
       <div className="grid gap-6 md:grid-cols-2">
         <Field label={t("nationality")} htmlFor="nationality" error={errors.nationality && t("required")}>
-          <Select id="nationality" defaultValue="" {...register("nationality")}>
-            <option value="" disabled>{t("nationalityPh")}</option>
-            {countries.map((c) => (
-              <option key={c} value={c}>{c}</option>
-            ))}
-          </Select>
+          <Controller
+            name="nationality"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <Select
+                id="nationality"
+                value={field.value ?? ""}
+                onChange={field.onChange}
+                onBlur={field.onBlur}
+                placeholder={t("nationalityPh")}
+                options={countries.map((c) => ({ value: c, label: c }))}
+              />
+            )}
+          />
         </Field>
         <Field label={t("specialization")} htmlFor="specialization">
           <Input id="specialization" placeholder={t("specializationPh")} {...register("specialization")} />

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useTranslations } from "next-intl";
@@ -31,6 +31,7 @@ export function TrainingForm() {
   const [done, setDone] = useState(false);
   const {
     register,
+    control,
     handleSubmit,
     reset,
     formState: { errors, isSubmitting },
@@ -82,21 +83,39 @@ export function TrainingForm() {
       </Field>
 
       <Field label={t("visitType")} htmlFor="visitType" error={errors.visitType && t("required")}>
-        <Select id="visitType" defaultValue="" {...register("visitType")}>
-          <option value="" disabled>{t("visitTypePh")}</option>
-          {visitTypes.map((o) => (
-            <option key={o} value={o}>{o}</option>
-          ))}
-        </Select>
+        <Controller
+          name="visitType"
+          control={control}
+          defaultValue=""
+          render={({ field }) => (
+            <Select
+              id="visitType"
+              value={field.value ?? ""}
+              onChange={field.onChange}
+              onBlur={field.onBlur}
+              placeholder={t("visitTypePh")}
+              options={visitTypes.map((o) => ({ value: o, label: o }))}
+            />
+          )}
+        />
       </Field>
 
       <Field label={t("visitors")} htmlFor="visitors" error={errors.visitors && t("required")}>
-        <Select id="visitors" defaultValue="" {...register("visitors")}>
-          <option value="" disabled>{t("visitorsPh")}</option>
-          {visitorOptions.map((o) => (
-            <option key={o} value={o}>{o}</option>
-          ))}
-        </Select>
+        <Controller
+          name="visitors"
+          control={control}
+          defaultValue=""
+          render={({ field }) => (
+            <Select
+              id="visitors"
+              value={field.value ?? ""}
+              onChange={field.onChange}
+              onBlur={field.onBlur}
+              placeholder={t("visitorsPh")}
+              options={visitorOptions.map((o) => ({ value: o, label: o }))}
+            />
+          )}
+        />
       </Field>
 
       <Field label={t("details")} htmlFor="details">
