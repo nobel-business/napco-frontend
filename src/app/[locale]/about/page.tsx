@@ -235,27 +235,37 @@ export default async function AboutPage({
         </Container>
       </section>
 
-      {/* VISION 2030 BANNER */}
-      <section className="pb-12 lg:pb-16">
+      {/* VISION 2030 BANNER — full-bleed, faint desert backdrop, no card */}
+      <section className="relative isolate overflow-hidden py-14 lg:py-20">
+        {/* Maraya desert backdrop spanning the full section, fading into the page */}
+        <MediaImage
+          src="/images/vision-2030-bg.png"
+          alt=""
+          fill
+          sizes="100vw"
+          className="pointer-events-none -z-10 object-cover opacity-[0.14] dark:opacity-[0.2] [-webkit-mask-image:linear-gradient(to_bottom,transparent,black_16%,black_84%,transparent)] [mask-image:linear-gradient(to_bottom,transparent,black_16%,black_84%,transparent)]"
+        />
         <Container>
-          <div className="fx-glow-text grid items-center gap-8 overflow-hidden rounded-3xl border border-border bg-surface shadow-card md:grid-cols-[240px_1fr]">
-            <div className="relative h-[220px] w-full md:h-[300px]">
+          <div className="grid items-center gap-8 md:grid-cols-[300px_1fr]">
+            {/* Vision 2030 lockup — full logo, never cropped, light/dark variants;
+                grows + glows turquoise on hover */}
+            <div className="relative h-[180px] w-full transition-[transform,filter] duration-[var(--motion-base)] ease-[var(--ease-spring)] [filter:drop-shadow(0_0_16px_rgba(147,214,231,0.55))] hover:[filter:drop-shadow(0_0_30px_rgba(147,214,231,0.85))] motion-safe:hover:scale-[1.06] md:h-[280px]">
               <MediaImage
                 src="/images/vision-2030.png"
                 alt={t("vision2030.badge")}
                 fill
-                sizes="(min-width: 768px) 240px, 100vw"
-                className="object-cover object-left dark:hidden"
+                sizes="(min-width: 768px) 300px, 100vw"
+                className="object-contain object-left rtl:object-right dark:hidden"
               />
               <MediaImage
                 src="/images/vision-2030-dark.png"
                 alt=""
                 fill
-                sizes="(min-width: 768px) 240px, 100vw"
-                className="hidden object-cover object-left dark:block"
+                sizes="(min-width: 768px) 300px, 100vw"
+                className="hidden object-contain object-left rtl:object-right dark:block"
               />
             </div>
-            <div className="space-y-4 p-8 md:py-12 md:pe-12">
+            <div className="space-y-4">
               <h2 className="text-headline-small font-semibold uppercase text-foreground">
                 {t("vision2030.title")}
               </h2>
