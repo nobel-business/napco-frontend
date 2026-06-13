@@ -80,7 +80,6 @@ export default async function ContactPage({
         title={t("hero.title")}
         subtitle={t("hero.subtitle")}
         image="/images/hero-contact.png"
-        className="min-h-[420px] lg:min-h-[480px]"
       />
 
       {/* FORM + INFO */}

@@ -88,7 +88,7 @@ export default async function CareerPage({
           <div className="fx-glow-text grid items-center gap-8 rounded-3xl border border-border bg-surface p-6 shadow-card md:grid-cols-[280px_1fr] md:p-8">
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <MediaImage
-                src="/images/trusted.png"
+                src="/images/career-ambassador.png"
                 alt=""
                 fill
                 sizes="(min-width: 768px) 280px, 100vw"
