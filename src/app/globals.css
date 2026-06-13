@@ -857,6 +857,16 @@ html.lenis body {
   }
 }
 
+/* Soft marine glow for section-side images (the photos beside card lists — NOT card
+   thumbnails). Always-on, intensifies a touch on hover; matches the site's turquoise theme. */
+.fx-img-glow {
+  transition: box-shadow var(--motion-base) var(--ease-out-soft);
+  box-shadow: 0 0 30px -8px rgba(31, 159, 194, 0.45);
+}
+.fx-img-glow:hover {
+  box-shadow: 0 0 46px -6px rgba(31, 159, 194, 0.62);
+}
+
 /* Reduced-motion: no route animation, no reveal offset, no hover transforms. */
 @media (prefers-reduced-motion: reduce) {
   .route-transition {

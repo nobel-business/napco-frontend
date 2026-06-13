@@ -25,7 +25,7 @@ export function ServiceBlock({
   return (
     <div className="grid items-center gap-10 lg:grid-cols-2">
       <div className={cn("space-y-3", reverse ? "lg:order-last" : "lg:order-first")}>
-        <div className="relative aspect-[16/10] overflow-hidden rounded-2xl shadow-card">
+        <div className="fx-img-glow relative aspect-[16/10] overflow-hidden rounded-2xl shadow-card">
           <MediaImage
             src={data.image}
             alt={data.title}

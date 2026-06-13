@@ -172,7 +172,7 @@ export default async function AboutPage({
               ))}
             </ul>
             <div className="flex h-full flex-col gap-4">
-              <div className="relative aspect-[3/4] overflow-hidden rounded-2xl shadow-card lg:aspect-auto lg:flex-1">
+              <div className="fx-img-glow relative aspect-[3/4] overflow-hidden rounded-2xl shadow-card lg:aspect-auto lg:flex-1">
                 <MediaImage
                   src="/images/about-standards.png"
                   alt={t("standards.title")}

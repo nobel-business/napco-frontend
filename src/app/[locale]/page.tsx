@@ -139,7 +139,7 @@ export default async function HomePage({
               ))}
             </ul>
             <div className="flex flex-col gap-6 self-stretch pt-10">
-              <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-2xl">
+              <div className="fx-img-glow relative min-h-[300px] flex-1 overflow-hidden rounded-2xl">
                 <MediaImage
                   src="/images/home-services.png"
                   alt={t("services.title")}
@@ -207,7 +207,7 @@ export default async function HomePage({
               ))}
             </ul>
             <div className="flex flex-col gap-6 self-stretch pt-10">
-              <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-2xl">
+              <div className="fx-img-glow relative min-h-[300px] flex-1 overflow-hidden rounded-2xl">
                 <MediaImage
                   src="/images/solutions.png"
                   alt={t("solutions.title")}
@@ -228,7 +228,7 @@ export default async function HomePage({
           <SectionHeading title={t("values.title")} />
           <div className="grid w-full items-stretch gap-10 lg:grid-cols-[466px_1fr]">
             <div className="flex flex-col gap-6 self-stretch pt-10">
-              <div className="relative min-h-[300px] flex-1 overflow-hidden rounded-2xl">
+              <div className="fx-img-glow relative min-h-[300px] flex-1 overflow-hidden rounded-2xl">
                 <MediaImage
                   src={t("values.image")}
                   alt={t("values.title")}
