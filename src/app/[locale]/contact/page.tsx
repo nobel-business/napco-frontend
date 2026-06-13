@@ -110,7 +110,7 @@ export default async function ContactPage({
                   note={t("info.phoneNote")}
                   value={siteContact.phone}
                   href={`tel:${siteContact.phone}`}
-                  valueClass="text-accent-card dark:text-primary-200"
+                  valueClass="text-aqua-600 dark:text-aqua-400"
                 />
                 <InfoRow
                   icon={Clock}
@@ -139,7 +139,7 @@ export default async function ContactPage({
       {/* MAP — illustrated world map (Figma "image 9") */}
       <section className="pb-12 lg:pb-16">
         <Container className="flex justify-center">
-          <div className="relative aspect-[800/520] w-full max-w-[800px]">
+          <div className="relative aspect-[800/520] w-full max-w-[800px] transition-[transform,filter] duration-[var(--motion-slow)] ease-[var(--ease-spring)] hover:[filter:drop-shadow(0_0_36px_rgba(31,159,194,0.6))] motion-safe:hover:scale-[1.02]">
             <MediaImage
               src="/images/contact-map.png"
               alt={t("map.label")}
