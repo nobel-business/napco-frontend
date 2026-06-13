@@ -24,7 +24,7 @@ export function FloatingActions() {
   return (
     <>
       <Button asChild variant="primary" className="fixed bottom-6 start-6 z-40 shadow-lg">
-        <a href="#" aria-label={t("joinCommunity")}>
+        <a href="https://wa.me/966541252773" target="_blank" rel="noopener noreferrer" aria-label={t("joinCommunity")}>
           <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-white/20">
             <MessageCircle className="h-4 w-4" />
           </span>

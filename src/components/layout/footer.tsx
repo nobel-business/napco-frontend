@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Mail, MapPin, Phone, Facebook, Linkedin, Twitter, Instagram } from "@/components/ui/mingcute-icons";
+import { Mail, MapPin, Phone, Facebook, Linkedin, Twitter, Instagram, Youtube } from "@/components/ui/mingcute-icons";
 
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
@@ -8,10 +8,11 @@ import { footerQuickLinks, siteContact } from "@/config/site";
 import { Logo } from "./logo";
 
 const socials = [
-  { Icon: Facebook, href: "#", label: "Facebook" },
-  { Icon: Linkedin, href: "#", label: "LinkedIn" },
-  { Icon: Twitter, href: "#", label: "Twitter" },
-  { Icon: Instagram, href: "#", label: "Instagram" },
+  { Icon: Facebook, href: "https://www.facebook.com/profile.php?id=61566331919225", label: "Facebook" },
+  { Icon: Instagram, href: "https://www.instagram.com/napcoaqua", label: "Instagram" },
+  { Icon: Linkedin, href: "https://www.linkedin.com/company/npaqua/", label: "LinkedIn" },
+  { Icon: Twitter, href: "https://x.com/NAPCOAQUA", label: "X (Twitter)" },
+  { Icon: Youtube, href: "https://www.youtube.com/@napcoaqua", label: "YouTube" },
 ];
 
 export function Footer() {
@@ -78,6 +79,8 @@ export function Footer() {
                 key={label}
                 href={href}
                 aria-label={label}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="fx-social text-white/80 transition-colors hover:text-brand"
               >
                 <Icon className="h-6 w-6" />
