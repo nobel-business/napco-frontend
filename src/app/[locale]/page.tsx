@@ -98,7 +98,7 @@ export default async function HomePage({
                 src="/images/trusted.png"
                 alt={t("trusted.title")}
                 fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
+                sizes="(min-width: 1024px) 466px, 100vw"
                 className="object-cover"
               />
             </div>
@@ -146,7 +146,7 @@ export default async function HomePage({
                   src="/images/home-services.png"
                   alt={t("services.title")}
                   fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 466px, 100vw"
                   className="object-cover"
                 />
               </div>
@@ -168,7 +168,7 @@ export default async function HomePage({
                 src="/images/leadership.png"
                 alt=""
                 fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
+                sizes="(min-width: 1024px) 466px, 100vw"
                 className="object-cover"
               />
             </div>
@@ -214,7 +214,7 @@ export default async function HomePage({
                   src="/images/solutions.png"
                   alt={t("solutions.title")}
                   fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 466px, 100vw"
                   className="object-cover"
                 />
               </div>
@@ -235,7 +235,7 @@ export default async function HomePage({
                   src={t("values.image")}
                   alt={t("values.title")}
                   fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  sizes="(min-width: 1024px) 466px, 100vw"
                   className="object-cover"
                 />
               </div>
