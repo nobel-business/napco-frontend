@@ -26,7 +26,7 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
         <ChevronLeft className="h-5 w-5 rtl-flip" />
       </Button>
 
-      <article className="fx-glow-text flex flex-1 flex-col items-center gap-6 rounded-3xl border border-border bg-surface p-6 shadow-card md:flex-row md:items-center md:p-8">
+      <article className="fx-glow-text-teal flex flex-1 flex-col items-center gap-6 rounded-3xl border border-border bg-surface p-6 shadow-card md:flex-row md:items-center md:p-8">
         <div className="relative aspect-square w-28 shrink-0 overflow-hidden rounded-2xl md:w-40">
           <Image
             src={t.image}

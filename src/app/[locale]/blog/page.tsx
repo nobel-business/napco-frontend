@@ -87,7 +87,7 @@ export default async function BlogPage({
             {systems.map((card) => (
               <article
                 key={card.title}
-                className="hover-lift group fx-glow-text flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-card"
+                className="hover-lift group fx-glow-text-teal flex flex-col overflow-hidden rounded-2xl border border-border bg-surface shadow-card"
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   <MediaImage

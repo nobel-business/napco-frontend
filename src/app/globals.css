@@ -835,16 +835,37 @@ html.lenis body {
       0 8px 36px -4px rgba(31, 159, 194, 0.48);
   }
 
-  /* 3 — text illumination (neutral / text cards): inner text rises to full strength
-     with a soft aqua halo. Targets only headings/paragraphs so button/link text is left alone. */
-  .fx-glow-text :where(h2, h3, h4, p) {
-    transition:
-      color var(--motion-base) var(--ease-out-soft),
-      text-shadow var(--motion-base) var(--ease-out-soft);
+  /* 3 — text spotlight ("camel" hover): the card's text lights up in its accent colour,
+     like a coloured flashlight shining on it. Glow only (no colour change) so it reads
+     cleanly on light surfaces AND on the navy/orange cards' white text. Headings get the
+     brighter beam, body a softer wash. Targets only headings/paragraphs so button/link
+     text is untouched. Pair the matching variant with the same-accent aura on feature
+     cards; neutral content panels use the turquoise variant. */
+  .fx-glow-text-orange :where(h2, h3, h4, p),
+  .fx-glow-text-teal :where(h2, h3, h4, p) {
+    transition: text-shadow var(--motion-base) var(--ease-out-soft);
   }
-  .fx-glow-text:hover :where(h2, h3, h4, p) {
-    color: var(--foreground);
-    text-shadow: 0 0 18px rgba(147, 214, 231, 0.35);
+  .fx-glow-text-orange:hover :where(h2, h3, h4) {
+    text-shadow:
+      0 0 9px rgba(255, 120, 44, 0.85),
+      0 0 22px rgba(255, 120, 44, 0.55),
+      0 0 40px rgba(255, 120, 44, 0.32);
+  }
+  .fx-glow-text-orange:hover :where(p) {
+    text-shadow:
+      0 0 10px rgba(255, 120, 44, 0.5),
+      0 0 22px rgba(255, 120, 44, 0.28);
+  }
+  .fx-glow-text-teal:hover :where(h2, h3, h4) {
+    text-shadow:
+      0 0 9px rgba(31, 159, 194, 0.9),
+      0 0 22px rgba(31, 159, 194, 0.58),
+      0 0 40px rgba(31, 159, 194, 0.34);
+  }
+  .fx-glow-text-teal:hover :where(p) {
+    text-shadow:
+      0 0 10px rgba(31, 159, 194, 0.52),
+      0 0 22px rgba(31, 159, 194, 0.3);
   }
 
   /* Logo fish — twitch/swim while the logo is hovered. */
@@ -919,8 +940,8 @@ html.lenis body {
   .fx-point:hover::after {
     animation: none;
   }
-  .fx-glow-text:hover :where(h2, h3, h4, p) {
-    color: inherit;
+  .fx-glow-text-orange:hover :where(h2, h3, h4, p),
+  .fx-glow-text-teal:hover :where(h2, h3, h4, p) {
     text-shadow: none;
   }
   .fx-orbit::before {

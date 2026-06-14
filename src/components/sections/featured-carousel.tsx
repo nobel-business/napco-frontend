@@ -38,7 +38,7 @@ export function FeaturedCarousel({
 
       <Link
         href={`/articles/${a.slug}`}
-        className="fx-glow-text hover-lift group flex flex-1 flex-col gap-6 rounded-3xl border border-border bg-surface p-6 shadow-card md:flex-row md:items-center md:p-8"
+        className="fx-glow-text-teal hover-lift group flex flex-1 flex-col gap-6 rounded-3xl border border-border bg-surface p-6 shadow-card md:flex-row md:items-center md:p-8"
       >
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl md:w-72 md:shrink-0">
           <Image

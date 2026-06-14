@@ -90,7 +90,7 @@ export default async function HomePage({
       {/* TRUSTED PARTNER */}
       <section className="section">
         <Container>
-          <div className="fx-glow-text flex flex-col gap-10 rounded-3xl bg-surface-tint p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
+          <div className="fx-glow-text-teal flex flex-col gap-10 rounded-3xl bg-surface-tint p-6 shadow-card md:flex-row md:items-stretch md:p-10 dark:bg-surface">
             <div className="relative aspect-[4/3] shrink-0 overflow-hidden rounded-2xl md:aspect-auto md:w-[440px]">
               <MediaImage
                 src="/images/trusted.png"
@@ -129,7 +129,7 @@ export default async function HomePage({
               {services.map((item) => (
                 <li
                   key={item.label}
-                  className="group hover-lift fx-glow-orange flex h-24 items-center gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
+                  className="group hover-lift fx-glow-orange fx-glow-text-orange flex h-24 items-center gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
                 >
                   <IconTile name={item.icon} className="fx-icon-tile" />
                   <span className="text-label-large font-medium text-foreground">
@@ -160,7 +160,7 @@ export default async function HomePage({
       {/* VISION */}
       <section className="section">
         <Container>
-          <div className="fx-glow-text fx-orbit flex flex-col gap-10 rounded-3xl bg-surface p-6 shadow-card md:flex-row md:items-stretch md:p-10">
+          <div className="fx-glow-text-teal fx-orbit flex flex-col gap-10 rounded-3xl bg-surface p-6 shadow-card md:flex-row md:items-stretch md:p-10">
             <div className="relative aspect-square shrink-0 overflow-hidden rounded-2xl md:aspect-auto md:w-[360px]">
               <MediaImage
                 src="/images/leadership.png"
@@ -194,7 +194,7 @@ export default async function HomePage({
               {solutions.map((item) => (
                 <li
                   key={item.title}
-                  className="group hover-lift fx-glow-orange flex gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
+                  className="group hover-lift fx-glow-orange fx-glow-text-orange flex gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
                 >
                   <IconTile name={item.icon} size="lg" className="fx-icon-tile" />
                   <div className="space-y-4">
@@ -243,7 +243,7 @@ export default async function HomePage({
               {values.map((item) => (
                 <li
                   key={item.title}
-                  className="group hover-lift fx-glow-orange flex gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
+                  className="group hover-lift fx-glow-orange fx-glow-text-orange flex gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
                 >
                   <IconTile name={item.icon} size="lg" className="fx-icon-tile" />
                   <div className="space-y-4">
@@ -292,7 +292,7 @@ export default async function HomePage({
             {whyChoose.map((item) => (
               <article
                 key={item.title}
-                className="group hover-lift fx-glow-orange flex gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
+                className="group hover-lift fx-glow-orange fx-glow-text-orange flex gap-6 rounded-2xl border border-tint bg-surface p-6 shadow-card"
               >
                 <IconTile name={item.icon} size="lg" className="fx-icon-tile" />
                 <div className="space-y-4">
@@ -310,7 +310,7 @@ export default async function HomePage({
       {/* PARTNERS — infinite logo carousel (contained card: white in light, elevated in dark) */}
       <section className="bg-muted/40 section">
         <Container>
-          <div className="fx-glow-text space-y-10 rounded-3xl border border-border bg-surface px-6 py-10 shadow-card md:px-10">
+          <div className="fx-glow-text-teal space-y-10 rounded-3xl border border-border bg-surface px-6 py-10 shadow-card md:px-10">
             <SectionHeading title={t("partners.title")} />
             <PartnersMarquee logos={partners} />
           </div>

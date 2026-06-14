@@ -147,7 +147,7 @@ export default async function ArticlePage({
               <p className="text-body-medium text-muted-foreground">{t("implementationIntro")}</p>
               <div className="grid gap-6 md:grid-cols-3">
                 {implementation.map((item, i) => (
-                  <article key={item.title} className="hover-lift fx-glow-teal space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card">
+                  <article key={item.title} className="hover-lift fx-glow-teal fx-glow-text-teal space-y-4 rounded-2xl border border-border bg-surface p-6 shadow-card">
                     <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-stat-blue text-title-medium font-bold text-white">
                       {String(i + 1).padStart(2, "0")}
                     </span>

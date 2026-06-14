@@ -93,7 +93,7 @@ export default async function ContactPage({
               <h2 className="text-headline-small font-semibold uppercase text-foreground">
                 {t("info.heading")}
               </h2>
-              <div className="fx-glow-text space-y-6 rounded-3xl border border-border bg-surface p-6 shadow-card md:p-8">
+              <div className="fx-glow-text-teal space-y-6 rounded-3xl border border-border bg-surface p-6 shadow-card md:p-8">
                 <InfoRow
                   icon={Mail}
                   color="orange"
@@ -123,7 +123,7 @@ export default async function ContactPage({
               </div>
 
               {/* Expert support */}
-              <div className="bg-gradient-navy fx-glow-teal fx-orbit space-y-4 rounded-3xl p-6 text-white shadow-card md:p-8">
+              <div className="bg-gradient-navy fx-glow-teal fx-glow-text-teal fx-orbit space-y-4 rounded-3xl p-6 text-white shadow-card md:p-8">
                 <h3 className="text-title-large font-semibold">{t("info.expertTitle")}</h3>
                 <p className="text-body-small text-white/80">{t("info.expertBody")}</p>
                 <div className="flex flex-col items-center gap-1 rounded-2xl bg-white/10 p-4 text-center">
