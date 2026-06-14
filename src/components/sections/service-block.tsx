@@ -27,10 +27,11 @@ export function ServiceBlock({
       {/* Title above the grid so the image lines up with the cards (not offset by the heading). */}
       <h3 className="text-headline-small font-semibold text-foreground">{data.title}</h3>
 
-      <div className="grid items-center gap-10 lg:grid-cols-2">
-        {/* Image column — a clean image block, vertically centered against the cards. */}
+      <div className="grid items-stretch gap-10 lg:grid-cols-2">
+        {/* Image column — image sizes to its own card stack (short next to few cards,
+            taller next to many); a low floor keeps small blocks from getting too thin. */}
         <div className={cn("flex flex-col gap-3", reverse ? "lg:order-last" : "lg:order-first")}>
-          <div className="fx-img-glow relative aspect-[4/3] overflow-hidden rounded-2xl shadow-card">
+          <div className="fx-img-glow relative min-h-[180px] flex-1 overflow-hidden rounded-2xl shadow-card">
             <MediaImage
               src={data.image}
               alt={data.title}
@@ -44,8 +45,8 @@ export function ServiceBlock({
           )}
         </div>
 
-        {/* Cards */}
-        <ul className="space-y-3">
+        {/* Cards — centered when the image floor makes the image taller (very few cards). */}
+        <ul className="flex flex-col justify-center gap-3">
           {data.items.map((item) => (
             <li
               key={item}
