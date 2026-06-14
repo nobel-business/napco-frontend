@@ -3,12 +3,15 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Hero background video tuned for perceived performance:
- * - the `poster` paints instantly and carries the first frame (protects LCP);
- * - the MP4 is `preload="none"` and only fetched/played once the browser is idle AND the
- *   hero is in view — it never competes with the initial paint or first card images;
- * - skipped entirely (poster stays) under reduced-motion or data-saver / very slow networks;
- * - pauses when scrolled out of view.
+ * Hero background video. The video is the intended, always-on visual — the `poster`
+ * exists only as the very first paint before the first frame decodes, never as a
+ * lasting fallback. So it autoplays eagerly on every mount and keeps itself playing:
+ * - re-asserts play() on mount, on back/forward-cache restore (`pageshow`), and when
+ *   tabbed back to (`visibilitychange`) — these are the moments a revisit could otherwise
+ *   leave the poster showing instead of the video;
+ * - pauses only while fully scrolled out of view, and resumes on return (performance);
+ * - reduced-motion / data-saver / 2g are the sole cases where the poster intentionally
+ *   stays (no autoplay), for accessibility and bandwidth.
  */
 export function HeroVideo({
   src,
@@ -31,34 +34,50 @@ export function HeroVideo({
     ).connection;
     if (conn?.saveData || /(^|-)2g$/.test(conn?.effectiveType ?? "")) return;
 
-    const idle: (cb: () => void) => void =
-      typeof window.requestIdleCallback === "function"
-        ? (cb) => window.requestIdleCallback(cb)
-        : (cb) => window.setTimeout(cb, 200);
-
-    let started = false;
-    const start = () => {
-      if (started) return;
-      started = true;
-      video.src = src;
-      video.load();
-      void video.play().catch(() => {});
+    const play = () => {
+      // only when at least partly on screen — avoids fighting the scroll-out pause
+      if (video.paused && video.getBoundingClientRect().bottom > 0) {
+        void video.play().catch(() => {});
+      }
     };
+
+    play();
+    const onPageShow = () => play();
+    const onVisibility = () => {
+      if (document.visibilityState === "visible") play();
+    };
+    window.addEventListener("pageshow", onPageShow);
+    document.addEventListener("visibilitychange", onVisibility);
 
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
-          if (e.isIntersecting) idle(start);
-          else if (started) video.pause();
+          if (e.isIntersecting) void video.play().catch(() => {});
+          else video.pause();
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0 },
     );
     io.observe(video);
-    return () => io.disconnect();
+
+    return () => {
+      io.disconnect();
+      window.removeEventListener("pageshow", onPageShow);
+      document.removeEventListener("visibilitychange", onVisibility);
+    };
   }, [src]);
 
   return (
-    <video ref={ref} muted loop playsInline poster={poster} preload="none" className={className} />
+    <video
+      ref={ref}
+      src={src}
+      autoPlay
+      muted
+      loop
+      playsInline
+      poster={poster}
+      preload="auto"
+      className={className}
+    />
   );
 }
