@@ -138,7 +138,7 @@
   --ease-out-quint: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* slight overshoot — bouncy hover pop */
   --motion-fast: 150ms; /* hover / press feedback */
-  --motion-route: 130ms; /* route cross-dissolve — kept short so navigation feels instant */
+  --motion-route: 90ms; /* route cross-dissolve — kept very short so navigation feels instant */
   --motion-base: 220ms; /* menus */
   --motion-slow: 300ms; /* bg/overlay/opacity toggles */
   --motion-image: 500ms; /* image zoom on hover */

@@ -75,14 +75,15 @@ export function ViewTransitions() {
         () =>
           new Promise<void>((resolve) => {
             finishRef.current = resolve;
-            // Failsafe: never leave the snapshot frozen if the route stalls. Kept short so a
-            // slow/un-prefetched route un-freezes quickly rather than feeling like a hang.
+            // Failsafe: never leave the snapshot frozen if the route stalls. Kept tight so a
+            // slow/un-prefetched route un-freezes quickly rather than feeling like a hang —
+            // every primary route is prefetched, so the real commit normally resolves first.
             window.setTimeout(() => {
               if (finishRef.current) {
                 finishRef.current();
                 finishRef.current = null;
               }
-            }, 400);
+            }, 180);
             router.push(url.pathname + url.search + url.hash);
           }),
       );
