@@ -42,8 +42,10 @@ export default async function AboutPage({
       <PageHero
         eyebrow={t("hero.eyebrow")}
         title={t("hero.title")}
-        subtitle={t("hero.subtitle")}
+        subtitle={t.rich("hero.subtitle", { br: () => <br className="hidden xl:block" /> })}
         image="/images/hero-about.png"
+        wide
+        subtitleWide
       />
 
       {/* INTRO — national partner */}

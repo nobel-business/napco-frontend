@@ -5,7 +5,7 @@
   "footer": { "quickLinks": "Quick Links", "getStarted": "Get Started", "bookConsultation": "Book a Consultation", "copyright": "© 2026 NAPCO Aqua. All rights reserved.", "poweredBy": "Powered by" },
   "notFound": { "title": "Page not found", "description": "The page you are looking for doesn't exist or has been moved.", "backHome": "Back to home" },
   "home": {
-    "hero": { "eyebrow": "Aquaculture · Engineering · Operations", "title": "Welcome to NAPCO Aqua", "subtitle": "An integrated system delivering innovative and sustainable solutions to support fish farming projects and drive sustainable growth in the aquaculture sector.", "primaryCta": "Explore our services", "secondaryCta": "Booking a Consultation", "stats": [{ "value": "30+", "label": "Years of expertise" }, { "value": "6", "label": "GCC markets" }, { "value": "5", "label": "Integrated services" }] },
+    "hero": { "eyebrow": "Aquaculture · Engineering · Operations", "title": "Welcome to NAPCO Aqua", "subtitle": "An integrated system delivering innovative and sustainable solutions to support <br></br>fish farming projects and drive sustainable growth in the aquaculture sector.", "primaryCta": "Explore our services", "secondaryCta": "Booking a Consultation", "stats": [{ "value": "30+", "label": "Years of expertise" }, { "value": "6", "label": "GCC markets" }, { "value": "5", "label": "Integrated services" }] },
     "trusted": { "title": "A Trusted Partner For Aquaculture Investors & Operators", "body": "Napco Aqua is an operating brand of Nobel Business Group, providing specialized consultancy and technical solutions for the aquaculture sector, backed by over 30 years of hands-on experience in developing and managing aquaculture projects.", "statValue": "30+", "statLabel": "Over 30 years of hands-on experience" },
     "services": {
       "title": "NAPCO Aqua Services",
@@ -66,7 +66,7 @@
     "cta": { "title": "Operational Excellence for Modern Aquaculture Ventures", "body": "Napco Aqua delivers advanced expertise in developing and managing aquaculture projects — from strategic feasibility studies through to full-scale operation — with an integrated model that ensures operational efficiency, sustainable production, and maximum investment value.", "button": "Start Your Investment Journey" }
   },
   "about": {
-    "hero": { "eyebrow": "Vision 2030 · Food Security", "title": "Partners in Aquaculture Success", "subtitle": "We lead the transformation of fish farming projects into sustainable production ecosystems from concept and feasibility studies through to design and operation, all delivered to world-class standards of efficiency." },
+    "hero": { "eyebrow": "Vision 2030 · Food Security", "title": "Partners in Aquaculture Success", "subtitle": "We lead the transformation of fish farming projects into sustainable production ecosystems from concept and <br></br>feasibility studies through to design and operation, all delivered to world-class standards of efficiency." },
     "intro": {
       "eyebrow": "Who We Are",
       "title": "The National Partner in Aquaculture",
@@ -314,7 +314,7 @@
     }
   },
   "blog": {
-    "hero": { "eyebrow": "Insights & Innovation", "title": "Insights That Shape the Future, Innovations That Make the Difference", "subtitle": "Explore the latest analyses and field stories in aquaculture technology drawn from hands-on practice and deep technical expertise." },
+    "hero": { "eyebrow": "Insights & Innovation", "title": "Insights That Shape the Future, Innovations <br></br>That Make the Difference", "subtitle": "Explore the latest analyses and field stories in aquaculture technology drawn from hands-on practice and deep technical expertise." },
     "featured": { "sectionTitle": "Fish Farm Design & Operations", "viewAll": "View All Articles", "tag": "Nutrition", "title": "Feeding Strategies for Maximum Growth Rate", "desc": "Discover proven feeding techniques and nutrition plans that maximize fish growth while minimizing costs.", "date": "Jan 20, 2025" },
     "stats": [
       { "icon": "newspaper", "color": "orange", "value": "250+", "label": "Published Articles" },
@@ -412,7 +412,7 @@
     }
   },
   "career": {
-    "hero": { "eyebrow": "Join Our Team", "title": "Build Your Future, Lead the Sustainable Aquaculture Revolution", "subtitle": "Join a team redefining food security standards across the region and become part of a journey that blends technical innovation, passion, and real impact." },
+    "hero": { "eyebrow": "Join Our Team", "title": "Build Your Future, Lead the Sustainable <br></br>Aquaculture Revolution", "subtitle": "Join a team redefining food security standards across the region and become part of a journey that blends technical innovation, passion, and real impact." },
     "testimonials": {
       "title": "Real Voices from Our Team",
       "items": [

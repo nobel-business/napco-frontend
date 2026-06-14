@@ -49,14 +49,16 @@ export default async function HomePage({
         />
         <div className="bg-hero-depth absolute inset-0 -z-10" />
         <Container className="relative z-10 w-full py-24 text-white">
-          <div className="mx-auto flex max-w-4xl flex-col items-center space-y-6 text-center">
+          <div className="mx-auto flex max-w-5xl flex-col items-center space-y-6 text-center">
             <p className="text-label-small font-medium uppercase tracking-[0.18em] text-aqua-200">
               {t("hero.eyebrow")}
             </p>
             <h1 className="text-balance text-display-small font-bold uppercase md:text-display-large">
               {t("hero.title")}
             </h1>
-            <p className="max-w-4xl text-label-large text-white/85">{t("hero.subtitle")}</p>
+            <p className="max-w-5xl text-label-large text-white/85">
+              {t.rich("hero.subtitle", { br: () => <br className="hidden lg:block" /> })}
+            </p>
             {/* orange accent bar */}
             <span className="block h-1.5 w-12 rounded-full bg-brand" />
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">

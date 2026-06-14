@@ -47,7 +47,7 @@ export default async function CareerPage({
     <>
       <PageHero
         eyebrow={t("hero.eyebrow")}
-        title={t("hero.title")}
+        title={t.rich("hero.title", { br: () => <br className="hidden lg:block" /> })}
         subtitle={t("hero.subtitle")}
         image="/images/hero-career.png"
       />
