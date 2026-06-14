@@ -478,13 +478,26 @@ html.lenis body {
 .reveal-init:not(.reveal-in) {
   will-change: opacity, transform;
 }
+/* Driven by an animation (not a transition) so it never clobbers an element's own hover
+   transitions, and with `backwards` fill (not `forwards`) so the final transform/opacity isn't
+   pinned afterwards — staggered children (cards/buttons) keep their hover effects fully intact.
+   `backwards` also shows the hidden `from` state during a child's stagger delay (no flicker).
+   `--reveal-delay` (set inline by the provider) staggers children; default 0 for block reveals. */
 .reveal-init.reveal-in {
   opacity: 1;
   transform: none;
   will-change: auto;
-  transition:
-    opacity var(--motion-reveal) var(--ease-out-quint),
-    transform var(--motion-reveal) var(--ease-out-quint);
+  animation: reveal-rise var(--motion-reveal) var(--ease-out-quint) var(--reveal-delay, 0ms) backwards;
+}
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Consistent, accessible keyboard focus for links (buttons/inputs keep their own rings). */
@@ -903,6 +916,7 @@ html.lenis body {
     opacity: 1;
     transform: none;
     transition: none;
+    animation: none !important;
   }
   .hover-lift:hover {
     transform: none;

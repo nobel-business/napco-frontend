@@ -58,7 +58,7 @@ export function ArticlesBrowser({
       </div>
 
       {/* Grid */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div data-reveal-stagger className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {visible.map((article) => (
           <ArticleCard key={article.slug} article={article} />
         ))}

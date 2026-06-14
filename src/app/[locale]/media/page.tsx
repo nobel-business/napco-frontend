@@ -38,7 +38,7 @@ export default async function MediaPage({
 
       {/* GALLERY */}
       <section className="section">
-        <Container className="space-y-10">
+        <Container data-reveal-stagger className="space-y-10">
           <SectionHeading title={t("gallery.title")} />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {galleryImages.map((src, i) => (
@@ -66,7 +66,7 @@ export default async function MediaPage({
 
       {/* VIDEOS */}
       <section className="bg-muted/40 section">
-        <Container className="space-y-10">
+        <Container data-reveal-stagger className="space-y-10">
           <SectionHeading title={t("videos.title")} />
           <div className="grid gap-6 md:grid-cols-2">
             {videos.map((v, i) => (

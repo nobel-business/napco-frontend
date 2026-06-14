@@ -54,7 +54,7 @@ export default async function CareerPage({
 
       {/* TESTIMONIALS */}
       <section className="section">
-        <Container className="space-y-10">
+        <Container data-reveal-stagger className="space-y-10">
           <SectionHeading title={t("testimonials.title")} />
           <TestimonialCarousel items={testimonials} />
         </Container>
@@ -110,7 +110,7 @@ export default async function CareerPage({
 
       {/* WHAT WILL YOU GAIN */}
       <section className="section">
-        <Container className="space-y-10">
+        <Container data-reveal-stagger className="space-y-10">
           <SectionHeading title={t("gain.title")} />
           <div className="grid gap-6 md:grid-cols-2">
             {gains.map((g) => (

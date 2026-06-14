@@ -84,7 +84,7 @@ export default async function ContactPage({
 
       {/* FORM + INFO */}
       <section className="section">
-        <Container className="space-y-10">
+        <Container data-reveal-stagger className="space-y-10">
           <SectionHeading title={t("mainTitle")} />
           <div className="grid gap-8 lg:grid-cols-2">
             <ContactForm />

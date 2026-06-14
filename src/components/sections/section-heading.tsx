@@ -6,12 +6,12 @@ export function SectionHeading({
   subtitle,
   align = "center",
   className,
+  ...rest
 }: {
   title: string;
   subtitle?: string;
   align?: "center" | "start";
-  className?: string;
-}) {
+} & Omit<React.ComponentProps<"div">, "title">) {
   return (
     <div
       className={cn(
@@ -19,6 +19,7 @@ export function SectionHeading({
         align === "center" ? "items-center text-center" : "items-start text-start",
         className,
       )}
+      {...rest}
     >
       <h2 className="text-headline-small font-semibold uppercase text-foreground">
         {title}

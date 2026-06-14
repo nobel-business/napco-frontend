@@ -175,7 +175,7 @@ export default async function ArticlePage({
 
       {/* RELATED */}
       <section className="bg-muted/40 section">
-        <Container className="space-y-10">
+        <Container data-reveal-stagger className="space-y-10">
           <SectionHeading title={t("relatedTitle")} />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((a) => (

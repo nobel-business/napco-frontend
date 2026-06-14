@@ -124,7 +124,7 @@ export default async function HomePage({
 
       {/* SERVICES */}
       <section className="bg-muted/40 section">
-        <Container className="flex flex-col items-center gap-10">
+        <Container data-reveal-stagger className="flex flex-col items-center gap-10">
           <SectionHeading title={t("services.title")} />
           <div className="grid w-full items-end gap-10 lg:grid-cols-[1fr_466px]">
             <ul className="flex flex-col gap-6">
@@ -189,7 +189,7 @@ export default async function HomePage({
 
       {/* SOLUTIONS */}
       <section className="bg-muted/40 section">
-        <Container className="flex flex-col items-center gap-10">
+        <Container data-reveal-stagger className="flex flex-col items-center gap-10">
           <SectionHeading title={t("solutions.title")} />
           <div className="grid w-full items-stretch gap-10 lg:grid-cols-[1fr_466px]">
             <ul className="flex flex-col gap-6">
@@ -226,7 +226,7 @@ export default async function HomePage({
 
       {/* VALUES */}
       <section className="section">
-        <Container className="flex flex-col items-center gap-10">
+        <Container data-reveal-stagger className="flex flex-col items-center gap-10">
           <SectionHeading title={t("values.title")} />
           <div className="grid w-full items-stretch gap-10 lg:grid-cols-[466px_1fr]">
             <div className="flex flex-col gap-6 self-stretch pt-10">
@@ -261,7 +261,7 @@ export default async function HomePage({
 
       {/* DEEP EXPERTISE — Middle Eastern markets */}
       <section className="bg-muted/40 section">
-        <Container className="flex flex-col items-center gap-10">
+        <Container data-reveal-stagger className="flex flex-col items-center gap-10">
           <SectionHeading title={t("markets.title")} />
           <div className="grid w-full grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
             {markets.map((c) => (
@@ -288,7 +288,7 @@ export default async function HomePage({
 
       {/* WHY CHOOSE */}
       <section className="section">
-        <Container className="flex flex-col items-center gap-10">
+        <Container data-reveal-stagger className="flex flex-col items-center gap-10">
           <SectionHeading title={t("whyChoose.title")} />
           <div className="grid w-full gap-6 md:grid-cols-2">
             {whyChoose.map((item) => (
