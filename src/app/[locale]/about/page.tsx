@@ -1,6 +1,6 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MediaImage } from "@/components/ui/media-image";
-import { Linkedin, Mail, MessageCircle } from "@/components/ui/mingcute-icons";
+import { Facebook, Instagram, Linkedin, Twitter } from "@/components/ui/mingcute-icons";
 
 import type { Locale } from "@/i18n/routing";
 import { Container } from "@/components/ui/container";
@@ -138,13 +138,22 @@ export default async function AboutPage({
                 </p>
               ))}
               <div className="flex items-center justify-end gap-3 pt-1">
-                {[Linkedin, MessageCircle, Mail].map((Ic, i) => (
-                  <span
-                    key={i}
+                {[
+                  { Ic: Facebook, href: "https://www.facebook.com/share/1BSLVo2Jyt/", label: "Facebook" },
+                  { Ic: Instagram, href: "https://www.instagram.com/nabilkammounofficial", label: "Instagram" },
+                  { Ic: Linkedin, href: "https://www.linkedin.com/in/nabilkammoun/", label: "LinkedIn" },
+                  { Ic: Twitter, href: "https://x.com/officialkammoun", label: "X (Twitter)" },
+                ].map(({ Ic, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${t("ceo.name")} on ${label}`}
                     className="fx-social fx-glow-teal bg-gradient-navy inline-flex h-10 w-10 items-center justify-center rounded-lg text-white transition hover:-translate-y-0.5 hover:opacity-90"
                   >
                     <Ic className="h-5 w-5" />
-                  </span>
+                  </a>
                 ))}
               </div>
             </div>
