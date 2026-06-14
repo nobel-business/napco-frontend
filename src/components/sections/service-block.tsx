@@ -23,9 +23,9 @@ export function ServiceBlock({
   reverse?: boolean;
 }) {
   return (
-    <div className="grid items-center gap-10 lg:grid-cols-2">
-      <div className={cn("space-y-3", reverse ? "lg:order-last" : "lg:order-first")}>
-        <div className="fx-img-glow relative aspect-[16/10] overflow-hidden rounded-2xl shadow-card">
+    <div className="grid items-stretch gap-10 lg:grid-cols-2">
+      <div className={cn("flex flex-col gap-3", reverse ? "lg:order-last" : "lg:order-first")}>
+        <div className="fx-img-glow relative min-h-[300px] flex-1 overflow-hidden rounded-2xl shadow-card">
           <MediaImage
             src={data.image}
             alt={data.title}
@@ -39,7 +39,7 @@ export function ServiceBlock({
         )}
       </div>
 
-      <div className="space-y-5">
+      <div className="flex flex-col justify-center space-y-5">
         <h3 className="text-headline-small font-semibold text-foreground">{data.title}</h3>
         <ul className="space-y-3">
           {data.items.map((item) => (
