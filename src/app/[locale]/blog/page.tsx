@@ -1,17 +1,18 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MediaImage } from "@/components/ui/media-image";
-import { Calendar, Check, ChevronLeft, ChevronRight } from "@/components/ui/mingcute-icons";
+import { Check } from "@/components/ui/mingcute-icons";
 
 import type { Locale } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Icon } from "@/components/ui/icon";
 import { PageHero } from "@/components/sections/page-hero";
 import { SectionHeading } from "@/components/sections/section-heading";
+import { FeaturedCarousel } from "@/components/sections/featured-carousel";
 import { StatTile } from "@/components/cards/stat-tile";
+import { getArticles } from "@/content/articles";
 
 type Stat = { icon: string; color: "orange" | "blue"; value: string; label: string };
 type SystemCard = {
@@ -43,8 +44,10 @@ export default async function BlogPage({
   setRequestLocale(locale);
   const t = await getTranslations("blog");
 
+  const tc = await getTranslations("common");
   const stats = t.raw("stats") as Stat[];
   const systems = t.raw("systems.items") as SystemCard[];
+  const articles = getArticles(locale);
 
   return (
     <>
@@ -54,50 +57,11 @@ export default async function BlogPage({
       <section className="section">
         <Container className="space-y-10">
           <SectionHeading title={t("featured.sectionTitle")} />
-          <div className="flex items-center gap-4">
-            <Button
-              type="button"
-              aria-label={t("featured.viewAll")}
-              variant="ghost"
-              size="icon"
-              className="fx-glide-start hidden shrink-0 border border-border bg-surface shadow-sm lg:inline-flex"
-            >
-              <ChevronLeft className="h-5 w-5 rtl-flip" />
-            </Button>
-
-            <article className="fx-glow-text flex flex-1 flex-col gap-6 rounded-3xl border border-border bg-surface p-6 shadow-card md:flex-row md:items-center md:p-8">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl md:w-72 md:shrink-0">
-                <MediaImage
-                  src="/images/blog-featured.png"
-                  alt={t("featured.title")}
-                  fill
-                  sizes="(min-width: 768px) 288px, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="space-y-4">
-                <Badge>{t("featured.tag")}</Badge>
-                <h3 className="text-headline-small font-semibold text-foreground">
-                  {t("featured.title")}
-                </h3>
-                <p className="text-body-medium text-muted-foreground">{t("featured.desc")}</p>
-                <div className="flex items-center gap-2 text-body-small text-muted-foreground">
-                  <Calendar className="h-4 w-4 text-brand" />
-                  <span>{t("featured.date")}</span>
-                </div>
-              </div>
-            </article>
-
-            <Button
-              type="button"
-              aria-label={t("featured.viewAll")}
-              variant="ghost"
-              size="icon"
-              className="fx-glide-end hidden shrink-0 border border-border bg-surface shadow-sm lg:inline-flex"
-            >
-              <ChevronRight className="h-5 w-5 rtl-flip" />
-            </Button>
-          </div>
+          <FeaturedCarousel
+            articles={articles}
+            prevLabel={tc("previous")}
+            nextLabel={tc("next")}
+          />
           <div className="flex justify-center">
             <Button asChild>
               <Link href="/articles">{t("featured.viewAll")}</Link>
