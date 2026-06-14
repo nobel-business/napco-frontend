@@ -288,9 +288,9 @@ export default async function HomePage({
 
       {/* WHY CHOOSE */}
       <section className="section">
-        <Container data-reveal-stagger className="flex flex-col items-center gap-10">
-          <SectionHeading title={t("whyChoose.title")} />
-          <div className="grid w-full gap-6 md:grid-cols-2">
+        <Container className="flex flex-col items-center gap-10">
+          <SectionHeading data-reveal title={t("whyChoose.title")} />
+          <div data-reveal-stagger className="grid w-full gap-6 md:grid-cols-2">
             {whyChoose.map((item) => (
               <article
                 key={item.title}
