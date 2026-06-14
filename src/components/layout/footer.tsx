@@ -27,7 +27,7 @@ export function Footer() {
           <ul className="space-y-3 text-body-small text-white/70">
             <li className="flex items-start gap-3">
               <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-brand" />
-              <span>{siteContact.address}</span>
+              <span>{t("footer.address")}</span>
             </li>
             <li className="flex items-center gap-3">
               <Mail className="h-5 w-5 shrink-0 text-brand" />
