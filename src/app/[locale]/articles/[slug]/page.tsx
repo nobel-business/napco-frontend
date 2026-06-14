@@ -1,14 +1,14 @@
 import { notFound } from "next/navigation";
 import { MediaImage } from "@/components/ui/media-image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Calendar, User, Eye, Check, Lightbulb, Facebook, Linkedin, MessageCircle } from "@/components/ui/mingcute-icons";
+import { Calendar, User, Eye, Check, Lightbulb } from "@/components/ui/mingcute-icons";
 
 import type { Locale } from "@/i18n/routing";
 import { routing } from "@/i18n/routing";
 import { Container } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SectionHeading } from "@/components/sections/section-heading";
+import { ShareButtons } from "@/components/sections/share-buttons";
 import { ArticleCard } from "@/components/cards/article-card";
 import { getArticle, getArticles } from "@/content/articles";
 
@@ -45,12 +45,6 @@ export default async function ArticlePage({
   const benefits = t.raw("benefits") as string[];
   const implementation = t.raw("implementation") as Impl[];
   const related = getArticles(locale).filter((a) => a.slug !== slug).slice(0, 3);
-
-  const shareButtons = [
-    { Icon: Facebook, label: "FaceBook" },
-    { Icon: MessageCircle, label: "WhatsApp" },
-    { Icon: Linkedin, label: "LinkedIn" },
-  ];
 
   return (
     <>
@@ -174,14 +168,7 @@ export default async function ArticlePage({
             <h2 className="text-headline-small font-semibold uppercase text-foreground">
               {t("shareTitle")}
             </h2>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              {shareButtons.map(({ Icon, label }) => (
-                <Button key={label} type="button" variant="secondary" className="fx-social">
-                  <Icon className="h-5 w-5" />
-                  {label}
-                </Button>
-              ))}
-            </div>
+            <ShareButtons title={article.title} />
           </div>
         </Container>
       </section>
