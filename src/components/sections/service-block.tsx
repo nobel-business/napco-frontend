@@ -23,25 +23,29 @@ export function ServiceBlock({
   reverse?: boolean;
 }) {
   return (
-    <div className="grid items-stretch gap-10 lg:grid-cols-2">
-      <div className={cn("flex flex-col gap-3", reverse ? "lg:order-last" : "lg:order-first")}>
-        <div className="fx-img-glow relative min-h-[300px] flex-1 overflow-hidden rounded-2xl shadow-card">
-          <MediaImage
-            src={data.image}
-            alt={data.title}
-            fill
-            sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover"
-          />
-        </div>
-        {data.caption && (
-          <p className="text-body-small text-muted-foreground">{data.caption}</p>
-        )}
-      </div>
+    <div className="space-y-6">
+      {/* Title above the grid so the image lines up with the cards (not offset by the heading). */}
+      <h3 className="text-headline-small font-semibold text-foreground">{data.title}</h3>
 
-      <div className="flex flex-col justify-center space-y-5">
-        <h3 className="text-headline-small font-semibold text-foreground">{data.title}</h3>
-        <ul className="space-y-3">
+      <div className="grid items-stretch gap-10 lg:grid-cols-2">
+        {/* Image column — image stretches to the cards' height; caption sits below it. */}
+        <div className={cn("flex flex-col gap-3", reverse ? "lg:order-last" : "lg:order-first")}>
+          <div className="fx-img-glow relative min-h-[300px] flex-1 overflow-hidden rounded-2xl shadow-card">
+            <MediaImage
+              src={data.image}
+              alt={data.title}
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          {data.caption && (
+            <p className="text-body-small text-muted-foreground">{data.caption}</p>
+          )}
+        </div>
+
+        {/* Cards — centered vertically when they're shorter than the image (e.g. few items). */}
+        <ul className="flex flex-col justify-center gap-3">
           {data.items.map((item) => (
             <li
               key={item}
