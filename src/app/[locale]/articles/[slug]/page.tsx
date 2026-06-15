@@ -66,7 +66,7 @@ export default async function ArticlePage({
               {t("heroEyebrow")}
             </p>
             <h1 className="text-balance text-display-small font-bold uppercase md:text-headline-large">
-              {t("heroTitle")}
+              {article.title}
             </h1>
             <p className="max-w-4xl text-body-medium text-white/85">{t("heroSubtitle")}</p>
             <span className="block h-1.5 w-16 rounded-full bg-brand" />
@@ -91,10 +91,6 @@ export default async function ArticlePage({
               </span>
               <Badge className="ms-auto">{article.category}</Badge>
             </div>
-
-            <h2 className="text-headline-medium font-semibold uppercase text-foreground">
-              {article.title}
-            </h2>
 
             <p className="text-body-large text-muted-foreground">{t("intro")}</p>
 
