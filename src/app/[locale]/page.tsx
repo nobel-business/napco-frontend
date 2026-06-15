@@ -163,7 +163,7 @@ export default async function HomePage({
       <section className="section">
         <Container>
           <div className="fx-glow-text-teal fx-orbit flex flex-col gap-10 rounded-3xl bg-surface p-6 shadow-card md:flex-row md:items-stretch md:p-10">
-            <div className="relative aspect-square shrink-0 overflow-hidden rounded-2xl md:aspect-auto md:w-[360px]">
+            <div className="relative aspect-square shrink-0 self-stretch overflow-hidden rounded-2xl md:aspect-auto md:min-h-[360px] md:w-[360px]">
               <MediaImage
                 src="/images/leadership.png"
                 alt=""
