@@ -71,7 +71,7 @@ export function CareerForm() {
           <Input id="email" type="email" placeholder={t("emailPh")} {...register("email")} />
         </Field>
         <Field label={t("phone")} htmlFor="phone">
-          <Input id="phone" type="tel" dir="ltr" placeholder={t("phonePh")} {...register("phone")} />
+          <Input id="phone" type="tel" dir="ltr" className="text-right" placeholder={t("phonePh")} {...register("phone")} />
         </Field>
       </div>
 
